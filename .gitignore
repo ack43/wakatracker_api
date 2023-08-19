@@ -8,6 +8,3 @@ pubspec.lock
 
 # Mac
 .DS_Store
-
-**.g.dart
-**.freezed.dart

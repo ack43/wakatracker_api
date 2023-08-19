@@ -97,6 +97,7 @@ final class WakatrackClient {
       );
 
   String getAuthorizeUrl() {
+    // ignore: lines_longer_than_80_chars
     return '$authorizationEndpoint?client_id=$clientId&response_type=code&redirect_uri=$redirectUrl&scope=${scopes.join(' ')}';
   }
 
