@@ -68,32 +68,7 @@ final class WakatrackClient {
 
   Interceptor get _authInterceptor => Fresh.oAuth2(
         tokenStorage: tokenStorage,
-        refreshToken: (token, httpClient) async {
-          log(
-            'refreshing access token...',
-            name: 'WakatrackClient::_authInterceptor',
-          );
-
-          final res = await httpClient.post<String>(
-            tokenEndpoint,
-            data: {
-              'client_id': clientId,
-              'client_secret': clientSecret,
-              'grant_type': 'refresh_token',
-              'refresh_token': token?.refreshToken,
-              'redirect_uri': redirectUrl,
-            },
-            options: Options(
-              contentType: Headers.formUrlEncodedContentType,
-            ),
-          );
-          final data = Uri.parse('?$res').queryParameters;
-
-          return OAuth2Token(
-            accessToken: data['access_token'] ?? '',
-            refreshToken: data['refresh_token'] ?? token?.refreshToken ?? '',
-          );
-        },
+        refreshToken: refreshOAuthToken,
       );
 
   String getAuthorizeUrl() {
@@ -101,7 +76,32 @@ final class WakatrackClient {
     return '$authorizationEndpoint?client_id=$clientId&response_type=code&redirect_uri=$redirectUrl&scope=${scopes.join(' ')}';
   }
 
-  Future<WakatrackApi> getAuthorizeSession({
+  Future<OAuth2Token> refreshOAuthToken(
+    OAuth2Token? token,
+    Dio httpClient,
+  ) async {
+    final res = await httpClient.post<String>(
+      tokenEndpoint,
+      data: {
+        'client_id': clientId,
+        'client_secret': clientSecret,
+        'grant_type': 'refresh_token',
+        'refresh_token': token?.refreshToken,
+        'redirect_uri': redirectUrl,
+      },
+      options: Options(
+        contentType: Headers.formUrlEncodedContentType,
+      ),
+    );
+    final data = Uri.parse('?$res').queryParameters;
+
+    return OAuth2Token(
+      accessToken: data['access_token'] ?? '',
+      refreshToken: data['refresh_token'] ?? token?.refreshToken ?? '',
+    );
+  }
+
+  Future<OAuth2Token?> getOAuthToken({
     required String code,
   }) async {
     final res = await Dio().post<String>(
@@ -120,11 +120,30 @@ final class WakatrackClient {
 
     final data = Uri.parse('?$res').queryParameters;
 
-    return WakatrackApi(
-      _configureDio(
-        accessToken: data['access_token'],
-        refreshToken: data['refresh_token'],
-      ),
+    return OAuth2Token(
+      accessToken: data['access_token'] ?? '',
+      refreshToken: data['refresh_token'] ?? '',
     );
+  }
+
+  /// Obtain an access and refresh token from the code. Saves as [OAuth2Token]
+  /// to [tokenStorage]. Configures [Dio] with the access token. Returns
+  /// [WakatrackApi] with the configured [Dio].
+  Future<WakatrackApi> getAuthorizeSession({
+    required String code,
+  }) async {
+    final token = await getOAuthToken(code: code);
+    if (token == null) {
+      throw Exception('Failed to get OAuth2 token.');
+    }
+
+    await tokenStorage.write(token);
+
+    final dio = _configureDio(
+      accessToken: token.accessToken,
+      refreshToken: token.refreshToken,
+    );
+
+    return WakatrackApi(dio);
   }
 }
