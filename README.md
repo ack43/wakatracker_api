@@ -7,6 +7,10 @@ Modified and republished under the same license with improvements.
 
 - [x] Current user info
 - [x] Current user today activity
+- [x] Projects
+- [x] Heartbeats
+- [ ] Stats
+- [ ] Durations/ExternalDurations
 - [ ] Goals
 
 ## Usage

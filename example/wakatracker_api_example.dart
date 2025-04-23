@@ -149,11 +149,11 @@ Future<void> fetchWakatimeData({
   print('');
   print(api);
 
-  final user = await api.getCurrentUser();
-  print('👤 User: ${user.toJson()}');
+  final userResponse = await api.getCurrentUser();
+  print('👤 User: ${userResponse.data}');
 
-  final activity = await api.getMyTodaysActivity();
-  print('📊 Activity: ${activity.toJson()}');
+  final activityResponse = await api.getMyTodaysActivity();
+  print('📊 Activity: ${activityResponse.data}');
 }
 
 String getProjectRoot() {

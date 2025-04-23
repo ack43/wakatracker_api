@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,228 +10,36 @@ part of 'activity_record_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ActivityRecordModel {
-  String get digital => throw _privateConstructorUsedError;
-  int get hours => throw _privateConstructorUsedError;
-  int get minutes => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  double get percent => throw _privateConstructorUsedError;
-  int get seconds => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  double get totalSeconds => throw _privateConstructorUsedError;
-
-  /// Serializes this ActivityRecordModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get digital;
+  int? get hours;
+  int? get minutes;
+  String? get name;
+  double? get percent;
+  int? get seconds;
+  String? get text;
+  double? get totalSeconds;
 
   /// Create a copy of ActivityRecordModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ActivityRecordModelCopyWith<ActivityRecordModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ActivityRecordModelCopyWithImpl<ActivityRecordModel>(
+          this as ActivityRecordModel, _$identity);
 
-/// @nodoc
-abstract class $ActivityRecordModelCopyWith<$Res> {
-  factory $ActivityRecordModelCopyWith(
-          ActivityRecordModel value, $Res Function(ActivityRecordModel) then) =
-      _$ActivityRecordModelCopyWithImpl<$Res, ActivityRecordModel>;
-  @useResult
-  $Res call(
-      {String digital,
-      int hours,
-      int minutes,
-      String name,
-      double percent,
-      int seconds,
-      String text,
-      double totalSeconds});
-}
-
-/// @nodoc
-class _$ActivityRecordModelCopyWithImpl<$Res, $Val extends ActivityRecordModel>
-    implements $ActivityRecordModelCopyWith<$Res> {
-  _$ActivityRecordModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ActivityRecordModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? digital = null,
-    Object? hours = null,
-    Object? minutes = null,
-    Object? name = null,
-    Object? percent = null,
-    Object? seconds = null,
-    Object? text = null,
-    Object? totalSeconds = null,
-  }) {
-    return _then(_value.copyWith(
-      digital: null == digital
-          ? _value.digital
-          : digital // ignore: cast_nullable_to_non_nullable
-              as String,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      percent: null == percent
-          ? _value.percent
-          : percent // ignore: cast_nullable_to_non_nullable
-              as double,
-      seconds: null == seconds
-          ? _value.seconds
-          : seconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalSeconds: null == totalSeconds
-          ? _value.totalSeconds
-          : totalSeconds // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ActivityRecordModelImplCopyWith<$Res>
-    implements $ActivityRecordModelCopyWith<$Res> {
-  factory _$$ActivityRecordModelImplCopyWith(_$ActivityRecordModelImpl value,
-          $Res Function(_$ActivityRecordModelImpl) then) =
-      __$$ActivityRecordModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String digital,
-      int hours,
-      int minutes,
-      String name,
-      double percent,
-      int seconds,
-      String text,
-      double totalSeconds});
-}
-
-/// @nodoc
-class __$$ActivityRecordModelImplCopyWithImpl<$Res>
-    extends _$ActivityRecordModelCopyWithImpl<$Res, _$ActivityRecordModelImpl>
-    implements _$$ActivityRecordModelImplCopyWith<$Res> {
-  __$$ActivityRecordModelImplCopyWithImpl(_$ActivityRecordModelImpl _value,
-      $Res Function(_$ActivityRecordModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ActivityRecordModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? digital = null,
-    Object? hours = null,
-    Object? minutes = null,
-    Object? name = null,
-    Object? percent = null,
-    Object? seconds = null,
-    Object? text = null,
-    Object? totalSeconds = null,
-  }) {
-    return _then(_$ActivityRecordModelImpl(
-      digital: null == digital
-          ? _value.digital
-          : digital // ignore: cast_nullable_to_non_nullable
-              as String,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      percent: null == percent
-          ? _value.percent
-          : percent // ignore: cast_nullable_to_non_nullable
-              as double,
-      seconds: null == seconds
-          ? _value.seconds
-          : seconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalSeconds: null == totalSeconds
-          ? _value.totalSeconds
-          : totalSeconds // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable(createFactory: false)
-class _$ActivityRecordModelImpl implements _ActivityRecordModel {
-  _$ActivityRecordModelImpl(
-      {required this.digital,
-      required this.hours,
-      required this.minutes,
-      required this.name,
-      required this.percent,
-      required this.seconds,
-      required this.text,
-      required this.totalSeconds});
-
-  @override
-  final String digital;
-  @override
-  final int hours;
-  @override
-  final int minutes;
-  @override
-  final String name;
-  @override
-  final double percent;
-  @override
-  final int seconds;
-  @override
-  final String text;
-  @override
-  final double totalSeconds;
-
-  @override
-  String toString() {
-    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds)';
-  }
+  /// Serializes this ActivityRecordModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ActivityRecordModelImpl &&
+            other is ActivityRecordModel &&
             (identical(other.digital, digital) || other.digital == digital) &&
             (identical(other.hours, hours) || other.hours == hours) &&
             (identical(other.minutes, minutes) || other.minutes == minutes) &&
@@ -247,55 +56,240 @@ class _$ActivityRecordModelImpl implements _ActivityRecordModel {
   int get hashCode => Object.hash(runtimeType, digital, hours, minutes, name,
       percent, seconds, text, totalSeconds);
 
+  @override
+  String toString() {
+    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ActivityRecordModelCopyWith<$Res> {
+  factory $ActivityRecordModelCopyWith(
+          ActivityRecordModel value, $Res Function(ActivityRecordModel) _then) =
+      _$ActivityRecordModelCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? digital,
+      int? hours,
+      int? minutes,
+      String? name,
+      double? percent,
+      int? seconds,
+      String? text,
+      double? totalSeconds});
+}
+
+/// @nodoc
+class _$ActivityRecordModelCopyWithImpl<$Res>
+    implements $ActivityRecordModelCopyWith<$Res> {
+  _$ActivityRecordModelCopyWithImpl(this._self, this._then);
+
+  final ActivityRecordModel _self;
+  final $Res Function(ActivityRecordModel) _then;
+
   /// Create a copy of ActivityRecordModel
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$ActivityRecordModelImplCopyWith<_$ActivityRecordModelImpl> get copyWith =>
-      __$$ActivityRecordModelImplCopyWithImpl<_$ActivityRecordModelImpl>(
+  @override
+  $Res call({
+    Object? digital = freezed,
+    Object? hours = freezed,
+    Object? minutes = freezed,
+    Object? name = freezed,
+    Object? percent = freezed,
+    Object? seconds = freezed,
+    Object? text = freezed,
+    Object? totalSeconds = freezed,
+  }) {
+    return _then(_self.copyWith(
+      digital: freezed == digital
+          ? _self.digital
+          : digital // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hours: freezed == hours
+          ? _self.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minutes: freezed == minutes
+          ? _self.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      percent: freezed == percent
+          ? _self.percent
+          : percent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      seconds: freezed == seconds
+          ? _self.seconds
+          : seconds // ignore: cast_nullable_to_non_nullable
+              as int?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalSeconds: freezed == totalSeconds
+          ? _self.totalSeconds
+          : totalSeconds // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _ActivityRecordModel implements ActivityRecordModel {
+  const _ActivityRecordModel(
+      {this.digital,
+      this.hours,
+      this.minutes,
+      this.name,
+      this.percent,
+      this.seconds,
+      this.text,
+      this.totalSeconds});
+  factory _ActivityRecordModel.fromJson(Map<String, dynamic> json) =>
+      _$ActivityRecordModelFromJson(json);
+
+  @override
+  final String? digital;
+  @override
+  final int? hours;
+  @override
+  final int? minutes;
+  @override
+  final String? name;
+  @override
+  final double? percent;
+  @override
+  final int? seconds;
+  @override
+  final String? text;
+  @override
+  final double? totalSeconds;
+
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ActivityRecordModelCopyWith<_ActivityRecordModel> get copyWith =>
+      __$ActivityRecordModelCopyWithImpl<_ActivityRecordModel>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ActivityRecordModelImplToJson(
+    return _$ActivityRecordModelToJson(
       this,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ActivityRecordModel &&
+            (identical(other.digital, digital) || other.digital == digital) &&
+            (identical(other.hours, hours) || other.hours == hours) &&
+            (identical(other.minutes, minutes) || other.minutes == minutes) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.percent, percent) || other.percent == percent) &&
+            (identical(other.seconds, seconds) || other.seconds == seconds) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.totalSeconds, totalSeconds) ||
+                other.totalSeconds == totalSeconds));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, digital, hours, minutes, name,
+      percent, seconds, text, totalSeconds);
+
+  @override
+  String toString() {
+    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds)';
+  }
 }
 
-abstract class _ActivityRecordModel implements ActivityRecordModel {
-  factory _ActivityRecordModel(
-      {required final String digital,
-      required final int hours,
-      required final int minutes,
-      required final String name,
-      required final double percent,
-      required final int seconds,
-      required final String text,
-      required final double totalSeconds}) = _$ActivityRecordModelImpl;
+/// @nodoc
+abstract mixin class _$ActivityRecordModelCopyWith<$Res>
+    implements $ActivityRecordModelCopyWith<$Res> {
+  factory _$ActivityRecordModelCopyWith(_ActivityRecordModel value,
+          $Res Function(_ActivityRecordModel) _then) =
+      __$ActivityRecordModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? digital,
+      int? hours,
+      int? minutes,
+      String? name,
+      double? percent,
+      int? seconds,
+      String? text,
+      double? totalSeconds});
+}
 
-  @override
-  String get digital;
-  @override
-  int get hours;
-  @override
-  int get minutes;
-  @override
-  String get name;
-  @override
-  double get percent;
-  @override
-  int get seconds;
-  @override
-  String get text;
-  @override
-  double get totalSeconds;
+/// @nodoc
+class __$ActivityRecordModelCopyWithImpl<$Res>
+    implements _$ActivityRecordModelCopyWith<$Res> {
+  __$ActivityRecordModelCopyWithImpl(this._self, this._then);
+
+  final _ActivityRecordModel _self;
+  final $Res Function(_ActivityRecordModel) _then;
 
   /// Create a copy of ActivityRecordModel
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ActivityRecordModelImplCopyWith<_$ActivityRecordModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? digital = freezed,
+    Object? hours = freezed,
+    Object? minutes = freezed,
+    Object? name = freezed,
+    Object? percent = freezed,
+    Object? seconds = freezed,
+    Object? text = freezed,
+    Object? totalSeconds = freezed,
+  }) {
+    return _then(_ActivityRecordModel(
+      digital: freezed == digital
+          ? _self.digital
+          : digital // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hours: freezed == hours
+          ? _self.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minutes: freezed == minutes
+          ? _self.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      percent: freezed == percent
+          ? _self.percent
+          : percent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      seconds: freezed == seconds
+          ? _self.seconds
+          : seconds // ignore: cast_nullable_to_non_nullable
+              as int?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalSeconds: freezed == totalSeconds
+          ? _self.totalSeconds
+          : totalSeconds // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
+
+// dart format on
