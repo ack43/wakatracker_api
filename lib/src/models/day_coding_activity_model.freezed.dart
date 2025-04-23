@@ -12,7 +12,7 @@ part of 'day_coding_activity_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DayCodingActivityModel {
@@ -26,8 +26,12 @@ mixin _$DayCodingActivityModel {
       throw _privateConstructorUsedError;
   List<ActivityRecordModel> get projects => throw _privateConstructorUsedError;
 
+  /// Serializes this DayCodingActivityModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DayCodingActivityModelCopyWith<DayCodingActivityModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +65,8 @@ class _$DayCodingActivityModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,6 +110,8 @@ class _$DayCodingActivityModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GrandTotalModelCopyWith<$Res> get grandTotal {
@@ -114,11 +122,11 @@ class _$DayCodingActivityModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DayCodingActivityCopyWith<$Res>
+abstract class _$$DayCodingActivityImplCopyWith<$Res>
     implements $DayCodingActivityModelCopyWith<$Res> {
-  factory _$$_DayCodingActivityCopyWith(_$_DayCodingActivity value,
-          $Res Function(_$_DayCodingActivity) then) =
-      __$$_DayCodingActivityCopyWithImpl<$Res>;
+  factory _$$DayCodingActivityImplCopyWith(_$DayCodingActivityImpl value,
+          $Res Function(_$DayCodingActivityImpl) then) =
+      __$$DayCodingActivityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -135,13 +143,15 @@ abstract class _$$_DayCodingActivityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DayCodingActivityCopyWithImpl<$Res>
-    extends _$DayCodingActivityModelCopyWithImpl<$Res, _$_DayCodingActivity>
-    implements _$$_DayCodingActivityCopyWith<$Res> {
-  __$$_DayCodingActivityCopyWithImpl(
-      _$_DayCodingActivity _value, $Res Function(_$_DayCodingActivity) _then)
+class __$$DayCodingActivityImplCopyWithImpl<$Res>
+    extends _$DayCodingActivityModelCopyWithImpl<$Res, _$DayCodingActivityImpl>
+    implements _$$DayCodingActivityImplCopyWith<$Res> {
+  __$$DayCodingActivityImplCopyWithImpl(_$DayCodingActivityImpl _value,
+      $Res Function(_$DayCodingActivityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,7 +163,7 @@ class __$$_DayCodingActivityCopyWithImpl<$Res>
     Object? operatingSystems = null,
     Object? projects = null,
   }) {
-    return _then(_$_DayCodingActivity(
+    return _then(_$DayCodingActivityImpl(
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -188,8 +198,8 @@ class __$$_DayCodingActivityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$_DayCodingActivity implements _DayCodingActivity {
-  _$_DayCodingActivity(
+class _$DayCodingActivityImpl implements _DayCodingActivity {
+  _$DayCodingActivityImpl(
       {required final List<ActivityRecordModel> categories,
       required final List<ActivityRecordModel> editors,
       required this.grandTotal,
@@ -261,10 +271,10 @@ class _$_DayCodingActivity implements _DayCodingActivity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DayCodingActivity &&
+            other is _$DayCodingActivityImpl &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._editors, _editors) &&
@@ -278,7 +288,7 @@ class _$_DayCodingActivity implements _DayCodingActivity {
             const DeepCollectionEquality().equals(other._projects, _projects));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -290,16 +300,18 @@ class _$_DayCodingActivity implements _DayCodingActivity {
       const DeepCollectionEquality().hash(_operatingSystems),
       const DeepCollectionEquality().hash(_projects));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DayCodingActivityCopyWith<_$_DayCodingActivity> get copyWith =>
-      __$$_DayCodingActivityCopyWithImpl<_$_DayCodingActivity>(
+  _$$DayCodingActivityImplCopyWith<_$DayCodingActivityImpl> get copyWith =>
+      __$$DayCodingActivityImplCopyWithImpl<_$DayCodingActivityImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DayCodingActivityToJson(
+    return _$$DayCodingActivityImplToJson(
       this,
     );
   }
@@ -314,7 +326,7 @@ abstract class _DayCodingActivity implements DayCodingActivityModel {
           required final List<ActivityRecordModel> machines,
           required final List<ActivityRecordModel> operatingSystems,
           required final List<ActivityRecordModel> projects}) =
-      _$_DayCodingActivity;
+      _$DayCodingActivityImpl;
 
   @override
   List<ActivityRecordModel> get categories;
@@ -330,8 +342,11 @@ abstract class _DayCodingActivity implements DayCodingActivityModel {
   List<ActivityRecordModel> get operatingSystems;
   @override
   List<ActivityRecordModel> get projects;
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_DayCodingActivityCopyWith<_$_DayCodingActivity> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DayCodingActivityImplCopyWith<_$DayCodingActivityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

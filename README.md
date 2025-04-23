@@ -1,3 +1,6 @@
+Forked from [wakatracker_api](https://github.com/ytskk/wakatracker_api) by @ytskk.
+Modified and republished under the same license with improvements.
+
 # Dart library with WakaTime api implementation
 
 ## Features

@@ -12,7 +12,7 @@ part of 'activity_record_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ActivityRecordModel {
@@ -25,8 +25,12 @@ mixin _$ActivityRecordModel {
   String get text => throw _privateConstructorUsedError;
   double get totalSeconds => throw _privateConstructorUsedError;
 
+  /// Serializes this ActivityRecordModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ActivityRecordModelCopyWith<ActivityRecordModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$ActivityRecordModelCopyWithImpl<$Res, $Val extends ActivityRecordModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,11 +114,11 @@ class _$ActivityRecordModelCopyWithImpl<$Res, $Val extends ActivityRecordModel>
 }
 
 /// @nodoc
-abstract class _$$_ActivityRecordModelCopyWith<$Res>
+abstract class _$$ActivityRecordModelImplCopyWith<$Res>
     implements $ActivityRecordModelCopyWith<$Res> {
-  factory _$$_ActivityRecordModelCopyWith(_$_ActivityRecordModel value,
-          $Res Function(_$_ActivityRecordModel) then) =
-      __$$_ActivityRecordModelCopyWithImpl<$Res>;
+  factory _$$ActivityRecordModelImplCopyWith(_$ActivityRecordModelImpl value,
+          $Res Function(_$ActivityRecordModelImpl) then) =
+      __$$ActivityRecordModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,13 +133,15 @@ abstract class _$$_ActivityRecordModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ActivityRecordModelCopyWithImpl<$Res>
-    extends _$ActivityRecordModelCopyWithImpl<$Res, _$_ActivityRecordModel>
-    implements _$$_ActivityRecordModelCopyWith<$Res> {
-  __$$_ActivityRecordModelCopyWithImpl(_$_ActivityRecordModel _value,
-      $Res Function(_$_ActivityRecordModel) _then)
+class __$$ActivityRecordModelImplCopyWithImpl<$Res>
+    extends _$ActivityRecordModelCopyWithImpl<$Res, _$ActivityRecordModelImpl>
+    implements _$$ActivityRecordModelImplCopyWith<$Res> {
+  __$$ActivityRecordModelImplCopyWithImpl(_$ActivityRecordModelImpl _value,
+      $Res Function(_$ActivityRecordModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,7 +154,7 @@ class __$$_ActivityRecordModelCopyWithImpl<$Res>
     Object? text = null,
     Object? totalSeconds = null,
   }) {
-    return _then(_$_ActivityRecordModel(
+    return _then(_$ActivityRecordModelImpl(
       digital: null == digital
           ? _value.digital
           : digital // ignore: cast_nullable_to_non_nullable
@@ -185,8 +193,8 @@ class __$$_ActivityRecordModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$_ActivityRecordModel implements _ActivityRecordModel {
-  _$_ActivityRecordModel(
+class _$ActivityRecordModelImpl implements _ActivityRecordModel {
+  _$ActivityRecordModelImpl(
       {required this.digital,
       required this.hours,
       required this.minutes,
@@ -219,10 +227,10 @@ class _$_ActivityRecordModel implements _ActivityRecordModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ActivityRecordModel &&
+            other is _$ActivityRecordModelImpl &&
             (identical(other.digital, digital) || other.digital == digital) &&
             (identical(other.hours, hours) || other.hours == hours) &&
             (identical(other.minutes, minutes) || other.minutes == minutes) &&
@@ -234,21 +242,23 @@ class _$_ActivityRecordModel implements _ActivityRecordModel {
                 other.totalSeconds == totalSeconds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, digital, hours, minutes, name,
       percent, seconds, text, totalSeconds);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ActivityRecordModelCopyWith<_$_ActivityRecordModel> get copyWith =>
-      __$$_ActivityRecordModelCopyWithImpl<_$_ActivityRecordModel>(
+  _$$ActivityRecordModelImplCopyWith<_$ActivityRecordModelImpl> get copyWith =>
+      __$$ActivityRecordModelImplCopyWithImpl<_$ActivityRecordModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ActivityRecordModelToJson(
+    return _$$ActivityRecordModelImplToJson(
       this,
     );
   }
@@ -263,7 +273,7 @@ abstract class _ActivityRecordModel implements ActivityRecordModel {
       required final double percent,
       required final int seconds,
       required final String text,
-      required final double totalSeconds}) = _$_ActivityRecordModel;
+      required final double totalSeconds}) = _$ActivityRecordModelImpl;
 
   @override
   String get digital;
@@ -281,8 +291,11 @@ abstract class _ActivityRecordModel implements ActivityRecordModel {
   String get text;
   @override
   double get totalSeconds;
+
+  /// Create a copy of ActivityRecordModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ActivityRecordModelCopyWith<_$_ActivityRecordModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActivityRecordModelImplCopyWith<_$ActivityRecordModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

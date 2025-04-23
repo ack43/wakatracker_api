@@ -43,8 +43,8 @@ Map<String, dynamic> _$DayCodingActivityModelToJson(
       'projects': instance.projects,
     };
 
-Map<String, dynamic> _$$_DayCodingActivityToJson(
-        _$_DayCodingActivity instance) =>
+Map<String, dynamic> _$$DayCodingActivityImplToJson(
+        _$DayCodingActivityImpl instance) =>
     <String, dynamic>{
       'categories': instance.categories,
       'editors': instance.editors,

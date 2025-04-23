@@ -12,14 +12,18 @@ part of 'response_wrapper_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ResponseWrapperModel {
   dynamic get data => throw _privateConstructorUsedError;
 
+  /// Serializes this ResponseWrapperModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ResponseWrapperModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResponseWrapperModelCopyWith<ResponseWrapperModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -44,6 +48,8 @@ class _$ResponseWrapperModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ResponseWrapperModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -59,30 +65,32 @@ class _$ResponseWrapperModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ResponseWrapperModelCopyWith<$Res>
+abstract class _$$ResponseWrapperModelImplCopyWith<$Res>
     implements $ResponseWrapperModelCopyWith<$Res> {
-  factory _$$_ResponseWrapperModelCopyWith(_$_ResponseWrapperModel value,
-          $Res Function(_$_ResponseWrapperModel) then) =
-      __$$_ResponseWrapperModelCopyWithImpl<$Res>;
+  factory _$$ResponseWrapperModelImplCopyWith(_$ResponseWrapperModelImpl value,
+          $Res Function(_$ResponseWrapperModelImpl) then) =
+      __$$ResponseWrapperModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({dynamic data});
 }
 
 /// @nodoc
-class __$$_ResponseWrapperModelCopyWithImpl<$Res>
-    extends _$ResponseWrapperModelCopyWithImpl<$Res, _$_ResponseWrapperModel>
-    implements _$$_ResponseWrapperModelCopyWith<$Res> {
-  __$$_ResponseWrapperModelCopyWithImpl(_$_ResponseWrapperModel _value,
-      $Res Function(_$_ResponseWrapperModel) _then)
+class __$$ResponseWrapperModelImplCopyWithImpl<$Res>
+    extends _$ResponseWrapperModelCopyWithImpl<$Res, _$ResponseWrapperModelImpl>
+    implements _$$ResponseWrapperModelImplCopyWith<$Res> {
+  __$$ResponseWrapperModelImplCopyWithImpl(_$ResponseWrapperModelImpl _value,
+      $Res Function(_$ResponseWrapperModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ResponseWrapperModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_ResponseWrapperModel(
+    return _then(_$ResponseWrapperModelImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -93,8 +101,8 @@ class __$$_ResponseWrapperModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$_ResponseWrapperModel implements _ResponseWrapperModel {
-  _$_ResponseWrapperModel({required this.data});
+class _$ResponseWrapperModelImpl implements _ResponseWrapperModel {
+  _$ResponseWrapperModelImpl({required this.data});
 
   @override
   final dynamic data;
@@ -105,28 +113,31 @@ class _$_ResponseWrapperModel implements _ResponseWrapperModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ResponseWrapperModel &&
+            other is _$ResponseWrapperModelImpl &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ResponseWrapperModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ResponseWrapperModelCopyWith<_$_ResponseWrapperModel> get copyWith =>
-      __$$_ResponseWrapperModelCopyWithImpl<_$_ResponseWrapperModel>(
-          this, _$identity);
+  _$$ResponseWrapperModelImplCopyWith<_$ResponseWrapperModelImpl>
+      get copyWith =>
+          __$$ResponseWrapperModelImplCopyWithImpl<_$ResponseWrapperModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResponseWrapperModelToJson(
+    return _$$ResponseWrapperModelImplToJson(
       this,
     );
   }
@@ -134,12 +145,15 @@ class _$_ResponseWrapperModel implements _ResponseWrapperModel {
 
 abstract class _ResponseWrapperModel implements ResponseWrapperModel {
   factory _ResponseWrapperModel({required final dynamic data}) =
-      _$_ResponseWrapperModel;
+      _$ResponseWrapperModelImpl;
 
   @override
   dynamic get data;
+
+  /// Create a copy of ResponseWrapperModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ResponseWrapperModelCopyWith<_$_ResponseWrapperModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResponseWrapperModelImplCopyWith<_$ResponseWrapperModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

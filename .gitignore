@@ -8,3 +8,8 @@ pubspec.lock
 
 # Mac
 .DS_Store
+
+.wakatime-project
+.wakatime.cfg
+
+.env

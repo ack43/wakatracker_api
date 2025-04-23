@@ -12,7 +12,7 @@ part of 'grand_total_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GrandTotalModel {
@@ -23,8 +23,12 @@ mixin _$GrandTotalModel {
   String get text => throw _privateConstructorUsedError;
   double get totalSeconds => throw _privateConstructorUsedError;
 
+  /// Serializes this GrandTotalModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GrandTotalModelCopyWith<GrandTotalModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$GrandTotalModelCopyWithImpl<$Res, $Val extends GrandTotalModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,11 +100,11 @@ class _$GrandTotalModelCopyWithImpl<$Res, $Val extends GrandTotalModel>
 }
 
 /// @nodoc
-abstract class _$$_GrandTotalModelCopyWith<$Res>
+abstract class _$$GrandTotalModelImplCopyWith<$Res>
     implements $GrandTotalModelCopyWith<$Res> {
-  factory _$$_GrandTotalModelCopyWith(
-          _$_GrandTotalModel value, $Res Function(_$_GrandTotalModel) then) =
-      __$$_GrandTotalModelCopyWithImpl<$Res>;
+  factory _$$GrandTotalModelImplCopyWith(_$GrandTotalModelImpl value,
+          $Res Function(_$GrandTotalModelImpl) then) =
+      __$$GrandTotalModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -111,13 +117,15 @@ abstract class _$$_GrandTotalModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GrandTotalModelCopyWithImpl<$Res>
-    extends _$GrandTotalModelCopyWithImpl<$Res, _$_GrandTotalModel>
-    implements _$$_GrandTotalModelCopyWith<$Res> {
-  __$$_GrandTotalModelCopyWithImpl(
-      _$_GrandTotalModel _value, $Res Function(_$_GrandTotalModel) _then)
+class __$$GrandTotalModelImplCopyWithImpl<$Res>
+    extends _$GrandTotalModelCopyWithImpl<$Res, _$GrandTotalModelImpl>
+    implements _$$GrandTotalModelImplCopyWith<$Res> {
+  __$$GrandTotalModelImplCopyWithImpl(
+      _$GrandTotalModelImpl _value, $Res Function(_$GrandTotalModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,7 +136,7 @@ class __$$_GrandTotalModelCopyWithImpl<$Res>
     Object? text = null,
     Object? totalSeconds = null,
   }) {
-    return _then(_$_GrandTotalModel(
+    return _then(_$GrandTotalModelImpl(
       decimal: null == decimal
           ? _value.decimal
           : decimal // ignore: cast_nullable_to_non_nullable
@@ -159,8 +167,8 @@ class __$$_GrandTotalModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$_GrandTotalModel implements _GrandTotalModel {
-  _$_GrandTotalModel(
+class _$GrandTotalModelImpl implements _GrandTotalModel {
+  _$GrandTotalModelImpl(
       {required this.decimal,
       required this.digital,
       required this.hours,
@@ -187,10 +195,10 @@ class _$_GrandTotalModel implements _GrandTotalModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GrandTotalModel &&
+            other is _$GrandTotalModelImpl &&
             (identical(other.decimal, decimal) || other.decimal == decimal) &&
             (identical(other.digital, digital) || other.digital == digital) &&
             (identical(other.hours, hours) || other.hours == hours) &&
@@ -200,20 +208,23 @@ class _$_GrandTotalModel implements _GrandTotalModel {
                 other.totalSeconds == totalSeconds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, decimal, digital, hours, minutes, text, totalSeconds);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GrandTotalModelCopyWith<_$_GrandTotalModel> get copyWith =>
-      __$$_GrandTotalModelCopyWithImpl<_$_GrandTotalModel>(this, _$identity);
+  _$$GrandTotalModelImplCopyWith<_$GrandTotalModelImpl> get copyWith =>
+      __$$GrandTotalModelImplCopyWithImpl<_$GrandTotalModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GrandTotalModelToJson(
+    return _$$GrandTotalModelImplToJson(
       this,
     );
   }
@@ -226,7 +237,7 @@ abstract class _GrandTotalModel implements GrandTotalModel {
       required final int hours,
       required final int minutes,
       required final String text,
-      required final double totalSeconds}) = _$_GrandTotalModel;
+      required final double totalSeconds}) = _$GrandTotalModelImpl;
 
   @override
   String get decimal;
@@ -240,8 +251,11 @@ abstract class _GrandTotalModel implements GrandTotalModel {
   String get text;
   @override
   double get totalSeconds;
+
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GrandTotalModelCopyWith<_$_GrandTotalModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GrandTotalModelImplCopyWith<_$GrandTotalModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

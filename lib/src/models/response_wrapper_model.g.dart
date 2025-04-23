@@ -18,8 +18,8 @@ Map<String, dynamic> _$ResponseWrapperModelToJson(
       'data': instance.data,
     };
 
-Map<String, dynamic> _$$_ResponseWrapperModelToJson(
-        _$_ResponseWrapperModel instance) =>
+Map<String, dynamic> _$$ResponseWrapperModelImplToJson(
+        _$ResponseWrapperModelImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
