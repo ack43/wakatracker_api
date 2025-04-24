@@ -23,13 +23,13 @@ mixin _$UserCodingActivity {
   double? get dailyAverageIncludingOtherLanguage;
   String? get humanReadableDailyAverage;
   String? get humanReadableDailyAverageIncludingOtherLanguage;
-  List<DayCodingActivityModel>? get categories;
-  List<DayCodingActivityModel>? get projects;
-  List<DayCodingActivityModel>? get languages;
-  List<DayCodingActivityModel>? get editors;
-  List<DayCodingActivityModel>? get operatingSystems;
-  List<DayCodingActivityModel>? get dependencies;
-  List<DayCodingActivityModel>? get machines;
+  List<ActivityRecordModel>? get categories;
+  List<ActivityRecordModel>? get projects;
+  List<ActivityRecordModel>? get languages;
+  List<ActivityRecordModel>? get editors;
+  List<ActivityRecordModel>? get operatingSystems;
+  List<ActivityRecordModel>? get dependencies;
+  List<ActivityRecordModel>? get machines;
   BestDay? get bestDay;
   String? get range;
   String? get humanReadableRange;
@@ -208,13 +208,13 @@ abstract mixin class $UserCodingActivityCopyWith<$Res> {
       double? dailyAverageIncludingOtherLanguage,
       String? humanReadableDailyAverage,
       String? humanReadableDailyAverageIncludingOtherLanguage,
-      List<DayCodingActivityModel>? categories,
-      List<DayCodingActivityModel>? projects,
-      List<DayCodingActivityModel>? languages,
-      List<DayCodingActivityModel>? editors,
-      List<DayCodingActivityModel>? operatingSystems,
-      List<DayCodingActivityModel>? dependencies,
-      List<DayCodingActivityModel>? machines,
+      List<ActivityRecordModel>? categories,
+      List<ActivityRecordModel>? projects,
+      List<ActivityRecordModel>? languages,
+      List<ActivityRecordModel>? editors,
+      List<ActivityRecordModel>? operatingSystems,
+      List<ActivityRecordModel>? dependencies,
+      List<ActivityRecordModel>? machines,
       BestDay? bestDay,
       String? range,
       String? humanReadableRange,
@@ -340,31 +340,31 @@ class _$UserCodingActivityCopyWithImpl<$Res>
       categories: freezed == categories
           ? _self.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       projects: freezed == projects
           ? _self.projects
           : projects // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       languages: freezed == languages
           ? _self.languages
           : languages // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       editors: freezed == editors
           ? _self.editors
           : editors // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       operatingSystems: freezed == operatingSystems
           ? _self.operatingSystems
           : operatingSystems // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       dependencies: freezed == dependencies
           ? _self.dependencies
           : dependencies // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       machines: freezed == machines
           ? _self.machines
           : machines // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       bestDay: freezed == bestDay
           ? _self.bestDay
           : bestDay // ignore: cast_nullable_to_non_nullable
@@ -500,13 +500,13 @@ class _UserCodingActivity implements UserCodingActivity {
       this.dailyAverageIncludingOtherLanguage,
       this.humanReadableDailyAverage,
       this.humanReadableDailyAverageIncludingOtherLanguage,
-      final List<DayCodingActivityModel>? categories,
-      final List<DayCodingActivityModel>? projects,
-      final List<DayCodingActivityModel>? languages,
-      final List<DayCodingActivityModel>? editors,
-      final List<DayCodingActivityModel>? operatingSystems,
-      final List<DayCodingActivityModel>? dependencies,
-      final List<DayCodingActivityModel>? machines,
+      final List<ActivityRecordModel>? categories,
+      final List<ActivityRecordModel>? projects,
+      final List<ActivityRecordModel>? languages,
+      final List<ActivityRecordModel>? editors,
+      final List<ActivityRecordModel>? operatingSystems,
+      final List<ActivityRecordModel>? dependencies,
+      final List<ActivityRecordModel>? machines,
       this.bestDay,
       this.range,
       this.humanReadableRange,
@@ -559,9 +559,9 @@ class _UserCodingActivity implements UserCodingActivity {
   final String? humanReadableDailyAverage;
   @override
   final String? humanReadableDailyAverageIncludingOtherLanguage;
-  final List<DayCodingActivityModel>? _categories;
+  final List<ActivityRecordModel>? _categories;
   @override
-  List<DayCodingActivityModel>? get categories {
+  List<ActivityRecordModel>? get categories {
     final value = _categories;
     if (value == null) return null;
     if (_categories is EqualUnmodifiableListView) return _categories;
@@ -569,9 +569,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _projects;
+  final List<ActivityRecordModel>? _projects;
   @override
-  List<DayCodingActivityModel>? get projects {
+  List<ActivityRecordModel>? get projects {
     final value = _projects;
     if (value == null) return null;
     if (_projects is EqualUnmodifiableListView) return _projects;
@@ -579,9 +579,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _languages;
+  final List<ActivityRecordModel>? _languages;
   @override
-  List<DayCodingActivityModel>? get languages {
+  List<ActivityRecordModel>? get languages {
     final value = _languages;
     if (value == null) return null;
     if (_languages is EqualUnmodifiableListView) return _languages;
@@ -589,9 +589,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _editors;
+  final List<ActivityRecordModel>? _editors;
   @override
-  List<DayCodingActivityModel>? get editors {
+  List<ActivityRecordModel>? get editors {
     final value = _editors;
     if (value == null) return null;
     if (_editors is EqualUnmodifiableListView) return _editors;
@@ -599,9 +599,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _operatingSystems;
+  final List<ActivityRecordModel>? _operatingSystems;
   @override
-  List<DayCodingActivityModel>? get operatingSystems {
+  List<ActivityRecordModel>? get operatingSystems {
     final value = _operatingSystems;
     if (value == null) return null;
     if (_operatingSystems is EqualUnmodifiableListView)
@@ -610,9 +610,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _dependencies;
+  final List<ActivityRecordModel>? _dependencies;
   @override
-  List<DayCodingActivityModel>? get dependencies {
+  List<ActivityRecordModel>? get dependencies {
     final value = _dependencies;
     if (value == null) return null;
     if (_dependencies is EqualUnmodifiableListView) return _dependencies;
@@ -620,9 +620,9 @@ class _UserCodingActivity implements UserCodingActivity {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<DayCodingActivityModel>? _machines;
+  final List<ActivityRecordModel>? _machines;
   @override
-  List<DayCodingActivityModel>? get machines {
+  List<ActivityRecordModel>? get machines {
     final value = _machines;
     if (value == null) return null;
     if (_machines is EqualUnmodifiableListView) return _machines;
@@ -840,13 +840,13 @@ abstract mixin class _$UserCodingActivityCopyWith<$Res>
       double? dailyAverageIncludingOtherLanguage,
       String? humanReadableDailyAverage,
       String? humanReadableDailyAverageIncludingOtherLanguage,
-      List<DayCodingActivityModel>? categories,
-      List<DayCodingActivityModel>? projects,
-      List<DayCodingActivityModel>? languages,
-      List<DayCodingActivityModel>? editors,
-      List<DayCodingActivityModel>? operatingSystems,
-      List<DayCodingActivityModel>? dependencies,
-      List<DayCodingActivityModel>? machines,
+      List<ActivityRecordModel>? categories,
+      List<ActivityRecordModel>? projects,
+      List<ActivityRecordModel>? languages,
+      List<ActivityRecordModel>? editors,
+      List<ActivityRecordModel>? operatingSystems,
+      List<ActivityRecordModel>? dependencies,
+      List<ActivityRecordModel>? machines,
       BestDay? bestDay,
       String? range,
       String? humanReadableRange,
@@ -973,31 +973,31 @@ class __$UserCodingActivityCopyWithImpl<$Res>
       categories: freezed == categories
           ? _self._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       projects: freezed == projects
           ? _self._projects
           : projects // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       languages: freezed == languages
           ? _self._languages
           : languages // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       editors: freezed == editors
           ? _self._editors
           : editors // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       operatingSystems: freezed == operatingSystems
           ? _self._operatingSystems
           : operatingSystems // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       dependencies: freezed == dependencies
           ? _self._dependencies
           : dependencies // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       machines: freezed == machines
           ? _self._machines
           : machines // ignore: cast_nullable_to_non_nullable
-              as List<DayCodingActivityModel>?,
+              as List<ActivityRecordModel>?,
       bestDay: freezed == bestDay
           ? _self.bestDay
           : bestDay // ignore: cast_nullable_to_non_nullable

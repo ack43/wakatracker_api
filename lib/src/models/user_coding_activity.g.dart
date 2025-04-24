@@ -23,32 +23,25 @@ _UserCodingActivity _$UserCodingActivityFromJson(Map<String, dynamic> json) =>
           json['human_readable_daily_average_including_other_language']
               as String?,
       categories: (json['categories'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       projects: (json['projects'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       languages: (json['languages'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       editors: (json['editors'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       operatingSystems: (json['operating_systems'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       dependencies: (json['dependencies'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       machines: (json['machines'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       bestDay: json['best_day'] == null
           ? null

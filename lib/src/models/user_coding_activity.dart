@@ -1,7 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 //
 // ignore: always_use_package_imports
-import 'day_coding_activity_model.dart';
+import 'activity_record_model.dart';
+// import 'day_coding_activity_model.dart';
 
 part 'user_coding_activity.freezed.dart';
 part 'user_coding_activity.g.dart';
@@ -20,13 +21,13 @@ sealed class UserCodingActivity with _$UserCodingActivity {
     double? dailyAverageIncludingOtherLanguage,
     String? humanReadableDailyAverage,
     String? humanReadableDailyAverageIncludingOtherLanguage,
-    List<DayCodingActivityModel>? categories,
-    List<DayCodingActivityModel>? projects,
-    List<DayCodingActivityModel>? languages,
-    List<DayCodingActivityModel>? editors,
-    List<DayCodingActivityModel>? operatingSystems,
-    List<DayCodingActivityModel>? dependencies,
-    List<DayCodingActivityModel>? machines,
+    List<ActivityRecordModel>? categories,
+    List<ActivityRecordModel>? projects,
+    List<ActivityRecordModel>? languages,
+    List<ActivityRecordModel>? editors,
+    List<ActivityRecordModel>? operatingSystems,
+    List<ActivityRecordModel>? dependencies,
+    List<ActivityRecordModel>? machines,
     BestDay? bestDay,
     String? range,
     String? humanReadableRange,
