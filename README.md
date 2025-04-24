@@ -10,7 +10,8 @@ Modified and republished under the same license with improvements.
 - [x] Projects
 - [x] Heartbeats
 - [ ] Stats
-- [ ] Durations/ExternalDurations
+- [x] Durations/ExternalDurations
+- [ ] Summaries
 - [ ] Goals
 
 ## Usage

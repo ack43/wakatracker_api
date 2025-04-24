@@ -25,13 +25,44 @@ final class WakatrackClient {
 
   // api configs.
   static const _baseUrl = 'https://wakatime.com/api/v1/';
-
   static const List<String> scopes = [
+    // Base scopes
     'email',
     'read_logged_time',
+    'read_heartbeats',
     'read_stats',
     'read_orgs',
     'read_private_leaderboards',
+
+    // Summary scopes
+    'read_summaries',
+    'read_summaries.categories',
+    'read_summaries.dependencies',
+    'read_summaries.editors',
+    'read_summaries.languages',
+    'read_summaries.machines',
+    'read_summaries.operating_systems',
+    'read_summaries.projects',
+
+    // Stats scopes (more granular access)
+    'read_stats.best_day',
+    'read_stats.categories',
+    'read_stats.dependencies',
+    'read_stats.editors',
+    'read_stats.languages',
+    'read_stats.machines',
+    'read_stats.operating_systems',
+    'read_stats.projects',
+
+    // Goal and org scopes
+    'read_goals',
+    'write_orgs',
+
+    // Leaderboard scopes
+    'write_private_leaderboards',
+
+    // Heartbeats and activity
+    'write_heartbeats',
   ];
 
   static const authorizationEndpoint = 'https://wakatime.com/oauth/authorize';
@@ -39,14 +70,19 @@ final class WakatrackClient {
   static const redirectUrl = 'https://wakatime.com/oauth/test';
   static const revokeTokenEndpoint = 'https://wakatime.com/oauth/revoke';
 
-  Future<WakatrackApi?> createApiClient({bool safe = true}) async {
+  Future<WakatrackApi?> createApiClient({
+    bool safe = true,
+    List<String>? scopes,
+  }) async {
     final token = await tokenStorage?.read() ?? secretToken;
 
     if (tokenStorage != null) {
       if (token?.refreshToken == null) {
-        final message = 'You need to login first.\nVisit ${getAuthorizeUrl()}';
+        final message = 'You need to login first.\nVisit ${getAuthorizeUrl(
+          scopes: scopes,
+        )}';
         if (safe) {
-          // TODO: fix in future
+          // TODO(ack): fix in future.
           // ignore: avoid_print
           print(message);
           return null;
@@ -92,10 +128,13 @@ final class WakatrackClient {
           refreshToken: refreshOAuthToken,
         );
 
-  String getAuthorizeUrl() {
+  String getAuthorizeUrl({List<String>? scopes}) {
+    final validScopes = (scopes ?? WakatrackClient.scopes)
+        .where((scope) => WakatrackClient.scopes.contains(scope))
+        .toList();
     //
     // ignore: lines_longer_than_80_chars
-    return '$authorizationEndpoint?client_id=$clientId&response_type=code&redirect_uri=$redirectUrl&scope=${scopes.join(',')}';
+    return '$authorizationEndpoint?client_id=$clientId&response_type=code&redirect_uri=$redirectUrl&scope=${validScopes.join(',')}';
   }
 
   Future<WakatrackOAuth2Token> refreshOAuthToken(

@@ -409,10 +409,14 @@ class __$DayCodingActivityCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$Range {
+// @freezed requirements
+// ignore: invalid_annotation_target
   @JsonKey(fromJson: _fromDateString, toJson: _toDateString)
-  DateTime? get date;
+  DateTime? get date; // @freezed requirements
+// ignore: invalid_annotation_target
   @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
-  DateTime? get start;
+  DateTime? get start; // @freezed requirements
+// ignore: invalid_annotation_target
   @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
   DateTime? get end;
   String? get text;
@@ -520,12 +524,18 @@ class _Range implements Range {
       this.timezone});
   factory _Range.fromJson(Map<String, dynamic> json) => _$RangeFromJson(json);
 
+// @freezed requirements
+// ignore: invalid_annotation_target
   @override
   @JsonKey(fromJson: _fromDateString, toJson: _toDateString)
   final DateTime? date;
+// @freezed requirements
+// ignore: invalid_annotation_target
   @override
   @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
   final DateTime? start;
+// @freezed requirements
+// ignore: invalid_annotation_target
   @override
   @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
   final DateTime? end;

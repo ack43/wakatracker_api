@@ -46,7 +46,7 @@ abstract class WakatrackApi {
   //
   // Durations
   @GET('users/current/durations')
-  Future<ResponseWrapperDurations> getCurrentDurations({
+  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getCurrentDurations({
     @Query('date') required String date, // Format: yyyy-MM-dd
     @Query('project') String? project,
     @Query('branches') String? branches,
@@ -57,7 +57,7 @@ abstract class WakatrackApi {
   });
 
   @GET('users/{userId}/durations')
-  Future<ResponseWrapperDurations> getDurations(
+  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getDurations(
     @Path('userId') String userId, {
     @Query('date') required String date,
     @Query('project') String? project,
@@ -66,5 +66,24 @@ abstract class WakatrackApi {
     @Query('writes_only') bool? writesOnly,
     @Query('timezone') String? timezone,
     @Query('slice_by') String? sliceBy,
+  });
+
+  // External Durations
+  @GET('users/current/external_durations')
+  Future<ResponseWrapperDurations<List<ExternalDuration>>>
+      getCurrentExternalDurations({
+    @Query('date') required String date,
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timezone') String? timezone,
+  });
+
+  @GET('users/{userId}/external_durations')
+  Future<ResponseWrapperDurations<List<ExternalDuration>>> getExternalDurations(
+    @Path('userId') String userId, {
+    @Query('date') required String date,
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timezone') String? timezone,
   });
 }

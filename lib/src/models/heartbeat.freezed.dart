@@ -227,13 +227,16 @@ mixin _$Heartbeat {
   int? get projectRootCount;
   String? get branch;
   String? get language;
-  List<String>? get dependencies;
+  List<String>? get dependencies; // order like in docs
+// ignore: always_put_required_named_parameters_first
   String get machineNameId;
   int? get lineAdditions;
-  int? get lineDeletions;
+  int? get lineDeletions; // order like in docs
+// ignore: always_put_required_named_parameters_first
   int get lines;
   int? get lineno;
-  int? get cursorpos;
+  int? get cursorpos; // order like in docs
+// ignore: always_put_required_named_parameters_first
   bool get isWrite;
 
   /// Create a copy of Heartbeat
@@ -477,18 +480,24 @@ class _Heartbeat implements Heartbeat {
     return EqualUnmodifiableListView(value);
   }
 
+// order like in docs
+// ignore: always_put_required_named_parameters_first
   @override
   final String machineNameId;
   @override
   final int? lineAdditions;
   @override
   final int? lineDeletions;
+// order like in docs
+// ignore: always_put_required_named_parameters_first
   @override
   final int lines;
   @override
   final int? lineno;
   @override
   final int? cursorpos;
+// order like in docs
+// ignore: always_put_required_named_parameters_first
   @override
   final bool isWrite;
 

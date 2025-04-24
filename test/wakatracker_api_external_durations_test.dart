@@ -11,8 +11,8 @@ void main() {
     env = DotEnv()..load(['.env']);
   });
 
-  group('Wakatrack Durations API (Real Requests)', () {
-    test('API Key: fetch current durations', () async {
+  group('Wakatrack External Durations API (Real Requests)', () {
+    test('API Key: fetch current external durations', () async {
       final apiKey = env['WAKATIME_API_KEY'];
       if (apiKey == null) {
         print('⚠️ WAKATIME_API_KEY not found in .env — skipping test.');
@@ -27,24 +27,22 @@ void main() {
 
       final today = DateTime.now().toIso8601String().split('T').first;
 
-      final durations = await api!.getCurrentDurations(
+      final externalDurations = await api!.getCurrentExternalDurations(
         date: today,
-        sliceBy:
-            'project', // Optional: try other values like 'editor', 'entity', etc.
       );
 
-      expect(durations.data, isA<List<WakatimeDuration>>());
-      print('✅ Durations fetched: ${durations.data.length}');
-      for (final duration in durations.data.take(3)) {
+      expect(externalDurations.data, isA<List<ExternalDuration>>());
+      print('✅ External durations fetched: ${externalDurations.data.length}');
+      for (final ext in externalDurations.data.take(3)) {
         print(
           //
           // ignore: lines_longer_than_80_chars
-          '- project: ${duration.project} @ ${duration.dateTime} (${duration.time}) => (${duration.duration})',
+          '- ${ext.provider}: ${ext.entity} from ${ext.startTime} to ${ext.endTime} [${ext.category}]',
         );
       }
-      print('Durations.meta.start: ${durations.start}');
-      print('Durations.meta.end: ${durations.end}');
-      print('Durations.meta.timezone: ${durations.timezone}');
+      print('ExternalDurations.meta.start: ${externalDurations.start}');
+      print('ExternalDurations.meta.end: ${externalDurations.end}');
+      print('ExternalDurations.meta.timezone: ${externalDurations.timezone}');
     });
   });
 }

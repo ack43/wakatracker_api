@@ -14,8 +14,8 @@ part of 'duration.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$ResponseWrapperDurations {
-  List<WakatimeDuration> get data;
+mixin _$ResponseWrapperDurations<T> {
+  T get data;
   String get start;
   String get end;
   String get timezone;
@@ -24,18 +24,19 @@ mixin _$ResponseWrapperDurations {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $ResponseWrapperDurationsCopyWith<ResponseWrapperDurations> get copyWith =>
-      _$ResponseWrapperDurationsCopyWithImpl<ResponseWrapperDurations>(
-          this as ResponseWrapperDurations, _$identity);
+  $ResponseWrapperDurationsCopyWith<T, ResponseWrapperDurations<T>>
+      get copyWith => _$ResponseWrapperDurationsCopyWithImpl<T,
+              ResponseWrapperDurations<T>>(
+          this as ResponseWrapperDurations<T>, _$identity);
 
   /// Serializes this ResponseWrapperDurations to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ResponseWrapperDurations &&
+            other is ResponseWrapperDurations<T> &&
             const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
@@ -50,43 +51,42 @@ mixin _$ResponseWrapperDurations {
 
   @override
   String toString() {
-    return 'ResponseWrapperDurations(data: $data, start: $start, end: $end, timezone: $timezone)';
+    return 'ResponseWrapperDurations<$T>(data: $data, start: $start, end: $end, timezone: $timezone)';
   }
 }
 
 /// @nodoc
-abstract mixin class $ResponseWrapperDurationsCopyWith<$Res> {
-  factory $ResponseWrapperDurationsCopyWith(ResponseWrapperDurations value,
-          $Res Function(ResponseWrapperDurations) _then) =
+abstract mixin class $ResponseWrapperDurationsCopyWith<T, $Res> {
+  factory $ResponseWrapperDurationsCopyWith(ResponseWrapperDurations<T> value,
+          $Res Function(ResponseWrapperDurations<T>) _then) =
       _$ResponseWrapperDurationsCopyWithImpl;
   @useResult
-  $Res call(
-      {List<WakatimeDuration> data, String start, String end, String timezone});
+  $Res call({T data, String start, String end, String timezone});
 }
 
 /// @nodoc
-class _$ResponseWrapperDurationsCopyWithImpl<$Res>
-    implements $ResponseWrapperDurationsCopyWith<$Res> {
+class _$ResponseWrapperDurationsCopyWithImpl<T, $Res>
+    implements $ResponseWrapperDurationsCopyWith<T, $Res> {
   _$ResponseWrapperDurationsCopyWithImpl(this._self, this._then);
 
-  final ResponseWrapperDurations _self;
-  final $Res Function(ResponseWrapperDurations) _then;
+  final ResponseWrapperDurations<T> _self;
+  final $Res Function(ResponseWrapperDurations<T>) _then;
 
   /// Create a copy of ResponseWrapperDurations
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
     Object? start = null,
     Object? end = null,
     Object? timezone = null,
   }) {
     return _then(_self.copyWith(
-      data: null == data
+      data: freezed == data
           ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<WakatimeDuration>,
+              as T,
       start: null == start
           ? _self.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -104,25 +104,19 @@ class _$ResponseWrapperDurationsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _ResponseWrapperDurations implements ResponseWrapperDurations {
+@JsonSerializable(genericArgumentFactories: true)
+class _ResponseWrapperDurations<T> implements ResponseWrapperDurations<T> {
   const _ResponseWrapperDurations(
-      {required final List<WakatimeDuration> data,
+      {required this.data,
       required this.start,
       required this.end,
-      required this.timezone})
-      : _data = data;
-  factory _ResponseWrapperDurations.fromJson(Map<String, dynamic> json) =>
-      _$ResponseWrapperDurationsFromJson(json);
+      required this.timezone});
+  factory _ResponseWrapperDurations.fromJson(
+          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
+      _$ResponseWrapperDurationsFromJson(json, fromJsonT);
 
-  final List<WakatimeDuration> _data;
   @override
-  List<WakatimeDuration> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
+  final T data;
   @override
   final String start;
   @override
@@ -135,23 +129,21 @@ class _ResponseWrapperDurations implements ResponseWrapperDurations {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$ResponseWrapperDurationsCopyWith<_ResponseWrapperDurations> get copyWith =>
-      __$ResponseWrapperDurationsCopyWithImpl<_ResponseWrapperDurations>(
-          this, _$identity);
+  _$ResponseWrapperDurationsCopyWith<T, _ResponseWrapperDurations<T>>
+      get copyWith => __$ResponseWrapperDurationsCopyWithImpl<T,
+          _ResponseWrapperDurations<T>>(this, _$identity);
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$ResponseWrapperDurationsToJson(
-      this,
-    );
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
+    return _$ResponseWrapperDurationsToJson<T>(this, toJsonT);
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ResponseWrapperDurations &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            other is _ResponseWrapperDurations<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
             (identical(other.timezone, timezone) ||
@@ -161,49 +153,48 @@ class _ResponseWrapperDurations implements ResponseWrapperDurations {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_data), start, end, timezone);
+      const DeepCollectionEquality().hash(data), start, end, timezone);
 
   @override
   String toString() {
-    return 'ResponseWrapperDurations(data: $data, start: $start, end: $end, timezone: $timezone)';
+    return 'ResponseWrapperDurations<$T>(data: $data, start: $start, end: $end, timezone: $timezone)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$ResponseWrapperDurationsCopyWith<$Res>
-    implements $ResponseWrapperDurationsCopyWith<$Res> {
-  factory _$ResponseWrapperDurationsCopyWith(_ResponseWrapperDurations value,
-          $Res Function(_ResponseWrapperDurations) _then) =
+abstract mixin class _$ResponseWrapperDurationsCopyWith<T, $Res>
+    implements $ResponseWrapperDurationsCopyWith<T, $Res> {
+  factory _$ResponseWrapperDurationsCopyWith(_ResponseWrapperDurations<T> value,
+          $Res Function(_ResponseWrapperDurations<T>) _then) =
       __$ResponseWrapperDurationsCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {List<WakatimeDuration> data, String start, String end, String timezone});
+  $Res call({T data, String start, String end, String timezone});
 }
 
 /// @nodoc
-class __$ResponseWrapperDurationsCopyWithImpl<$Res>
-    implements _$ResponseWrapperDurationsCopyWith<$Res> {
+class __$ResponseWrapperDurationsCopyWithImpl<T, $Res>
+    implements _$ResponseWrapperDurationsCopyWith<T, $Res> {
   __$ResponseWrapperDurationsCopyWithImpl(this._self, this._then);
 
-  final _ResponseWrapperDurations _self;
-  final $Res Function(_ResponseWrapperDurations) _then;
+  final _ResponseWrapperDurations<T> _self;
+  final $Res Function(_ResponseWrapperDurations<T>) _then;
 
   /// Create a copy of ResponseWrapperDurations
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? data = null,
+    Object? data = freezed,
     Object? start = null,
     Object? end = null,
     Object? timezone = null,
   }) {
-    return _then(_ResponseWrapperDurations(
-      data: null == data
-          ? _self._data
+    return _then(_ResponseWrapperDurations<T>(
+      data: freezed == data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<WakatimeDuration>,
+              as T,
       start: null == start
           ? _self.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -394,6 +385,575 @@ class __$WakatimeDurationCopyWithImpl<$Res>
           ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as double,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ResponseWrapperExternalDurations {
+  List<ExternalDuration> get data;
+  String get start;
+  String get end;
+  String get timezone;
+
+  /// Create a copy of ResponseWrapperExternalDurations
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ResponseWrapperExternalDurationsCopyWith<ResponseWrapperExternalDurations>
+      get copyWith => _$ResponseWrapperExternalDurationsCopyWithImpl<
+              ResponseWrapperExternalDurations>(
+          this as ResponseWrapperExternalDurations, _$identity);
+
+  /// Serializes this ResponseWrapperExternalDurations to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ResponseWrapperExternalDurations &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(data), start, end, timezone);
+
+  @override
+  String toString() {
+    return 'ResponseWrapperExternalDurations(data: $data, start: $start, end: $end, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ResponseWrapperExternalDurationsCopyWith<$Res> {
+  factory $ResponseWrapperExternalDurationsCopyWith(
+          ResponseWrapperExternalDurations value,
+          $Res Function(ResponseWrapperExternalDurations) _then) =
+      _$ResponseWrapperExternalDurationsCopyWithImpl;
+  @useResult
+  $Res call(
+      {List<ExternalDuration> data, String start, String end, String timezone});
+}
+
+/// @nodoc
+class _$ResponseWrapperExternalDurationsCopyWithImpl<$Res>
+    implements $ResponseWrapperExternalDurationsCopyWith<$Res> {
+  _$ResponseWrapperExternalDurationsCopyWithImpl(this._self, this._then);
+
+  final ResponseWrapperExternalDurations _self;
+  final $Res Function(ResponseWrapperExternalDurations) _then;
+
+  /// Create a copy of ResponseWrapperExternalDurations
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? start = null,
+    Object? end = null,
+    Object? timezone = null,
+  }) {
+    return _then(_self.copyWith(
+      data: null == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<ExternalDuration>,
+      start: null == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
+      end: null == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as String,
+      timezone: null == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ResponseWrapperExternalDurations
+    implements ResponseWrapperExternalDurations {
+  const _ResponseWrapperExternalDurations(
+      {required final List<ExternalDuration> data,
+      required this.start,
+      required this.end,
+      required this.timezone})
+      : _data = data;
+  factory _ResponseWrapperExternalDurations.fromJson(
+          Map<String, dynamic> json) =>
+      _$ResponseWrapperExternalDurationsFromJson(json);
+
+  final List<ExternalDuration> _data;
+  @override
+  List<ExternalDuration> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  final String start;
+  @override
+  final String end;
+  @override
+  final String timezone;
+
+  /// Create a copy of ResponseWrapperExternalDurations
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ResponseWrapperExternalDurationsCopyWith<_ResponseWrapperExternalDurations>
+      get copyWith => __$ResponseWrapperExternalDurationsCopyWithImpl<
+          _ResponseWrapperExternalDurations>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ResponseWrapperExternalDurationsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ResponseWrapperExternalDurations &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_data), start, end, timezone);
+
+  @override
+  String toString() {
+    return 'ResponseWrapperExternalDurations(data: $data, start: $start, end: $end, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ResponseWrapperExternalDurationsCopyWith<$Res>
+    implements $ResponseWrapperExternalDurationsCopyWith<$Res> {
+  factory _$ResponseWrapperExternalDurationsCopyWith(
+          _ResponseWrapperExternalDurations value,
+          $Res Function(_ResponseWrapperExternalDurations) _then) =
+      __$ResponseWrapperExternalDurationsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<ExternalDuration> data, String start, String end, String timezone});
+}
+
+/// @nodoc
+class __$ResponseWrapperExternalDurationsCopyWithImpl<$Res>
+    implements _$ResponseWrapperExternalDurationsCopyWith<$Res> {
+  __$ResponseWrapperExternalDurationsCopyWithImpl(this._self, this._then);
+
+  final _ResponseWrapperExternalDurations _self;
+  final $Res Function(_ResponseWrapperExternalDurations) _then;
+
+  /// Create a copy of ResponseWrapperExternalDurations
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? data = null,
+    Object? start = null,
+    Object? end = null,
+    Object? timezone = null,
+  }) {
+    return _then(_ResponseWrapperExternalDurations(
+      data: null == data
+          ? _self._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<ExternalDuration>,
+      start: null == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
+      end: null == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as String,
+      timezone: null == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ExternalDuration {
+  String get id;
+  String get externalId;
+  String get entity;
+  String get type;
+  String get provider;
+  String get category;
+  DateTime get startTime;
+  DateTime get endTime;
+  String? get project;
+  String? get branch;
+  String? get language;
+  String? get meta;
+
+  /// Create a copy of ExternalDuration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ExternalDurationCopyWith<ExternalDuration> get copyWith =>
+      _$ExternalDurationCopyWithImpl<ExternalDuration>(
+          this as ExternalDuration, _$identity);
+
+  /// Serializes this ExternalDuration to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ExternalDuration &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.externalId, externalId) ||
+                other.externalId == externalId) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
+            (identical(other.endTime, endTime) || other.endTime == endTime) &&
+            (identical(other.project, project) || other.project == project) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.meta, meta) || other.meta == meta));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, externalId, entity, type,
+      provider, category, startTime, endTime, project, branch, language, meta);
+
+  @override
+  String toString() {
+    return 'ExternalDuration(id: $id, externalId: $externalId, entity: $entity, type: $type, provider: $provider, category: $category, startTime: $startTime, endTime: $endTime, project: $project, branch: $branch, language: $language, meta: $meta)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ExternalDurationCopyWith<$Res> {
+  factory $ExternalDurationCopyWith(
+          ExternalDuration value, $Res Function(ExternalDuration) _then) =
+      _$ExternalDurationCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String externalId,
+      String entity,
+      String type,
+      String provider,
+      String category,
+      DateTime startTime,
+      DateTime endTime,
+      String? project,
+      String? branch,
+      String? language,
+      String? meta});
+}
+
+/// @nodoc
+class _$ExternalDurationCopyWithImpl<$Res>
+    implements $ExternalDurationCopyWith<$Res> {
+  _$ExternalDurationCopyWithImpl(this._self, this._then);
+
+  final ExternalDuration _self;
+  final $Res Function(ExternalDuration) _then;
+
+  /// Create a copy of ExternalDuration
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? externalId = null,
+    Object? entity = null,
+    Object? type = null,
+    Object? provider = null,
+    Object? category = null,
+    Object? startTime = null,
+    Object? endTime = null,
+    Object? project = freezed,
+    Object? branch = freezed,
+    Object? language = freezed,
+    Object? meta = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalId: null == externalId
+          ? _self.externalId
+          : externalId // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      provider: null == provider
+          ? _self.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _self.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endTime: null == endTime
+          ? _self.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      project: freezed == project
+          ? _self.project
+          : project // ignore: cast_nullable_to_non_nullable
+              as String?,
+      branch: freezed == branch
+          ? _self.branch
+          : branch // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      meta: freezed == meta
+          ? _self.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ExternalDuration implements ExternalDuration {
+  const _ExternalDuration(
+      {required this.id,
+      required this.externalId,
+      required this.entity,
+      required this.type,
+      required this.provider,
+      required this.category,
+      required this.startTime,
+      required this.endTime,
+      required this.project,
+      required this.branch,
+      required this.language,
+      required this.meta});
+  factory _ExternalDuration.fromJson(Map<String, dynamic> json) =>
+      _$ExternalDurationFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String externalId;
+  @override
+  final String entity;
+  @override
+  final String type;
+  @override
+  final String provider;
+  @override
+  final String category;
+  @override
+  final DateTime startTime;
+  @override
+  final DateTime endTime;
+  @override
+  final String? project;
+  @override
+  final String? branch;
+  @override
+  final String? language;
+  @override
+  final String? meta;
+
+  /// Create a copy of ExternalDuration
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ExternalDurationCopyWith<_ExternalDuration> get copyWith =>
+      __$ExternalDurationCopyWithImpl<_ExternalDuration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ExternalDurationToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ExternalDuration &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.externalId, externalId) ||
+                other.externalId == externalId) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
+            (identical(other.endTime, endTime) || other.endTime == endTime) &&
+            (identical(other.project, project) || other.project == project) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.meta, meta) || other.meta == meta));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, externalId, entity, type,
+      provider, category, startTime, endTime, project, branch, language, meta);
+
+  @override
+  String toString() {
+    return 'ExternalDuration(id: $id, externalId: $externalId, entity: $entity, type: $type, provider: $provider, category: $category, startTime: $startTime, endTime: $endTime, project: $project, branch: $branch, language: $language, meta: $meta)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ExternalDurationCopyWith<$Res>
+    implements $ExternalDurationCopyWith<$Res> {
+  factory _$ExternalDurationCopyWith(
+          _ExternalDuration value, $Res Function(_ExternalDuration) _then) =
+      __$ExternalDurationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String externalId,
+      String entity,
+      String type,
+      String provider,
+      String category,
+      DateTime startTime,
+      DateTime endTime,
+      String? project,
+      String? branch,
+      String? language,
+      String? meta});
+}
+
+/// @nodoc
+class __$ExternalDurationCopyWithImpl<$Res>
+    implements _$ExternalDurationCopyWith<$Res> {
+  __$ExternalDurationCopyWithImpl(this._self, this._then);
+
+  final _ExternalDuration _self;
+  final $Res Function(_ExternalDuration) _then;
+
+  /// Create a copy of ExternalDuration
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? externalId = null,
+    Object? entity = null,
+    Object? type = null,
+    Object? provider = null,
+    Object? category = null,
+    Object? startTime = null,
+    Object? endTime = null,
+    Object? project = freezed,
+    Object? branch = freezed,
+    Object? language = freezed,
+    Object? meta = freezed,
+  }) {
+    return _then(_ExternalDuration(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      externalId: null == externalId
+          ? _self.externalId
+          : externalId // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      provider: null == provider
+          ? _self.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _self.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endTime: null == endTime
+          ? _self.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      project: freezed == project
+          ? _self.project
+          : project // ignore: cast_nullable_to_non_nullable
+              as String?,
+      branch: freezed == branch
+          ? _self.branch
+          : branch // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      meta: freezed == meta
+          ? _self.meta
+          : meta // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
