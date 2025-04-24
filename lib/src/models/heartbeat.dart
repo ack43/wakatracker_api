@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'response_wrapper_model.dart';
 
 part 'heartbeat.freezed.dart';
 part 'heartbeat.g.dart';

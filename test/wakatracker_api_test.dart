@@ -3,11 +3,9 @@
 
 import 'package:dotenv/dotenv.dart';
 
-import 'package:fresh_dio/fresh_dio.dart';
+// import 'package:fresh_dio/fresh_dio.dart';
 
 import 'package:test/test.dart';
-import 'package:wakatracker_api/src/models/models.dart';
-import 'package:wakatracker_api/src/wakatrack_client.dart';
 import 'package:wakatracker_api/wakatracker_api.dart';
 
 void main() {

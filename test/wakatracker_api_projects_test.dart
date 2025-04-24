@@ -4,8 +4,6 @@
 import 'package:dotenv/dotenv.dart';
 import 'package:test/test.dart';
 import 'package:wakatracker_api/wakatracker_api.dart';
-import 'package:wakatracker_api/src/wakatrack_client.dart';
-import 'package:wakatracker_api/src/models/models.dart';
 
 void main() {
   late final DotEnv env;

@@ -1,11 +1,11 @@
+// cause its example
 // ignore_for_file: avoid_print
 
 import 'dart:io';
-import 'dart:convert';
-import 'package:path/path.dart' as p;
 import 'package:args/args.dart';
 import 'package:dotenv/dotenv.dart';
 import 'package:fresh_dio/fresh_dio.dart';
+import 'package:path/path.dart' as p;
 import 'package:wakatracker_api/wakatracker_api.dart';
 
 Future<void> main(List<String> arguments) async {
