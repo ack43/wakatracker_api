@@ -11,7 +11,7 @@ Modified and republished under the same license with improvements.
 - [x] Heartbeats
 - [ ] Stats
 - [x] Durations/ExternalDurations
-- [ ] Summaries
+- [x] Summaries
 - [ ] Goals
 
 ## Usage

@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased] - 2025-04-24
+
+## [Unreleased] - 2025-04-24
+
+### Added
+- `GET /api/v1/users/current/summaries` endpoint.
+- `GET /api/v1/users/:user/summaries` endpoint.
+
+---
 ## [0.2.2] - 2025-04-24
 
 ### Added
@@ -35,6 +44,7 @@
 ### Removed
 - Cleaned up unused imports (`dart:developer`).
 
+---
 
 ## [0.2.0] - 2025-04-23
 

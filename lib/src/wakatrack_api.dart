@@ -86,4 +86,31 @@ abstract class WakatrackApi {
     @Query('branches') String? branches,
     @Query('timezone') String? timezone,
   });
+
+  // Summaries
+  @GET('users/current/summaries')
+  Future<ResponseWrapperModel<List<DayCodingActivityModel>>>
+      getCurrentSummaries({
+    @Query('start') required String start,
+    @Query('end') required String end,
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+    @Query('timezone') String? timezone,
+    @Query('range') String? range,
+  });
+
+  @GET('users/{userId}/summaries')
+  Future<ResponseWrapperModel<List<DayCodingActivityModel>>> getSummaries(
+    @Path('userId') String userId, {
+    @Query('start') required String start,
+    @Query('end') required String end,
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+    @Query('timezone') String? timezone,
+    @Query('range') String? range,
+  });
 }

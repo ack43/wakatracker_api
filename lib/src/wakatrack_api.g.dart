@@ -434,6 +434,128 @@ class _WakatrackApi implements WakatrackApi {
     return _value;
   }
 
+  @override
+  Future<ResponseWrapperModel<List<DayCodingActivityModel>>>
+      getCurrentSummaries({
+    required String start,
+    required String end,
+    String? project,
+    String? branches,
+    int? timeout,
+    bool? writesOnly,
+    String? timezone,
+    String? range,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'start': start,
+      r'end': end,
+      r'project': project,
+      r'branches': branches,
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+      r'timezone': timezone,
+      r'range': range,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<ResponseWrapperModel<List<DayCodingActivityModel>>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'users/current/summaries',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(
+            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
+          ),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<List<DayCodingActivityModel>> _value;
+    try {
+      _value = ResponseWrapperModel<List<DayCodingActivityModel>>.fromJson(
+        _result.data!,
+        (json) => json is List<dynamic>
+            ? json
+                .map<DayCodingActivityModel>(
+                  (i) => DayCodingActivityModel.fromJson(
+                    i as Map<String, dynamic>,
+                  ),
+                )
+                .toList()
+            : List.empty(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResponseWrapperModel<List<DayCodingActivityModel>>> getSummaries(
+    String userId, {
+    required String start,
+    required String end,
+    String? project,
+    String? branches,
+    int? timeout,
+    bool? writesOnly,
+    String? timezone,
+    String? range,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'start': start,
+      r'end': end,
+      r'project': project,
+      r'branches': branches,
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+      r'timezone': timezone,
+      r'range': range,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options =
+        _setStreamType<ResponseWrapperModel<List<DayCodingActivityModel>>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'users/${userId}/summaries',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(
+            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
+          ),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<List<DayCodingActivityModel>> _value;
+    try {
+      _value = ResponseWrapperModel<List<DayCodingActivityModel>>.fromJson(
+        _result.data!,
+        (json) => json is List<dynamic>
+            ? json
+                .map<DayCodingActivityModel>(
+                  (i) => DayCodingActivityModel.fromJson(
+                    i as Map<String, dynamic>,
+                  ),
+                )
+                .toList()
+            : List.empty(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
