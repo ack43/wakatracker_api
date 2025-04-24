@@ -171,31 +171,20 @@ mixin _$Project {
   String? get repository;
   String? get badge;
   String? get color;
-  List<String> get clients; // @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
+  List<String> get clients;
   @JsonKey(name: 'has_public_url')
-  bool get hasPublicUrl; // @freezed requirements
-// ignore: invalid_annotation_target
+  bool get hasPublicUrl;
   @JsonKey(name: 'human_readable_last_heartbeat_at')
-  String? get humanReadableLastHeartbeatAt; // @freezed requirements
-// ignore: invalid_annotation_target
+  String? get humanReadableLastHeartbeatAt;
   @JsonKey(name: 'last_heartbeat_at')
-  String? get lastHeartbeatAt; // @freezed requirements
-// ignore: invalid_annotation_target
+  String? get lastHeartbeatAt;
   @JsonKey(name: 'human_readable_first_heartbeat_at')
-  String? get humanReadableFirstHeartbeatAt; // @freezed requirements
-// ignore: invalid_annotation_target
+  String? get humanReadableFirstHeartbeatAt;
   @JsonKey(name: 'first_heartbeat_at')
-  String? get firstHeartbeatAt; // order like in docs
-// ignore: always_put_required_named_parameters_first
-  String get url; // @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
+  String? get firstHeartbeatAt;
+  String get url;
   @JsonKey(name: 'urlencoded_name')
-  String get urlencodedName; // @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
+  String get urlencodedName;
   @JsonKey(name: 'created_at')
   String get createdAt;
 
@@ -421,45 +410,26 @@ class _Project implements Project {
     return EqualUnmodifiableListView(_clients);
   }
 
-// @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
   @override
   @JsonKey(name: 'has_public_url')
   final bool hasPublicUrl;
-// @freezed requirements
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'human_readable_last_heartbeat_at')
   final String? humanReadableLastHeartbeatAt;
-// @freezed requirements
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'last_heartbeat_at')
   final String? lastHeartbeatAt;
-// @freezed requirements
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'human_readable_first_heartbeat_at')
   final String? humanReadableFirstHeartbeatAt;
-// @freezed requirements
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'first_heartbeat_at')
   final String? firstHeartbeatAt;
-// order like in docs
-// ignore: always_put_required_named_parameters_first
   @override
   final String url;
-// @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
   @override
   @JsonKey(name: 'urlencoded_name')
   final String urlencodedName;
-// @freezed requirements
-// order like in docs
-// ignore: invalid_annotation_target,always_put_required_named_parameters_first
   @override
   @JsonKey(name: 'created_at')
   final String createdAt;

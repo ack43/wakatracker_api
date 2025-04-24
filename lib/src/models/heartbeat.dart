@@ -1,3 +1,6 @@
+// order like in docs
+// ignore_for_file: always_put_required_named_parameters_first
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'heartbeat.freezed.dart';
@@ -33,18 +36,12 @@ sealed class Heartbeat with _$Heartbeat {
     String? branch,
     String? language,
     List<String>? dependencies,
-    // order like in docs
-    // ignore: always_put_required_named_parameters_first
     required String machineNameId,
     int? lineAdditions,
     int? lineDeletions,
-    // order like in docs
-    // ignore: always_put_required_named_parameters_first
     required int lines,
     int? lineno,
     int? cursorpos,
-    // order like in docs
-    // ignore: always_put_required_named_parameters_first
     required bool isWrite,
   }) = _Heartbeat;
 
@@ -58,7 +55,6 @@ sealed class ResponseWrapperHeartbeats with _$ResponseWrapperHeartbeats {
     required List<Heartbeat> data,
     required String start,
     String? finish,
-    // ignore: always_put_required_named_parameters_first
     required String timezone,
   }) = _ResponseWrapperHeartbeats;
 

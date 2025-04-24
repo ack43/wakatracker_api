@@ -82,7 +82,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperModel<List<Project>>> getCurrentProjects({
+  Future<ResponseWrapperList<Project>> getCurrentProjects({
     String? searchQuery,
   }) async {
     final _extra = <String, dynamic>{};
@@ -90,7 +90,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ResponseWrapperModel<List<Project>>>(
+    final _options = _setStreamType<ResponseWrapperList<Project>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -101,17 +101,11 @@ class _WakatrackApi implements WakatrackApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperModel<List<Project>> _value;
+    late ResponseWrapperList<Project> _value;
     try {
-      _value = ResponseWrapperModel<List<Project>>.fromJson(
+      _value = ResponseWrapperList<Project>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<Project>(
-                  (i) => Project.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => Project.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -121,7 +115,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperModel<List<Project>>> getProjects(
+  Future<ResponseWrapperList<Project>> getProjects(
     String userId, {
     String? searchQuery,
   }) async {
@@ -130,7 +124,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ResponseWrapperModel<List<Project>>>(
+    final _options = _setStreamType<ResponseWrapperList<Project>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -141,17 +135,11 @@ class _WakatrackApi implements WakatrackApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperModel<List<Project>> _value;
+    late ResponseWrapperList<Project> _value;
     try {
-      _value = ResponseWrapperModel<List<Project>>.fromJson(
+      _value = ResponseWrapperList<Project>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<Project>(
-                  (i) => Project.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => Project.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -220,7 +208,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getCurrentDurations({
+  Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
     required String date,
     String? project,
     String? branches,
@@ -242,8 +230,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<ResponseWrapperDurations<List<WakatimeDuration>>>(
+    final _options = _setStreamType<ResponseWrapperDurations<WakatimeDuration>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -251,22 +238,14 @@ class _WakatrackApi implements WakatrackApi {
             queryParameters: queryParameters,
             data: _data,
           )
-          .copyWith(
-            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
-          ),
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<List<WakatimeDuration>> _value;
+    late ResponseWrapperDurations<WakatimeDuration> _value;
     try {
-      _value = ResponseWrapperDurations<List<WakatimeDuration>>.fromJson(
+      _value = ResponseWrapperDurations<WakatimeDuration>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<WakatimeDuration>(
-                  (i) => WakatimeDuration.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => WakatimeDuration.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -276,7 +255,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getDurations(
+  Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
     String userId, {
     required String date,
     String? project,
@@ -299,8 +278,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<ResponseWrapperDurations<List<WakatimeDuration>>>(
+    final _options = _setStreamType<ResponseWrapperDurations<WakatimeDuration>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -308,22 +286,14 @@ class _WakatrackApi implements WakatrackApi {
             queryParameters: queryParameters,
             data: _data,
           )
-          .copyWith(
-            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
-          ),
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<List<WakatimeDuration>> _value;
+    late ResponseWrapperDurations<WakatimeDuration> _value;
     try {
-      _value = ResponseWrapperDurations<List<WakatimeDuration>>.fromJson(
+      _value = ResponseWrapperDurations<WakatimeDuration>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<WakatimeDuration>(
-                  (i) => WakatimeDuration.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => WakatimeDuration.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -333,7 +303,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<List<ExternalDuration>>>
+  Future<ResponseWrapperDurations<ExternalDuration>>
       getCurrentExternalDurations({
     required String date,
     String? project,
@@ -350,8 +320,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<ResponseWrapperDurations<List<ExternalDuration>>>(
+    final _options = _setStreamType<ResponseWrapperDurations<ExternalDuration>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -359,22 +328,14 @@ class _WakatrackApi implements WakatrackApi {
             queryParameters: queryParameters,
             data: _data,
           )
-          .copyWith(
-            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
-          ),
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<List<ExternalDuration>> _value;
+    late ResponseWrapperDurations<ExternalDuration> _value;
     try {
-      _value = ResponseWrapperDurations<List<ExternalDuration>>.fromJson(
+      _value = ResponseWrapperDurations<ExternalDuration>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<ExternalDuration>(
-                  (i) => ExternalDuration.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => ExternalDuration.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -384,7 +345,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<List<ExternalDuration>>> getExternalDurations(
+  Future<ResponseWrapperDurations<ExternalDuration>> getExternalDurations(
     String userId, {
     required String date,
     String? project,
@@ -401,8 +362,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<ResponseWrapperDurations<List<ExternalDuration>>>(
+    final _options = _setStreamType<ResponseWrapperDurations<ExternalDuration>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -410,22 +370,14 @@ class _WakatrackApi implements WakatrackApi {
             queryParameters: queryParameters,
             data: _data,
           )
-          .copyWith(
-            baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl),
-          ),
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<List<ExternalDuration>> _value;
+    late ResponseWrapperDurations<ExternalDuration> _value;
     try {
-      _value = ResponseWrapperDurations<List<ExternalDuration>>.fromJson(
+      _value = ResponseWrapperDurations<ExternalDuration>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<ExternalDuration>(
-                  (i) => ExternalDuration.fromJson(i as Map<String, dynamic>),
-                )
-                .toList()
-            : List.empty(),
+        (json) => ExternalDuration.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -435,8 +387,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperModel<List<DayCodingActivityModel>>>
-      getCurrentSummaries({
+  Future<ResponseWrapperList<DayCodingActivityModel>> getCurrentSummaries({
     required String start,
     required String end,
     String? project,
@@ -461,7 +412,7 @@ class _WakatrackApi implements WakatrackApi {
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
-        _setStreamType<ResponseWrapperModel<List<DayCodingActivityModel>>>(
+        _setStreamType<ResponseWrapperList<DayCodingActivityModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -474,19 +425,11 @@ class _WakatrackApi implements WakatrackApi {
           ),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperModel<List<DayCodingActivityModel>> _value;
+    late ResponseWrapperList<DayCodingActivityModel> _value;
     try {
-      _value = ResponseWrapperModel<List<DayCodingActivityModel>>.fromJson(
+      _value = ResponseWrapperList<DayCodingActivityModel>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<DayCodingActivityModel>(
-                  (i) => DayCodingActivityModel.fromJson(
-                    i as Map<String, dynamic>,
-                  ),
-                )
-                .toList()
-            : List.empty(),
+        (json) => DayCodingActivityModel.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -496,7 +439,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperModel<List<DayCodingActivityModel>>> getSummaries(
+  Future<ResponseWrapperList<DayCodingActivityModel>> getSummaries(
     String userId, {
     required String start,
     required String end,
@@ -522,7 +465,7 @@ class _WakatrackApi implements WakatrackApi {
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options =
-        _setStreamType<ResponseWrapperModel<List<DayCodingActivityModel>>>(
+        _setStreamType<ResponseWrapperList<DayCodingActivityModel>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -535,19 +478,163 @@ class _WakatrackApi implements WakatrackApi {
           ),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperModel<List<DayCodingActivityModel>> _value;
+    late ResponseWrapperList<DayCodingActivityModel> _value;
     try {
-      _value = ResponseWrapperModel<List<DayCodingActivityModel>>.fromJson(
+      _value = ResponseWrapperList<DayCodingActivityModel>.fromJson(
         _result.data!,
-        (json) => json is List<dynamic>
-            ? json
-                .map<DayCodingActivityModel>(
-                  (i) => DayCodingActivityModel.fromJson(
-                    i as Map<String, dynamic>,
-                  ),
-                )
-                .toList()
-            : List.empty(),
+        (json) => DayCodingActivityModel.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResponseWrapperModel<UserCodingActivity>> getUserStats(
+    String userId, {
+    int? timeout,
+    bool? writesOnly,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ResponseWrapperModel<UserCodingActivity>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/users/${userId}/stats',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<UserCodingActivity> _value;
+    try {
+      _value = ResponseWrapperModel<UserCodingActivity>.fromJson(
+        _result.data!,
+        (json) => UserCodingActivity.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResponseWrapperModel<UserCodingActivity>> getCurrentUserStats({
+    int? timeout,
+    bool? writesOnly,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ResponseWrapperModel<UserCodingActivity>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'users/current/stats',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<UserCodingActivity> _value;
+    try {
+      _value = ResponseWrapperModel<UserCodingActivity>.fromJson(
+        _result.data!,
+        (json) => UserCodingActivity.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResponseWrapperModel<UserCodingActivity>> getUserStatsByRange(
+    String userId,
+    String range, {
+    int? timeout,
+    bool? writesOnly,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ResponseWrapperModel<UserCodingActivity>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'users/${userId}/stats/${range}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<UserCodingActivity> _value;
+    try {
+      _value = ResponseWrapperModel<UserCodingActivity>.fromJson(
+        _result.data!,
+        (json) => UserCodingActivity.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResponseWrapperModel<UserCodingActivity>> getCurrentUserStatsByRange(
+    String range, {
+    int? timeout,
+    bool? writesOnly,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'timeout': timeout,
+      r'writes_only': writesOnly,
+    };
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ResponseWrapperModel<UserCodingActivity>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'users/current/stats/${range}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ResponseWrapperModel<UserCodingActivity> _value;
+    try {
+      _value = ResponseWrapperModel<UserCodingActivity>.fromJson(
+        _result.data!,
+        (json) => UserCodingActivity.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);

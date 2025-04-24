@@ -1,12 +1,44 @@
 # Changelog
 
-## [Unreleased] - 2025-04-24
+## [0.2.3] - 2025-04-24
 
-## [Unreleased] - 2025-04-24
+### 🚀 Added
 
-### Added
-- `GET /api/v1/users/current/summaries` endpoint.
-- `GET /api/v1/users/:user/summaries` endpoint.
+#### WakaTime API Endpoints (in `wakatrack_api.dart`)
+
+- **Summaries**
+  - `GET /users/current/summaries` → `getCurrentSummaries({ start, end, project, branches, timeout, writesOnly, timezone, range })`
+  - `GET /users/{userId}/summaries` → `getSummaries(userId, { start, end, project, branches, timeout, writesOnly, timezone, range })`
+
+- **Stats**
+  - `GET /users/{userId}/stats` → `getUserStats(userId, { timeout, writesOnly })`
+  - `GET /users/current/stats` → `getCurrentUserStats({ timeout, writesOnly })`
+  - `GET /users/{userId}/stats/{range}` → `getUserStatsByRange(userId, range, { timeout, writesOnly })`
+  - `GET /users/current/stats/{range}` → `getCurrentUserStatsByRange(range, { timeout, writesOnly })`
+
+---
+
+### 🛠 Changed
+
+#### Response Type Adjustments
+
+- **Projects**
+  - `GET /users/current/projects` → `getCurrentProjects`:  
+    Changed return type from `ResponseWrapperModel<List<Project>>` → `ResponseWrapperList<Project>`
+  - `GET /users/{userId}/projects` → `getProjects`:  
+    Changed return type from `ResponseWrapperModel<List<Project>>` → `ResponseWrapperList<Project>`
+
+- **Durations**
+  - `GET /users/current/durations` → `getCurrentDurations`:  
+    Changed return type from `ResponseWrapperDurations<List<WakatimeDuration>>` → `ResponseWrapperDurations<WakatimeDuration>`
+  - `GET /users/{userId}/durations` → `getDurations`:  
+    Changed return type from `ResponseWrapperDurations<List<WakatimeDuration>>` → `ResponseWrapperDurations<WakatimeDuration>`
+
+- **External Durations**
+  - `GET /users/current/external_durations` → `getCurrentExternalDurations`:  
+    Changed return type from `ResponseWrapperDurations<List<ExternalDuration>>` → `ResponseWrapperDurations<ExternalDuration>`
+  - `GET /users/{userId}/external_durations` → `getExternalDurations`:  
+    Changed return type from `ResponseWrapperDurations<List<ExternalDuration>>` → `ResponseWrapperDurations<ExternalDuration>`
 
 ---
 ## [0.2.2] - 2025-04-24

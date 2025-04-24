@@ -38,9 +38,9 @@ void main() {
 
       final summary = response.data.first;
       print('✅ Current user summary for $today:');
-      print('- Total time: ${summary.grandTotal.text}');
-      print('- Projects: ${summary.projects.map((p) => p.name).join(', ')}');
-      print('- Languages: ${summary.languages.map((l) => l.name).join(', ')}');
+      print('- Total time: ${summary.grandTotal?.text}');
+      print('- Projects: ${summary.projects?.map((p) => p.name).join(', ')}');
+      print('- Languages: ${summary.languages?.map((l) => l.name).join(', ')}');
     });
 
     test('API Key: summaries with `range` param (Last 7 Days)', () async {
@@ -67,7 +67,7 @@ void main() {
 
       print('✅ Last 7 Days summary: ${response.data.length} day(s)');
       response.data.forEach((day) {
-        print('- ${day.range.date}: ${day.grandTotal.text}');
+        print('- ${day.range?.date}: ${day.grandTotal?.text}');
       });
     });
 
@@ -98,9 +98,9 @@ void main() {
 
       final summary = response.data.first;
       print('✅ Writes-only summary for $today:');
-      print('- Total write time: ${summary.grandTotal.text}');
+      print('- Total write time: ${summary.grandTotal?.text}');
       print(
-          '- Projects (writes): ${summary.projects.map((p) => p.name).join(', ')}');
+          '- Projects (writes): ${summary.projects?.map((p) => p.name).join(', ')}');
     });
   });
 }

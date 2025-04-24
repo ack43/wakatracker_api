@@ -11,7 +11,7 @@ _ResponseWrapperDurations<T> _$ResponseWrapperDurationsFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     _ResponseWrapperDurations<T>(
-      data: fromJsonT(json['data']),
+      data: (json['data'] as List<dynamic>).map(fromJsonT).toList(),
       start: json['start'] as String,
       end: json['end'] as String,
       timezone: json['timezone'] as String,
@@ -22,7 +22,7 @@ Map<String, dynamic> _$ResponseWrapperDurationsToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
-      'data': toJsonT(instance.data),
+      'data': instance.data.map(toJsonT).toList(),
       'start': instance.start,
       'end': instance.end,
       'timezone': instance.timezone,
@@ -65,13 +65,13 @@ Map<String, dynamic> _$ResponseWrapperExternalDurationsToJson(
 _ExternalDuration _$ExternalDurationFromJson(Map<String, dynamic> json) =>
     _ExternalDuration(
       id: json['id'] as String,
-      externalId: json['externalId'] as String,
+      externalId: json['external_id'] as String,
       entity: json['entity'] as String,
       type: json['type'] as String,
       provider: json['provider'] as String,
-      category: json['category'] as String,
-      startTime: DateTime.parse(json['startTime'] as String),
-      endTime: DateTime.parse(json['endTime'] as String),
+      category: json['category'] as String?,
+      startTime: DateTime.parse(json['start_time'] as String),
+      endTime: DateTime.parse(json['end_time'] as String),
       project: json['project'] as String?,
       branch: json['branch'] as String?,
       language: json['language'] as String?,
@@ -81,13 +81,13 @@ _ExternalDuration _$ExternalDurationFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ExternalDurationToJson(_ExternalDuration instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'externalId': instance.externalId,
+      'external_id': instance.externalId,
       'entity': instance.entity,
       'type': instance.type,
       'provider': instance.provider,
       'category': instance.category,
-      'startTime': instance.startTime.toIso8601String(),
-      'endTime': instance.endTime.toIso8601String(),
+      'start_time': instance.startTime.toIso8601String(),
+      'end_time': instance.endTime.toIso8601String(),
       'project': instance.project,
       'branch': instance.branch,
       'language': instance.language,

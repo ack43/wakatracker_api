@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$ResponseWrapperDurations<T> {
-  T get data;
+  List<T> get data;
   String get start;
   String get end;
   String get timezone;
@@ -61,7 +61,7 @@ abstract mixin class $ResponseWrapperDurationsCopyWith<T, $Res> {
           $Res Function(ResponseWrapperDurations<T>) _then) =
       _$ResponseWrapperDurationsCopyWithImpl;
   @useResult
-  $Res call({T data, String start, String end, String timezone});
+  $Res call({List<T> data, String start, String end, String timezone});
 }
 
 /// @nodoc
@@ -77,16 +77,16 @@ class _$ResponseWrapperDurationsCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? start = null,
     Object? end = null,
     Object? timezone = null,
   }) {
     return _then(_self.copyWith(
-      data: freezed == data
+      data: null == data
           ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as List<T>,
       start: null == start
           ? _self.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -107,16 +107,23 @@ class _$ResponseWrapperDurationsCopyWithImpl<T, $Res>
 @JsonSerializable(genericArgumentFactories: true)
 class _ResponseWrapperDurations<T> implements ResponseWrapperDurations<T> {
   const _ResponseWrapperDurations(
-      {required this.data,
+      {required final List<T> data,
       required this.start,
       required this.end,
-      required this.timezone});
+      required this.timezone})
+      : _data = data;
   factory _ResponseWrapperDurations.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$ResponseWrapperDurationsFromJson(json, fromJsonT);
 
+  final List<T> _data;
   @override
-  final T data;
+  List<T> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
   @override
   final String start;
   @override
@@ -143,7 +150,7 @@ class _ResponseWrapperDurations<T> implements ResponseWrapperDurations<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ResponseWrapperDurations<T> &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
             (identical(other.timezone, timezone) ||
@@ -153,7 +160,7 @@ class _ResponseWrapperDurations<T> implements ResponseWrapperDurations<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(data), start, end, timezone);
+      const DeepCollectionEquality().hash(_data), start, end, timezone);
 
   @override
   String toString() {
@@ -169,7 +176,7 @@ abstract mixin class _$ResponseWrapperDurationsCopyWith<T, $Res>
       __$ResponseWrapperDurationsCopyWithImpl;
   @override
   @useResult
-  $Res call({T data, String start, String end, String timezone});
+  $Res call({List<T> data, String start, String end, String timezone});
 }
 
 /// @nodoc
@@ -185,16 +192,16 @@ class __$ResponseWrapperDurationsCopyWithImpl<T, $Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
     Object? start = null,
     Object? end = null,
     Object? timezone = null,
   }) {
     return _then(_ResponseWrapperDurations<T>(
-      data: freezed == data
-          ? _self.data
+      data: null == data
+          ? _self._data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as List<T>,
       start: null == start
           ? _self.start
           : start // ignore: cast_nullable_to_non_nullable
@@ -608,7 +615,7 @@ mixin _$ExternalDuration {
   String get entity;
   String get type;
   String get provider;
-  String get category;
+  String? get category;
   DateTime get startTime;
   DateTime get endTime;
   String? get project;
@@ -674,7 +681,7 @@ abstract mixin class $ExternalDurationCopyWith<$Res> {
       String entity,
       String type,
       String provider,
-      String category,
+      String? category,
       DateTime startTime,
       DateTime endTime,
       String? project,
@@ -701,7 +708,7 @@ class _$ExternalDurationCopyWithImpl<$Res>
     Object? entity = null,
     Object? type = null,
     Object? provider = null,
-    Object? category = null,
+    Object? category = freezed,
     Object? startTime = null,
     Object? endTime = null,
     Object? project = freezed,
@@ -730,10 +737,10 @@ class _$ExternalDurationCopyWithImpl<$Res>
           ? _self.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
+      category: freezed == category
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startTime: null == startTime
           ? _self.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -763,7 +770,8 @@ class _$ExternalDurationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _ExternalDuration implements ExternalDuration {
   const _ExternalDuration(
       {required this.id,
@@ -771,13 +779,13 @@ class _ExternalDuration implements ExternalDuration {
       required this.entity,
       required this.type,
       required this.provider,
-      required this.category,
+      this.category,
       required this.startTime,
       required this.endTime,
-      required this.project,
-      required this.branch,
-      required this.language,
-      required this.meta});
+      this.project,
+      this.branch,
+      this.language,
+      this.meta});
   factory _ExternalDuration.fromJson(Map<String, dynamic> json) =>
       _$ExternalDurationFromJson(json);
 
@@ -792,7 +800,7 @@ class _ExternalDuration implements ExternalDuration {
   @override
   final String provider;
   @override
-  final String category;
+  final String? category;
   @override
   final DateTime startTime;
   @override
@@ -870,7 +878,7 @@ abstract mixin class _$ExternalDurationCopyWith<$Res>
       String entity,
       String type,
       String provider,
-      String category,
+      String? category,
       DateTime startTime,
       DateTime endTime,
       String? project,
@@ -897,7 +905,7 @@ class __$ExternalDurationCopyWithImpl<$Res>
     Object? entity = null,
     Object? type = null,
     Object? provider = null,
-    Object? category = null,
+    Object? category = freezed,
     Object? startTime = null,
     Object? endTime = null,
     Object? project = freezed,
@@ -926,10 +934,10 @@ class __$ExternalDurationCopyWithImpl<$Res>
           ? _self.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
+      category: freezed == category
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startTime: null == startTime
           ? _self.startTime
           : startTime // ignore: cast_nullable_to_non_nullable

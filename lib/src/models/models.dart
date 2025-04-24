@@ -6,4 +6,5 @@ export 'heartbeat.dart';
 export 'project.dart';
 export 'response_wrapper_model.dart';
 export 'summary.dart';
+export 'user_coding_activity.dart';
 export 'user_model.dart';

@@ -53,8 +53,8 @@ void main() {
       expect(api, isNotNull);
 
       final summary = await api!.getMyTodaysActivity();
-      expect(summary.data.grandTotal.totalSeconds, greaterThanOrEqualTo(0));
-      print('✅ Summary fetched with API key: ${summary.data.grandTotal.text}');
+      expect(summary.data.grandTotal?.totalSeconds, greaterThanOrEqualTo(0));
+      print('✅ Summary fetched with API key: ${summary.data.grandTotal?.text}');
     });
 
     test('OAuth2: refresh token and fetch summary', () async {

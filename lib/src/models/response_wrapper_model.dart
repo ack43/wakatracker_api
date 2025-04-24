@@ -9,12 +9,22 @@ sealed class ResponseWrapperModel<T> with _$ResponseWrapperModel<T> {
     required T data,
   }) = _ResponseWrapperModel;
 
-  // factory ResponseWrapperModel.fromJson(Map<String, dynamic> json) =>
-  //     _$ResponseWrapperModelFromJson(json);
-
   factory ResponseWrapperModel.fromJson(
     Map<String, dynamic> json,
     T Function(Object?) fromJsonT,
   ) =>
       _$ResponseWrapperModelFromJson(json, fromJsonT);
+}
+
+@Freezed(genericArgumentFactories: true)
+sealed class ResponseWrapperList<T> with _$ResponseWrapperList<T> {
+  const factory ResponseWrapperList({
+    required List<T> data,
+  }) = _ResponseWrapperList;
+
+  factory ResponseWrapperList.fromJson(
+    Map<String, dynamic> json,
+    T Function(Object?) fromJsonT,
+  ) =>
+      _$ResponseWrapperListFromJson(json, fromJsonT);
 }

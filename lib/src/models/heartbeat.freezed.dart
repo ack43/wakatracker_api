@@ -227,16 +227,13 @@ mixin _$Heartbeat {
   int? get projectRootCount;
   String? get branch;
   String? get language;
-  List<String>? get dependencies; // order like in docs
-// ignore: always_put_required_named_parameters_first
+  List<String>? get dependencies;
   String get machineNameId;
   int? get lineAdditions;
-  int? get lineDeletions; // order like in docs
-// ignore: always_put_required_named_parameters_first
+  int? get lineDeletions;
   int get lines;
   int? get lineno;
-  int? get cursorpos; // order like in docs
-// ignore: always_put_required_named_parameters_first
+  int? get cursorpos;
   bool get isWrite;
 
   /// Create a copy of Heartbeat
@@ -480,24 +477,18 @@ class _Heartbeat implements Heartbeat {
     return EqualUnmodifiableListView(value);
   }
 
-// order like in docs
-// ignore: always_put_required_named_parameters_first
   @override
   final String machineNameId;
   @override
   final int? lineAdditions;
   @override
   final int? lineDeletions;
-// order like in docs
-// ignore: always_put_required_named_parameters_first
   @override
   final int lines;
   @override
   final int? lineno;
   @override
   final int? cursorpos;
-// order like in docs
-// ignore: always_put_required_named_parameters_first
   @override
   final bool isWrite;
 
@@ -703,7 +694,7 @@ class __$HeartbeatCopyWithImpl<$Res> implements _$HeartbeatCopyWith<$Res> {
 mixin _$ResponseWrapperHeartbeats {
   List<Heartbeat> get data;
   String get start;
-  String? get finish; // ignore: always_put_required_named_parameters_first
+  String? get finish;
   String get timezone;
 
   /// Create a copy of ResponseWrapperHeartbeats
@@ -813,7 +804,6 @@ class _ResponseWrapperHeartbeats implements ResponseWrapperHeartbeats {
   final String start;
   @override
   final String? finish;
-// ignore: always_put_required_named_parameters_first
   @override
   final String timezone;
 

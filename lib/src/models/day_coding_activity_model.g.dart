@@ -8,27 +8,31 @@ part of 'day_coding_activity_model.dart';
 
 _DayCodingActivity _$DayCodingActivityFromJson(Map<String, dynamic> json) =>
     _DayCodingActivity(
-      categories: (json['categories'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      editors: (json['editors'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      editors: (json['editors'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      grandTotal:
-          GrandTotalModel.fromJson(json['grand_total'] as Map<String, dynamic>),
-      languages: (json['languages'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      grandTotal: json['grand_total'] == null
+          ? null
+          : GrandTotalModel.fromJson(
+              json['grand_total'] as Map<String, dynamic>),
+      languages: (json['languages'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      machines: (json['machines'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      machines: (json['machines'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      operatingSystems: (json['operating_systems'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      operatingSystems: (json['operating_systems'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      projects: (json['projects'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      projects: (json['projects'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      range: Range.fromJson(json['range'] as Map<String, dynamic>),
+      range: json['range'] == null
+          ? null
+          : Range.fromJson(json['range'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DayCodingActivityToJson(_DayCodingActivity instance) =>

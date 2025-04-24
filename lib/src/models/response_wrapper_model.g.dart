@@ -21,3 +21,19 @@ Map<String, dynamic> _$ResponseWrapperModelToJson<T>(
     <String, dynamic>{
       'data': toJsonT(instance.data),
     };
+
+_ResponseWrapperList<T> _$ResponseWrapperListFromJson<T>(
+  Map<String, dynamic> json,
+  T Function(Object? json) fromJsonT,
+) =>
+    _ResponseWrapperList<T>(
+      data: (json['data'] as List<dynamic>).map(fromJsonT).toList(),
+    );
+
+Map<String, dynamic> _$ResponseWrapperListToJson<T>(
+  _ResponseWrapperList<T> instance,
+  Object? Function(T value) toJsonT,
+) =>
+    <String, dynamic>{
+      'data': instance.data.map(toJsonT).toList(),
+    };

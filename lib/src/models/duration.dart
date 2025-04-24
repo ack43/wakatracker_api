@@ -1,3 +1,8 @@
+// order like in docs
+// ignore_for_file: always_put_required_named_parameters_first
+// @freezed requirements
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'duration.freezed.dart';
@@ -8,7 +13,7 @@ part 'duration.g.dart';
 @Freezed(genericArgumentFactories: true)
 sealed class ResponseWrapperDurations<T> with _$ResponseWrapperDurations<T> {
   const factory ResponseWrapperDurations({
-    required T data,
+    required List<T> data,
     required String start,
     required String end,
     required String timezone,
@@ -67,19 +72,20 @@ sealed class ResponseWrapperExternalDurations
 
 @freezed
 sealed class ExternalDuration with _$ExternalDuration {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ExternalDuration({
     required String id,
     required String externalId,
     required String entity,
     required String type,
     required String provider,
-    required String category,
+    String? category,
     required DateTime startTime,
     required DateTime endTime,
-    required String? project,
-    required String? branch,
-    required String? language,
-    required String? meta,
+    String? project,
+    String? branch,
+    String? language,
+    String? meta,
   }) = _ExternalDuration;
 
   factory ExternalDuration.fromJson(Map<String, dynamic> json) =>

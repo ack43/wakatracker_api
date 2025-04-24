@@ -19,12 +19,12 @@ abstract class WakatrackApi {
   //
   // Projects
   @GET('users/current/projects')
-  Future<ResponseWrapperModel<List<Project>>> getCurrentProjects({
+  Future<ResponseWrapperList<Project>> getCurrentProjects({
     @Query('q') String? searchQuery,
   });
 
   @GET('users/{userId}/projects')
-  Future<ResponseWrapperModel<List<Project>>> getProjects(
+  Future<ResponseWrapperList<Project>> getProjects(
     @Path('userId') String userId, {
     @Query('q') String? searchQuery,
   });
@@ -46,7 +46,7 @@ abstract class WakatrackApi {
   //
   // Durations
   @GET('users/current/durations')
-  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getCurrentDurations({
+  Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
     @Query('date') required String date, // Format: yyyy-MM-dd
     @Query('project') String? project,
     @Query('branches') String? branches,
@@ -57,7 +57,7 @@ abstract class WakatrackApi {
   });
 
   @GET('users/{userId}/durations')
-  Future<ResponseWrapperDurations<List<WakatimeDuration>>> getDurations(
+  Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
     @Path('userId') String userId, {
     @Query('date') required String date,
     @Query('project') String? project,
@@ -70,7 +70,7 @@ abstract class WakatrackApi {
 
   // External Durations
   @GET('users/current/external_durations')
-  Future<ResponseWrapperDurations<List<ExternalDuration>>>
+  Future<ResponseWrapperDurations<ExternalDuration>>
       getCurrentExternalDurations({
     @Query('date') required String date,
     @Query('project') String? project,
@@ -79,7 +79,7 @@ abstract class WakatrackApi {
   });
 
   @GET('users/{userId}/external_durations')
-  Future<ResponseWrapperDurations<List<ExternalDuration>>> getExternalDurations(
+  Future<ResponseWrapperDurations<ExternalDuration>> getExternalDurations(
     @Path('userId') String userId, {
     @Query('date') required String date,
     @Query('project') String? project,
@@ -89,8 +89,7 @@ abstract class WakatrackApi {
 
   // Summaries
   @GET('users/current/summaries')
-  Future<ResponseWrapperModel<List<DayCodingActivityModel>>>
-      getCurrentSummaries({
+  Future<ResponseWrapperList<DayCodingActivityModel>> getCurrentSummaries({
     @Query('start') required String start,
     @Query('end') required String end,
     @Query('project') String? project,
@@ -102,7 +101,7 @@ abstract class WakatrackApi {
   });
 
   @GET('users/{userId}/summaries')
-  Future<ResponseWrapperModel<List<DayCodingActivityModel>>> getSummaries(
+  Future<ResponseWrapperList<DayCodingActivityModel>> getSummaries(
     @Path('userId') String userId, {
     @Query('start') required String start,
     @Query('end') required String end,
@@ -112,5 +111,38 @@ abstract class WakatrackApi {
     @Query('writes_only') bool? writesOnly,
     @Query('timezone') String? timezone,
     @Query('range') String? range,
+  });
+
+  //
+  // GET /api/v1/users/:user/stats
+  @GET('/users/{userId}/stats')
+  Future<ResponseWrapperModel<UserCodingActivity>> getUserStats(
+    @Path('userId') String userId, {
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+  });
+
+  // GET /api/v1/users/current/stats
+  @GET('users/current/stats')
+  Future<ResponseWrapperModel<UserCodingActivity>> getCurrentUserStats({
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+  });
+
+  // GET /api/v1/users/:user/stats/:range
+  @GET('users/{userId}/stats/{range}')
+  Future<ResponseWrapperModel<UserCodingActivity>> getUserStatsByRange(
+    @Path('userId') String userId,
+    @Path('range') String range, {
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+  });
+
+  // GET /api/v1/users/current/stats/:range
+  @GET('users/current/stats/{range}')
+  Future<ResponseWrapperModel<UserCodingActivity>> getCurrentUserStatsByRange(
+    @Path('range') String range, {
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
   });
 }
