@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,188 +10,34 @@ part of 'grand_total_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GrandTotalModel {
-  String get decimal => throw _privateConstructorUsedError;
-  String get digital => throw _privateConstructorUsedError;
-  int get hours => throw _privateConstructorUsedError;
-  int get minutes => throw _privateConstructorUsedError;
-  String get text => throw _privateConstructorUsedError;
-  double get totalSeconds => throw _privateConstructorUsedError;
+  String? get decimal;
+  String? get digital;
+  int? get hours;
+  int? get minutes;
+  String? get text;
+  double? get totalSeconds;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GrandTotalModelCopyWith<GrandTotalModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GrandTotalModelCopyWithImpl<GrandTotalModel>(
+          this as GrandTotalModel, _$identity);
 
-/// @nodoc
-abstract class $GrandTotalModelCopyWith<$Res> {
-  factory $GrandTotalModelCopyWith(
-          GrandTotalModel value, $Res Function(GrandTotalModel) then) =
-      _$GrandTotalModelCopyWithImpl<$Res, GrandTotalModel>;
-  @useResult
-  $Res call(
-      {String decimal,
-      String digital,
-      int hours,
-      int minutes,
-      String text,
-      double totalSeconds});
-}
-
-/// @nodoc
-class _$GrandTotalModelCopyWithImpl<$Res, $Val extends GrandTotalModel>
-    implements $GrandTotalModelCopyWith<$Res> {
-  _$GrandTotalModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? decimal = null,
-    Object? digital = null,
-    Object? hours = null,
-    Object? minutes = null,
-    Object? text = null,
-    Object? totalSeconds = null,
-  }) {
-    return _then(_value.copyWith(
-      decimal: null == decimal
-          ? _value.decimal
-          : decimal // ignore: cast_nullable_to_non_nullable
-              as String,
-      digital: null == digital
-          ? _value.digital
-          : digital // ignore: cast_nullable_to_non_nullable
-              as String,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalSeconds: null == totalSeconds
-          ? _value.totalSeconds
-          : totalSeconds // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_GrandTotalModelCopyWith<$Res>
-    implements $GrandTotalModelCopyWith<$Res> {
-  factory _$$_GrandTotalModelCopyWith(
-          _$_GrandTotalModel value, $Res Function(_$_GrandTotalModel) then) =
-      __$$_GrandTotalModelCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String decimal,
-      String digital,
-      int hours,
-      int minutes,
-      String text,
-      double totalSeconds});
-}
-
-/// @nodoc
-class __$$_GrandTotalModelCopyWithImpl<$Res>
-    extends _$GrandTotalModelCopyWithImpl<$Res, _$_GrandTotalModel>
-    implements _$$_GrandTotalModelCopyWith<$Res> {
-  __$$_GrandTotalModelCopyWithImpl(
-      _$_GrandTotalModel _value, $Res Function(_$_GrandTotalModel) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? decimal = null,
-    Object? digital = null,
-    Object? hours = null,
-    Object? minutes = null,
-    Object? text = null,
-    Object? totalSeconds = null,
-  }) {
-    return _then(_$_GrandTotalModel(
-      decimal: null == decimal
-          ? _value.decimal
-          : decimal // ignore: cast_nullable_to_non_nullable
-              as String,
-      digital: null == digital
-          ? _value.digital
-          : digital // ignore: cast_nullable_to_non_nullable
-              as String,
-      hours: null == hours
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
-              as int,
-      minutes: null == minutes
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
-              as int,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalSeconds: null == totalSeconds
-          ? _value.totalSeconds
-          : totalSeconds // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable(createFactory: false)
-class _$_GrandTotalModel implements _GrandTotalModel {
-  _$_GrandTotalModel(
-      {required this.decimal,
-      required this.digital,
-      required this.hours,
-      required this.minutes,
-      required this.text,
-      required this.totalSeconds});
+  /// Serializes this GrandTotalModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
-  final String decimal;
-  @override
-  final String digital;
-  @override
-  final int hours;
-  @override
-  final int minutes;
-  @override
-  final String text;
-  @override
-  final double totalSeconds;
-
-  @override
-  String toString() {
-    return 'GrandTotalModel(decimal: $decimal, digital: $digital, hours: $hours, minutes: $minutes, text: $text, totalSeconds: $totalSeconds)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GrandTotalModel &&
+            other is GrandTotalModel &&
             (identical(other.decimal, decimal) || other.decimal == decimal) &&
             (identical(other.digital, digital) || other.digital == digital) &&
             (identical(other.hours, hours) || other.hours == hours) &&
@@ -200,48 +47,212 @@ class _$_GrandTotalModel implements _GrandTotalModel {
                 other.totalSeconds == totalSeconds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, decimal, digital, hours, minutes, text, totalSeconds);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$_GrandTotalModelCopyWith<_$_GrandTotalModel> get copyWith =>
-      __$$_GrandTotalModelCopyWithImpl<_$_GrandTotalModel>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_GrandTotalModelToJson(
-      this,
-    );
+  String toString() {
+    return 'GrandTotalModel(decimal: $decimal, digital: $digital, hours: $hours, minutes: $minutes, text: $text, totalSeconds: $totalSeconds)';
   }
 }
 
-abstract class _GrandTotalModel implements GrandTotalModel {
-  factory _GrandTotalModel(
-      {required final String decimal,
-      required final String digital,
-      required final int hours,
-      required final int minutes,
-      required final String text,
-      required final double totalSeconds}) = _$_GrandTotalModel;
+/// @nodoc
+abstract mixin class $GrandTotalModelCopyWith<$Res> {
+  factory $GrandTotalModelCopyWith(
+          GrandTotalModel value, $Res Function(GrandTotalModel) _then) =
+      _$GrandTotalModelCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? decimal,
+      String? digital,
+      int? hours,
+      int? minutes,
+      String? text,
+      double? totalSeconds});
+}
+
+/// @nodoc
+class _$GrandTotalModelCopyWithImpl<$Res>
+    implements $GrandTotalModelCopyWith<$Res> {
+  _$GrandTotalModelCopyWithImpl(this._self, this._then);
+
+  final GrandTotalModel _self;
+  final $Res Function(GrandTotalModel) _then;
+
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? decimal = freezed,
+    Object? digital = freezed,
+    Object? hours = freezed,
+    Object? minutes = freezed,
+    Object? text = freezed,
+    Object? totalSeconds = freezed,
+  }) {
+    return _then(_self.copyWith(
+      decimal: freezed == decimal
+          ? _self.decimal
+          : decimal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      digital: freezed == digital
+          ? _self.digital
+          : digital // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hours: freezed == hours
+          ? _self.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minutes: freezed == minutes
+          ? _self.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalSeconds: freezed == totalSeconds
+          ? _self.totalSeconds
+          : totalSeconds // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _GrandTotalModel implements GrandTotalModel {
+  const _GrandTotalModel(
+      {this.decimal,
+      this.digital,
+      this.hours,
+      this.minutes,
+      this.text,
+      this.totalSeconds});
+  factory _GrandTotalModel.fromJson(Map<String, dynamic> json) =>
+      _$GrandTotalModelFromJson(json);
 
   @override
-  String get decimal;
+  final String? decimal;
   @override
-  String get digital;
+  final String? digital;
   @override
-  int get hours;
+  final int? hours;
   @override
-  int get minutes;
+  final int? minutes;
   @override
-  String get text;
+  final String? text;
   @override
-  double get totalSeconds;
+  final double? totalSeconds;
+
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_GrandTotalModelCopyWith<_$_GrandTotalModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GrandTotalModelCopyWith<_GrandTotalModel> get copyWith =>
+      __$GrandTotalModelCopyWithImpl<_GrandTotalModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GrandTotalModelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GrandTotalModel &&
+            (identical(other.decimal, decimal) || other.decimal == decimal) &&
+            (identical(other.digital, digital) || other.digital == digital) &&
+            (identical(other.hours, hours) || other.hours == hours) &&
+            (identical(other.minutes, minutes) || other.minutes == minutes) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.totalSeconds, totalSeconds) ||
+                other.totalSeconds == totalSeconds));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, decimal, digital, hours, minutes, text, totalSeconds);
+
+  @override
+  String toString() {
+    return 'GrandTotalModel(decimal: $decimal, digital: $digital, hours: $hours, minutes: $minutes, text: $text, totalSeconds: $totalSeconds)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GrandTotalModelCopyWith<$Res>
+    implements $GrandTotalModelCopyWith<$Res> {
+  factory _$GrandTotalModelCopyWith(
+          _GrandTotalModel value, $Res Function(_GrandTotalModel) _then) =
+      __$GrandTotalModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? decimal,
+      String? digital,
+      int? hours,
+      int? minutes,
+      String? text,
+      double? totalSeconds});
+}
+
+/// @nodoc
+class __$GrandTotalModelCopyWithImpl<$Res>
+    implements _$GrandTotalModelCopyWith<$Res> {
+  __$GrandTotalModelCopyWithImpl(this._self, this._then);
+
+  final _GrandTotalModel _self;
+  final $Res Function(_GrandTotalModel) _then;
+
+  /// Create a copy of GrandTotalModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? decimal = freezed,
+    Object? digital = freezed,
+    Object? hours = freezed,
+    Object? minutes = freezed,
+    Object? text = freezed,
+    Object? totalSeconds = freezed,
+  }) {
+    return _then(_GrandTotalModel(
+      decimal: freezed == decimal
+          ? _self.decimal
+          : decimal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      digital: freezed == digital
+          ? _self.digital
+          : digital // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hours: freezed == hours
+          ? _self.hours
+          : hours // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minutes: freezed == minutes
+          ? _self.minutes
+          : minutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalSeconds: freezed == totalSeconds
+          ? _self.totalSeconds
+          : totalSeconds // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+// dart format on

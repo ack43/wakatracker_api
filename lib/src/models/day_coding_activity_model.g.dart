@@ -6,33 +6,36 @@ part of 'day_coding_activity_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DayCodingActivityModel _$DayCodingActivityModelFromJson(
-        Map<String, dynamic> json) =>
-    DayCodingActivityModel(
-      categories: (json['categories'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+_DayCodingActivity _$DayCodingActivityFromJson(Map<String, dynamic> json) =>
+    _DayCodingActivity(
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      editors: (json['editors'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      editors: (json['editors'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      grandTotal:
-          GrandTotalModel.fromJson(json['grand_total'] as Map<String, dynamic>),
-      languages: (json['languages'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      grandTotal: json['grand_total'] == null
+          ? null
+          : GrandTotalModel.fromJson(
+              json['grand_total'] as Map<String, dynamic>),
+      languages: (json['languages'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      machines: (json['machines'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      machines: (json['machines'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      operatingSystems: (json['operating_systems'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      operatingSystems: (json['operating_systems'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      projects: (json['projects'] as List<dynamic>)
-          .map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
+      projects: (json['projects'] as List<dynamic>?)
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      range: json['range'] == null
+          ? null
+          : Range.fromJson(json['range'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$DayCodingActivityModelToJson(
-        DayCodingActivityModel instance) =>
+Map<String, dynamic> _$DayCodingActivityToJson(_DayCodingActivity instance) =>
     <String, dynamic>{
       'categories': instance.categories,
       'editors': instance.editors,
@@ -41,16 +44,21 @@ Map<String, dynamic> _$DayCodingActivityModelToJson(
       'machines': instance.machines,
       'operating_systems': instance.operatingSystems,
       'projects': instance.projects,
+      'range': instance.range,
     };
 
-Map<String, dynamic> _$$_DayCodingActivityToJson(
-        _$_DayCodingActivity instance) =>
-    <String, dynamic>{
-      'categories': instance.categories,
-      'editors': instance.editors,
-      'grandTotal': instance.grandTotal,
-      'languages': instance.languages,
-      'machines': instance.machines,
-      'operatingSystems': instance.operatingSystems,
-      'projects': instance.projects,
+_Range _$RangeFromJson(Map<String, dynamic> json) => _Range(
+      date: _fromDateString(json['date'] as String?),
+      start: _fromIsoString(json['start'] as String?),
+      end: _fromIsoString(json['end'] as String?),
+      text: json['text'] as String?,
+      timezone: json['timezone'] as String?,
+    );
+
+Map<String, dynamic> _$RangeToJson(_Range instance) => <String, dynamic>{
+      'date': _toDateString(instance.date),
+      'start': _toIsoString(instance.start),
+      'end': _toIsoString(instance.end),
+      'text': instance.text,
+      'timezone': instance.timezone,
     };

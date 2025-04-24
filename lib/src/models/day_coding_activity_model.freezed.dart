@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,262 +10,287 @@ part of 'day_coding_activity_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+DayCodingActivityModel _$DayCodingActivityModelFromJson(
+    Map<String, dynamic> json) {
+  return _DayCodingActivity.fromJson(json);
+}
 
 /// @nodoc
 mixin _$DayCodingActivityModel {
-  List<ActivityRecordModel> get categories =>
-      throw _privateConstructorUsedError;
-  List<ActivityRecordModel> get editors => throw _privateConstructorUsedError;
-  GrandTotalModel get grandTotal => throw _privateConstructorUsedError;
-  List<ActivityRecordModel> get languages => throw _privateConstructorUsedError;
-  List<ActivityRecordModel> get machines => throw _privateConstructorUsedError;
-  List<ActivityRecordModel> get operatingSystems =>
-      throw _privateConstructorUsedError;
-  List<ActivityRecordModel> get projects => throw _privateConstructorUsedError;
+  List<ActivityRecordModel>? get categories;
+  List<ActivityRecordModel>? get editors;
+  GrandTotalModel? get grandTotal;
+  List<ActivityRecordModel>? get languages;
+  List<ActivityRecordModel>? get machines;
+  List<ActivityRecordModel>? get operatingSystems;
+  List<ActivityRecordModel>? get projects;
+  Range? get range;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $DayCodingActivityModelCopyWith<DayCodingActivityModel> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$DayCodingActivityModelCopyWithImpl<DayCodingActivityModel>(
+          this as DayCodingActivityModel, _$identity);
+
+  /// Serializes this DayCodingActivityModel to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DayCodingActivityModel &&
+            const DeepCollectionEquality()
+                .equals(other.categories, categories) &&
+            const DeepCollectionEquality().equals(other.editors, editors) &&
+            (identical(other.grandTotal, grandTotal) ||
+                other.grandTotal == grandTotal) &&
+            const DeepCollectionEquality().equals(other.languages, languages) &&
+            const DeepCollectionEquality().equals(other.machines, machines) &&
+            const DeepCollectionEquality()
+                .equals(other.operatingSystems, operatingSystems) &&
+            const DeepCollectionEquality().equals(other.projects, projects) &&
+            (identical(other.range, range) || other.range == range));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(categories),
+      const DeepCollectionEquality().hash(editors),
+      grandTotal,
+      const DeepCollectionEquality().hash(languages),
+      const DeepCollectionEquality().hash(machines),
+      const DeepCollectionEquality().hash(operatingSystems),
+      const DeepCollectionEquality().hash(projects),
+      range);
+
+  @override
+  String toString() {
+    return 'DayCodingActivityModel(categories: $categories, editors: $editors, grandTotal: $grandTotal, languages: $languages, machines: $machines, operatingSystems: $operatingSystems, projects: $projects, range: $range)';
+  }
 }
 
 /// @nodoc
-abstract class $DayCodingActivityModelCopyWith<$Res> {
+abstract mixin class $DayCodingActivityModelCopyWith<$Res> {
   factory $DayCodingActivityModelCopyWith(DayCodingActivityModel value,
-          $Res Function(DayCodingActivityModel) then) =
-      _$DayCodingActivityModelCopyWithImpl<$Res, DayCodingActivityModel>;
+          $Res Function(DayCodingActivityModel) _then) =
+      _$DayCodingActivityModelCopyWithImpl;
   @useResult
   $Res call(
-      {List<ActivityRecordModel> categories,
-      List<ActivityRecordModel> editors,
-      GrandTotalModel grandTotal,
-      List<ActivityRecordModel> languages,
-      List<ActivityRecordModel> machines,
-      List<ActivityRecordModel> operatingSystems,
-      List<ActivityRecordModel> projects});
+      {List<ActivityRecordModel>? categories,
+      List<ActivityRecordModel>? editors,
+      GrandTotalModel? grandTotal,
+      List<ActivityRecordModel>? languages,
+      List<ActivityRecordModel>? machines,
+      List<ActivityRecordModel>? operatingSystems,
+      List<ActivityRecordModel>? projects,
+      Range? range});
 
-  $GrandTotalModelCopyWith<$Res> get grandTotal;
+  $GrandTotalModelCopyWith<$Res>? get grandTotal;
+  $RangeCopyWith<$Res>? get range;
 }
 
 /// @nodoc
-class _$DayCodingActivityModelCopyWithImpl<$Res,
-        $Val extends DayCodingActivityModel>
+class _$DayCodingActivityModelCopyWithImpl<$Res>
     implements $DayCodingActivityModelCopyWith<$Res> {
-  _$DayCodingActivityModelCopyWithImpl(this._value, this._then);
+  _$DayCodingActivityModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final DayCodingActivityModel _self;
+  final $Res Function(DayCodingActivityModel) _then;
 
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = null,
-    Object? editors = null,
-    Object? grandTotal = null,
-    Object? languages = null,
-    Object? machines = null,
-    Object? operatingSystems = null,
-    Object? projects = null,
+    Object? categories = freezed,
+    Object? editors = freezed,
+    Object? grandTotal = freezed,
+    Object? languages = freezed,
+    Object? machines = freezed,
+    Object? operatingSystems = freezed,
+    Object? projects = freezed,
+    Object? range = freezed,
   }) {
-    return _then(_value.copyWith(
-      categories: null == categories
-          ? _value.categories
+    return _then(_self.copyWith(
+      categories: freezed == categories
+          ? _self.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      editors: null == editors
-          ? _value.editors
+              as List<ActivityRecordModel>?,
+      editors: freezed == editors
+          ? _self.editors
           : editors // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      grandTotal: null == grandTotal
-          ? _value.grandTotal
+              as List<ActivityRecordModel>?,
+      grandTotal: freezed == grandTotal
+          ? _self.grandTotal
           : grandTotal // ignore: cast_nullable_to_non_nullable
-              as GrandTotalModel,
-      languages: null == languages
-          ? _value.languages
+              as GrandTotalModel?,
+      languages: freezed == languages
+          ? _self.languages
           : languages // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      machines: null == machines
-          ? _value.machines
+              as List<ActivityRecordModel>?,
+      machines: freezed == machines
+          ? _self.machines
           : machines // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      operatingSystems: null == operatingSystems
-          ? _value.operatingSystems
+              as List<ActivityRecordModel>?,
+      operatingSystems: freezed == operatingSystems
+          ? _self.operatingSystems
           : operatingSystems // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      projects: null == projects
-          ? _value.projects
+              as List<ActivityRecordModel>?,
+      projects: freezed == projects
+          ? _self.projects
           : projects // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-    ) as $Val);
+              as List<ActivityRecordModel>?,
+      range: freezed == range
+          ? _self.range
+          : range // ignore: cast_nullable_to_non_nullable
+              as Range?,
+    ));
   }
 
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $GrandTotalModelCopyWith<$Res> get grandTotal {
-    return $GrandTotalModelCopyWith<$Res>(_value.grandTotal, (value) {
-      return _then(_value.copyWith(grandTotal: value) as $Val);
+  $GrandTotalModelCopyWith<$Res>? get grandTotal {
+    if (_self.grandTotal == null) {
+      return null;
+    }
+
+    return $GrandTotalModelCopyWith<$Res>(_self.grandTotal!, (value) {
+      return _then(_self.copyWith(grandTotal: value));
+    });
+  }
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RangeCopyWith<$Res>? get range {
+    if (_self.range == null) {
+      return null;
+    }
+
+    return $RangeCopyWith<$Res>(_self.range!, (value) {
+      return _then(_self.copyWith(range: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_DayCodingActivityCopyWith<$Res>
-    implements $DayCodingActivityModelCopyWith<$Res> {
-  factory _$$_DayCodingActivityCopyWith(_$_DayCodingActivity value,
-          $Res Function(_$_DayCodingActivity) then) =
-      __$$_DayCodingActivityCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {List<ActivityRecordModel> categories,
-      List<ActivityRecordModel> editors,
-      GrandTotalModel grandTotal,
-      List<ActivityRecordModel> languages,
-      List<ActivityRecordModel> machines,
-      List<ActivityRecordModel> operatingSystems,
-      List<ActivityRecordModel> projects});
 
-  @override
-  $GrandTotalModelCopyWith<$Res> get grandTotal;
-}
-
-/// @nodoc
-class __$$_DayCodingActivityCopyWithImpl<$Res>
-    extends _$DayCodingActivityModelCopyWithImpl<$Res, _$_DayCodingActivity>
-    implements _$$_DayCodingActivityCopyWith<$Res> {
-  __$$_DayCodingActivityCopyWithImpl(
-      _$_DayCodingActivity _value, $Res Function(_$_DayCodingActivity) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categories = null,
-    Object? editors = null,
-    Object? grandTotal = null,
-    Object? languages = null,
-    Object? machines = null,
-    Object? operatingSystems = null,
-    Object? projects = null,
-  }) {
-    return _then(_$_DayCodingActivity(
-      categories: null == categories
-          ? _value._categories
-          : categories // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      editors: null == editors
-          ? _value._editors
-          : editors // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      grandTotal: null == grandTotal
-          ? _value.grandTotal
-          : grandTotal // ignore: cast_nullable_to_non_nullable
-              as GrandTotalModel,
-      languages: null == languages
-          ? _value._languages
-          : languages // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      machines: null == machines
-          ? _value._machines
-          : machines // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      operatingSystems: null == operatingSystems
-          ? _value._operatingSystems
-          : operatingSystems // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-      projects: null == projects
-          ? _value._projects
-          : projects // ignore: cast_nullable_to_non_nullable
-              as List<ActivityRecordModel>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable(createFactory: false)
-class _$_DayCodingActivity implements _DayCodingActivity {
-  _$_DayCodingActivity(
-      {required final List<ActivityRecordModel> categories,
-      required final List<ActivityRecordModel> editors,
-      required this.grandTotal,
-      required final List<ActivityRecordModel> languages,
-      required final List<ActivityRecordModel> machines,
-      required final List<ActivityRecordModel> operatingSystems,
-      required final List<ActivityRecordModel> projects})
+@JsonSerializable(fieldRename: FieldRename.snake)
+class _DayCodingActivity implements DayCodingActivityModel {
+  const _DayCodingActivity(
+      {final List<ActivityRecordModel>? categories,
+      final List<ActivityRecordModel>? editors,
+      this.grandTotal,
+      final List<ActivityRecordModel>? languages,
+      final List<ActivityRecordModel>? machines,
+      final List<ActivityRecordModel>? operatingSystems,
+      final List<ActivityRecordModel>? projects,
+      this.range})
       : _categories = categories,
         _editors = editors,
         _languages = languages,
         _machines = machines,
         _operatingSystems = operatingSystems,
         _projects = projects;
+  factory _DayCodingActivity.fromJson(Map<String, dynamic> json) =>
+      _$DayCodingActivityFromJson(json);
 
-  final List<ActivityRecordModel> _categories;
+  final List<ActivityRecordModel>? _categories;
   @override
-  List<ActivityRecordModel> get categories {
+  List<ActivityRecordModel>? get categories {
+    final value = _categories;
+    if (value == null) return null;
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categories);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ActivityRecordModel> _editors;
+  final List<ActivityRecordModel>? _editors;
   @override
-  List<ActivityRecordModel> get editors {
+  List<ActivityRecordModel>? get editors {
+    final value = _editors;
+    if (value == null) return null;
     if (_editors is EqualUnmodifiableListView) return _editors;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_editors);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final GrandTotalModel grandTotal;
-  final List<ActivityRecordModel> _languages;
+  final GrandTotalModel? grandTotal;
+  final List<ActivityRecordModel>? _languages;
   @override
-  List<ActivityRecordModel> get languages {
+  List<ActivityRecordModel>? get languages {
+    final value = _languages;
+    if (value == null) return null;
     if (_languages is EqualUnmodifiableListView) return _languages;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_languages);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ActivityRecordModel> _machines;
+  final List<ActivityRecordModel>? _machines;
   @override
-  List<ActivityRecordModel> get machines {
+  List<ActivityRecordModel>? get machines {
+    final value = _machines;
+    if (value == null) return null;
     if (_machines is EqualUnmodifiableListView) return _machines;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_machines);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ActivityRecordModel> _operatingSystems;
+  final List<ActivityRecordModel>? _operatingSystems;
   @override
-  List<ActivityRecordModel> get operatingSystems {
+  List<ActivityRecordModel>? get operatingSystems {
+    final value = _operatingSystems;
+    if (value == null) return null;
     if (_operatingSystems is EqualUnmodifiableListView)
       return _operatingSystems;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_operatingSystems);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ActivityRecordModel> _projects;
+  final List<ActivityRecordModel>? _projects;
   @override
-  List<ActivityRecordModel> get projects {
+  List<ActivityRecordModel>? get projects {
+    final value = _projects;
+    if (value == null) return null;
     if (_projects is EqualUnmodifiableListView) return _projects;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_projects);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  String toString() {
-    return 'DayCodingActivityModel(categories: $categories, editors: $editors, grandTotal: $grandTotal, languages: $languages, machines: $machines, operatingSystems: $operatingSystems, projects: $projects)';
+  final Range? range;
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DayCodingActivityCopyWith<_DayCodingActivity> get copyWith =>
+      __$DayCodingActivityCopyWithImpl<_DayCodingActivity>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DayCodingActivityToJson(
+      this,
+    );
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DayCodingActivity &&
+            other is _DayCodingActivity &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._editors, _editors) &&
@@ -275,10 +301,11 @@ class _$_DayCodingActivity implements _DayCodingActivity {
             const DeepCollectionEquality().equals(other._machines, _machines) &&
             const DeepCollectionEquality()
                 .equals(other._operatingSystems, _operatingSystems) &&
-            const DeepCollectionEquality().equals(other._projects, _projects));
+            const DeepCollectionEquality().equals(other._projects, _projects) &&
+            (identical(other.range, range) || other.range == range));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -288,50 +315,348 @@ class _$_DayCodingActivity implements _DayCodingActivity {
       const DeepCollectionEquality().hash(_languages),
       const DeepCollectionEquality().hash(_machines),
       const DeepCollectionEquality().hash(_operatingSystems),
-      const DeepCollectionEquality().hash(_projects));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_DayCodingActivityCopyWith<_$_DayCodingActivity> get copyWith =>
-      __$$_DayCodingActivityCopyWithImpl<_$_DayCodingActivity>(
-          this, _$identity);
+      const DeepCollectionEquality().hash(_projects),
+      range);
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$_DayCodingActivityToJson(
-      this,
-    );
+  String toString() {
+    return 'DayCodingActivityModel(categories: $categories, editors: $editors, grandTotal: $grandTotal, languages: $languages, machines: $machines, operatingSystems: $operatingSystems, projects: $projects, range: $range)';
   }
 }
 
-abstract class _DayCodingActivity implements DayCodingActivityModel {
-  factory _DayCodingActivity(
-          {required final List<ActivityRecordModel> categories,
-          required final List<ActivityRecordModel> editors,
-          required final GrandTotalModel grandTotal,
-          required final List<ActivityRecordModel> languages,
-          required final List<ActivityRecordModel> machines,
-          required final List<ActivityRecordModel> operatingSystems,
-          required final List<ActivityRecordModel> projects}) =
-      _$_DayCodingActivity;
+/// @nodoc
+abstract mixin class _$DayCodingActivityCopyWith<$Res>
+    implements $DayCodingActivityModelCopyWith<$Res> {
+  factory _$DayCodingActivityCopyWith(
+          _DayCodingActivity value, $Res Function(_DayCodingActivity) _then) =
+      __$DayCodingActivityCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<ActivityRecordModel>? categories,
+      List<ActivityRecordModel>? editors,
+      GrandTotalModel? grandTotal,
+      List<ActivityRecordModel>? languages,
+      List<ActivityRecordModel>? machines,
+      List<ActivityRecordModel>? operatingSystems,
+      List<ActivityRecordModel>? projects,
+      Range? range});
 
   @override
-  List<ActivityRecordModel> get categories;
+  $GrandTotalModelCopyWith<$Res>? get grandTotal;
   @override
-  List<ActivityRecordModel> get editors;
-  @override
-  GrandTotalModel get grandTotal;
-  @override
-  List<ActivityRecordModel> get languages;
-  @override
-  List<ActivityRecordModel> get machines;
-  @override
-  List<ActivityRecordModel> get operatingSystems;
-  @override
-  List<ActivityRecordModel> get projects;
-  @override
-  @JsonKey(ignore: true)
-  _$$_DayCodingActivityCopyWith<_$_DayCodingActivity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RangeCopyWith<$Res>? get range;
 }
+
+/// @nodoc
+class __$DayCodingActivityCopyWithImpl<$Res>
+    implements _$DayCodingActivityCopyWith<$Res> {
+  __$DayCodingActivityCopyWithImpl(this._self, this._then);
+
+  final _DayCodingActivity _self;
+  final $Res Function(_DayCodingActivity) _then;
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? categories = freezed,
+    Object? editors = freezed,
+    Object? grandTotal = freezed,
+    Object? languages = freezed,
+    Object? machines = freezed,
+    Object? operatingSystems = freezed,
+    Object? projects = freezed,
+    Object? range = freezed,
+  }) {
+    return _then(_DayCodingActivity(
+      categories: freezed == categories
+          ? _self._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      editors: freezed == editors
+          ? _self._editors
+          : editors // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      grandTotal: freezed == grandTotal
+          ? _self.grandTotal
+          : grandTotal // ignore: cast_nullable_to_non_nullable
+              as GrandTotalModel?,
+      languages: freezed == languages
+          ? _self._languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      machines: freezed == machines
+          ? _self._machines
+          : machines // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      operatingSystems: freezed == operatingSystems
+          ? _self._operatingSystems
+          : operatingSystems // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      projects: freezed == projects
+          ? _self._projects
+          : projects // ignore: cast_nullable_to_non_nullable
+              as List<ActivityRecordModel>?,
+      range: freezed == range
+          ? _self.range
+          : range // ignore: cast_nullable_to_non_nullable
+              as Range?,
+    ));
+  }
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GrandTotalModelCopyWith<$Res>? get grandTotal {
+    if (_self.grandTotal == null) {
+      return null;
+    }
+
+    return $GrandTotalModelCopyWith<$Res>(_self.grandTotal!, (value) {
+      return _then(_self.copyWith(grandTotal: value));
+    });
+  }
+
+  /// Create a copy of DayCodingActivityModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RangeCopyWith<$Res>? get range {
+    if (_self.range == null) {
+      return null;
+    }
+
+    return $RangeCopyWith<$Res>(_self.range!, (value) {
+      return _then(_self.copyWith(range: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$Range {
+  @JsonKey(fromJson: _fromDateString, toJson: _toDateString)
+  DateTime? get date;
+  @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
+  DateTime? get start;
+  @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
+  DateTime? get end;
+  String? get text;
+  String? get timezone;
+
+  /// Create a copy of Range
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RangeCopyWith<Range> get copyWith =>
+      _$RangeCopyWithImpl<Range>(this as Range, _$identity);
+
+  /// Serializes this Range to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Range &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, date, start, end, text, timezone);
+
+  @override
+  String toString() {
+    return 'Range(date: $date, start: $start, end: $end, text: $text, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RangeCopyWith<$Res> {
+  factory $RangeCopyWith(Range value, $Res Function(Range) _then) =
+      _$RangeCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(fromJson: _fromDateString, toJson: _toDateString)
+      DateTime? date,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? start,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? end,
+      String? text,
+      String? timezone});
+}
+
+/// @nodoc
+class _$RangeCopyWithImpl<$Res> implements $RangeCopyWith<$Res> {
+  _$RangeCopyWithImpl(this._self, this._then);
+
+  final Range _self;
+  final $Res Function(Range) _then;
+
+  /// Create a copy of Range
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = freezed,
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? text = freezed,
+    Object? timezone = freezed,
+  }) {
+    return _then(_self.copyWith(
+      date: freezed == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Range implements Range {
+  _Range(
+      {@JsonKey(fromJson: _fromDateString, toJson: _toDateString) this.date,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) this.start,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) this.end,
+      this.text,
+      this.timezone});
+  factory _Range.fromJson(Map<String, dynamic> json) => _$RangeFromJson(json);
+
+  @override
+  @JsonKey(fromJson: _fromDateString, toJson: _toDateString)
+  final DateTime? date;
+  @override
+  @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
+  final DateTime? start;
+  @override
+  @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString)
+  final DateTime? end;
+  @override
+  final String? text;
+  @override
+  final String? timezone;
+
+  /// Create a copy of Range
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RangeCopyWith<_Range> get copyWith =>
+      __$RangeCopyWithImpl<_Range>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RangeToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Range &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, date, start, end, text, timezone);
+
+  @override
+  String toString() {
+    return 'Range(date: $date, start: $start, end: $end, text: $text, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RangeCopyWith<$Res> implements $RangeCopyWith<$Res> {
+  factory _$RangeCopyWith(_Range value, $Res Function(_Range) _then) =
+      __$RangeCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(fromJson: _fromDateString, toJson: _toDateString)
+      DateTime? date,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? start,
+      @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? end,
+      String? text,
+      String? timezone});
+}
+
+/// @nodoc
+class __$RangeCopyWithImpl<$Res> implements _$RangeCopyWith<$Res> {
+  __$RangeCopyWithImpl(this._self, this._then);
+
+  final _Range _self;
+  final $Res Function(_Range) _then;
+
+  /// Create a copy of Range
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? date = freezed,
+    Object? start = freezed,
+    Object? end = freezed,
+    Object? text = freezed,
+    Object? timezone = freezed,
+  }) {
+    return _then(_Range(
+      date: freezed == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      start: freezed == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      end: freezed == end
+          ? _self.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      text: freezed == text
+          ? _self.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on
