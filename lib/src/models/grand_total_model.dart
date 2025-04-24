@@ -5,6 +5,8 @@ part 'grand_total_model.g.dart';
 
 @freezed
 sealed class GrandTotalModel with _$GrandTotalModel {
+  // @freezed requirements
+  // ignore: invalid_annotation_target
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory GrandTotalModel({
     String? decimal,

@@ -157,8 +157,7 @@ Future<void> fetchWakatimeData({
 }
 
 String getProjectRoot() {
-  var current = Directory.current;
-  Directory dir = File.fromUri(Platform.script).parent;
+  var dir = File.fromUri(Platform.script).parent;
 
   while (true) {
     final pubspec = File(p.join(dir.path, 'pubspec.yaml'));
@@ -172,5 +171,5 @@ String getProjectRoot() {
     dir = parent;
   }
 
-  return current.path;
+  return Directory.current.path;
 }

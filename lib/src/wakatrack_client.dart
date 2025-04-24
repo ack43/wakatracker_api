@@ -47,6 +47,8 @@ final class WakatrackClient {
       if (token?.refreshToken == null) {
         final message = 'You need to login first.\nVisit ${getAuthorizeUrl()}';
         if (safe) {
+          // TODO: fix in future
+          // ignore: avoid_print
           print(message);
           return null;
         }
@@ -92,6 +94,7 @@ final class WakatrackClient {
         );
 
   String getAuthorizeUrl() {
+    //
     // ignore: lines_longer_than_80_chars
     return '$authorizationEndpoint?client_id=$clientId&response_type=code&redirect_uri=$redirectUrl&scope=${scopes.join(',')}';
   }
@@ -170,8 +173,11 @@ final class WakatrackClient {
     return WakatrackApi(_configureDio(token: token));
   }
 
-  Future<Response<String>> revokeTokens(
-      {String? token, String? userId, bool all = false}) async {
+  Future<Response<String>> revokeTokens({
+    String? token,
+    String? userId,
+    bool all = false,
+  }) async {
     final revokeData = {
       'client_id': clientId,
       'client_secret': clientSecret,

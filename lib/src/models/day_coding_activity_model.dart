@@ -6,6 +6,8 @@ part 'day_coding_activity_model.g.dart';
 
 @freezed
 sealed class DayCodingActivityModel with _$DayCodingActivityModel {
+  // @freezed requirements
+  // ignore: invalid_annotation_target
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory DayCodingActivityModel({
     required List<ActivityRecordModel> categories,
@@ -25,8 +27,14 @@ sealed class DayCodingActivityModel with _$DayCodingActivityModel {
 @freezed
 sealed class Range with _$Range {
   factory Range({
+    // @freezed requirements
+    // ignore: invalid_annotation_target
     @JsonKey(fromJson: _fromDateString, toJson: _toDateString) DateTime? date,
+    // @freezed requirements
+    // ignore: invalid_annotation_target
     @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? start,
+    // @freezed requirements
+    // ignore: invalid_annotation_target
     @JsonKey(fromJson: _fromIsoString, toJson: _toIsoString) DateTime? end,
     String? text,
     String? timezone,

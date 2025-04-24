@@ -1,5 +1,6 @@
 export 'activity_record_model.dart';
 export 'day_coding_activity_model.dart';
+export 'duration.dart';
 export 'grand_total_model.dart';
 export 'heartbeat.dart';
 export 'project.dart';

@@ -690,4 +690,213 @@ class __$HeartbeatCopyWithImpl<$Res> implements _$HeartbeatCopyWith<$Res> {
   }
 }
 
+/// @nodoc
+mixin _$ResponseWrapperHeartbeats {
+  List<Heartbeat> get data;
+  String get start;
+  String? get finish; // ignore: always_put_required_named_parameters_first
+  String get timezone;
+
+  /// Create a copy of ResponseWrapperHeartbeats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ResponseWrapperHeartbeatsCopyWith<ResponseWrapperHeartbeats> get copyWith =>
+      _$ResponseWrapperHeartbeatsCopyWithImpl<ResponseWrapperHeartbeats>(
+          this as ResponseWrapperHeartbeats, _$identity);
+
+  /// Serializes this ResponseWrapperHeartbeats to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ResponseWrapperHeartbeats &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.finish, finish) || other.finish == finish) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(data), start, finish, timezone);
+
+  @override
+  String toString() {
+    return 'ResponseWrapperHeartbeats(data: $data, start: $start, finish: $finish, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ResponseWrapperHeartbeatsCopyWith<$Res> {
+  factory $ResponseWrapperHeartbeatsCopyWith(ResponseWrapperHeartbeats value,
+          $Res Function(ResponseWrapperHeartbeats) _then) =
+      _$ResponseWrapperHeartbeatsCopyWithImpl;
+  @useResult
+  $Res call(
+      {List<Heartbeat> data, String start, String? finish, String timezone});
+}
+
+/// @nodoc
+class _$ResponseWrapperHeartbeatsCopyWithImpl<$Res>
+    implements $ResponseWrapperHeartbeatsCopyWith<$Res> {
+  _$ResponseWrapperHeartbeatsCopyWithImpl(this._self, this._then);
+
+  final ResponseWrapperHeartbeats _self;
+  final $Res Function(ResponseWrapperHeartbeats) _then;
+
+  /// Create a copy of ResponseWrapperHeartbeats
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+    Object? start = null,
+    Object? finish = freezed,
+    Object? timezone = null,
+  }) {
+    return _then(_self.copyWith(
+      data: null == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Heartbeat>,
+      start: null == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
+      finish: freezed == finish
+          ? _self.finish
+          : finish // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: null == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ResponseWrapperHeartbeats implements ResponseWrapperHeartbeats {
+  const _ResponseWrapperHeartbeats(
+      {required final List<Heartbeat> data,
+      required this.start,
+      this.finish,
+      required this.timezone})
+      : _data = data;
+  factory _ResponseWrapperHeartbeats.fromJson(Map<String, dynamic> json) =>
+      _$ResponseWrapperHeartbeatsFromJson(json);
+
+  final List<Heartbeat> _data;
+  @override
+  List<Heartbeat> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  final String start;
+  @override
+  final String? finish;
+// ignore: always_put_required_named_parameters_first
+  @override
+  final String timezone;
+
+  /// Create a copy of ResponseWrapperHeartbeats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ResponseWrapperHeartbeatsCopyWith<_ResponseWrapperHeartbeats>
+      get copyWith =>
+          __$ResponseWrapperHeartbeatsCopyWithImpl<_ResponseWrapperHeartbeats>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ResponseWrapperHeartbeatsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ResponseWrapperHeartbeats &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.finish, finish) || other.finish == finish) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_data), start, finish, timezone);
+
+  @override
+  String toString() {
+    return 'ResponseWrapperHeartbeats(data: $data, start: $start, finish: $finish, timezone: $timezone)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ResponseWrapperHeartbeatsCopyWith<$Res>
+    implements $ResponseWrapperHeartbeatsCopyWith<$Res> {
+  factory _$ResponseWrapperHeartbeatsCopyWith(_ResponseWrapperHeartbeats value,
+          $Res Function(_ResponseWrapperHeartbeats) _then) =
+      __$ResponseWrapperHeartbeatsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {List<Heartbeat> data, String start, String? finish, String timezone});
+}
+
+/// @nodoc
+class __$ResponseWrapperHeartbeatsCopyWithImpl<$Res>
+    implements _$ResponseWrapperHeartbeatsCopyWith<$Res> {
+  __$ResponseWrapperHeartbeatsCopyWithImpl(this._self, this._then);
+
+  final _ResponseWrapperHeartbeats _self;
+  final $Res Function(_ResponseWrapperHeartbeats) _then;
+
+  /// Create a copy of ResponseWrapperHeartbeats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? data = null,
+    Object? start = null,
+    Object? finish = freezed,
+    Object? timezone = null,
+  }) {
+    return _then(_ResponseWrapperHeartbeats(
+      data: null == data
+          ? _self._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Heartbeat>,
+      start: null == start
+          ? _self.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as String,
+      finish: freezed == finish
+          ? _self.finish
+          : finish // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: null == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
 // dart format on

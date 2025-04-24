@@ -64,3 +64,23 @@ Map<String, dynamic> _$HeartbeatToJson(_Heartbeat instance) =>
       'cursorpos': instance.cursorpos,
       'is_write': instance.isWrite,
     };
+
+_ResponseWrapperHeartbeats _$ResponseWrapperHeartbeatsFromJson(
+        Map<String, dynamic> json) =>
+    _ResponseWrapperHeartbeats(
+      data: (json['data'] as List<dynamic>)
+          .map((e) => Heartbeat.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      start: json['start'] as String,
+      finish: json['finish'] as String?,
+      timezone: json['timezone'] as String,
+    );
+
+Map<String, dynamic> _$ResponseWrapperHeartbeatsToJson(
+        _ResponseWrapperHeartbeats instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'start': instance.start,
+      'finish': instance.finish,
+      'timezone': instance.timezone,
+    };

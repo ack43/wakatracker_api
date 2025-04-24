@@ -8,6 +8,8 @@ part 'wakatrack_api.g.dart';
 abstract class WakatrackApi {
   factory WakatrackApi(Dio dio, {String baseUrl}) = _WakatrackApi;
 
+  //
+  // users
   @GET('users/current')
   Future<ResponseWrapperModel<UserModel>> getCurrentUser();
 
@@ -30,14 +32,39 @@ abstract class WakatrackApi {
   //
   // Heartbeats
   @GET('users/current/heartbeats')
-  Future<ResponseWrapperModel<List<Heartbeat>>> getCurrentHearbeats({
+  Future<ResponseWrapperHeartbeats> getCurrentHearbeats({
     @Query('date')
     required String date, // Use `DateFormat('yyyy-MM-dd')` to format
   });
 
   @GET('users/{userId}/heartbeats')
-  Future<ResponseWrapperModel<List<Heartbeat>>> getHearbeats(
+  Future<ResponseWrapperHeartbeats> getHearbeats(
     @Path('userId') String userId, {
     @Query('date') required String date,
+  });
+
+  //
+  // Durations
+  @GET('users/current/durations')
+  Future<ResponseWrapperDurations> getCurrentDurations({
+    @Query('date') required String date, // Format: yyyy-MM-dd
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+    @Query('timezone') String? timezone,
+    @Query('slice_by') String? sliceBy,
+  });
+
+  @GET('users/{userId}/durations')
+  Future<ResponseWrapperDurations> getDurations(
+    @Path('userId') String userId, {
+    @Query('date') required String date,
+    @Query('project') String? project,
+    @Query('branches') String? branches,
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+    @Query('timezone') String? timezone,
+    @Query('slice_by') String? sliceBy,
   });
 }

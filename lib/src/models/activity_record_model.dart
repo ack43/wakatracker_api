@@ -5,6 +5,8 @@ part 'activity_record_model.g.dart';
 
 @freezed
 sealed class ActivityRecordModel with _$ActivityRecordModel {
+  // @freezed requirements
+  // ignore: invalid_annotation_target
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ActivityRecordModel({
     String? digital,

@@ -1,3 +1,6 @@
+// cause its tests
+// ignore_for_file: avoid_print
+
 import 'package:dotenv/dotenv.dart';
 
 import 'package:fresh_dio/fresh_dio.dart';

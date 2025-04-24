@@ -1,3 +1,6 @@
+// cause its tests
+// ignore_for_file: avoid_print
+
 import 'package:dotenv/dotenv.dart';
 import 'package:test/test.dart';
 import 'package:wakatracker_api/wakatracker_api.dart';
@@ -32,6 +35,9 @@ void main() {
       for (final hb in heartbeats.data.take(3)) {
         print('- ${hb.entity} @ ${hb.time} (${hb.type})');
       }
+      print('Heartbeats.meta.start: ${heartbeats.start}');
+      print('Heartbeats.meta.finish: ${heartbeats.finish}');
+      print('Heartbeats.meta.timezone: ${heartbeats.timezone}');
     });
   });
 }
