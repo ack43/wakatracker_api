@@ -33,6 +33,7 @@ _WakatimeDuration _$WakatimeDurationFromJson(Map<String, dynamic> json) =>
       project: json['project'] as String,
       time: (json['time'] as num).toDouble(),
       duration: (json['duration'] as num).toDouble(),
+      color: json['color'] as String?,
     );
 
 Map<String, dynamic> _$WakatimeDurationToJson(_WakatimeDuration instance) =>
@@ -40,6 +41,7 @@ Map<String, dynamic> _$WakatimeDurationToJson(_WakatimeDuration instance) =>
       'project': instance.project,
       'time': instance.time,
       'duration': instance.duration,
+      'color': instance.color,
     };
 
 _ResponseWrapperExternalDurations _$ResponseWrapperExternalDurationsFromJson(

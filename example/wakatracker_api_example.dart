@@ -118,7 +118,6 @@ Future<void> runOauth() async {
 Future<void> fetchWakatimeData({
   required String clientSecret,
   String? clientId,
-  //
   WakatrackOAuth2Token? token,
 }) async {
   print('fetchWakatimeData');
@@ -149,11 +148,40 @@ Future<void> fetchWakatimeData({
   print('');
   print(api);
 
+  final today = DateTime.now();
+  final formattedMonth = today.month.toString().padLeft(2, '0');
+  final formattedDay = today.day.toString().padLeft(2, '0');
+  final formattedDate = '${today.year}-$formattedMonth-$formattedDay';
+
   final userResponse = await api.getCurrentUser();
   print('👤 User: ${userResponse.data}');
 
   final activityResponse = await api.getMyTodaysActivity();
   print('📊 Activity: ${activityResponse.data}');
+
+  final statsResponse = await api.getCurrentUserStatsByRange('last_7_days');
+  print('📈 Stats (last 7 days): ${statsResponse.data}');
+
+  final projectsResponse = await api.getCurrentProjects();
+  print('📁 Projects: ${projectsResponse.data.map((p) => p.name).join(', ')}');
+
+  print('');
+  print('formattedDate - $formattedDate');
+  final durationsResponse = await api.getCurrentDurations(date: formattedDate);
+  print('⏱ Durations Today: ${durationsResponse.data.length} entries');
+
+  final externalDurationsResponse =
+      await api.getCurrentExternalDurations(date: formattedDate);
+  final entriesCount = externalDurationsResponse.data.length;
+  print('🧩 External Durations Today: $entriesCount entries');
+
+  final summariesResponse = await api.getCurrentSummaries(
+    start: formattedDate,
+    end: formattedDate,
+  );
+  final summariesResponseForTodayText =
+      summariesResponse.data.map((s) => s.grandTotal?.text ?? '').join(', ');
+  print('📅 Summary for Today: $summariesResponseForTodayText');
 }
 
 String getProjectRoot() {

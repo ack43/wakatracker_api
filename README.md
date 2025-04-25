@@ -9,7 +9,7 @@ Modified and republished under the same license with improvements.
 - [x] Current user today activity
 - [x] Projects
 - [x] Heartbeats
-- [x] Stats
+- [x] Stats/AggregateStats
 - [x] Durations/ExternalDurations
 - [x] Summaries
 - [ ] Goals

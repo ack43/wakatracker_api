@@ -15,6 +15,7 @@
   - `GET /users/current/stats` → `getCurrentUserStats({ timeout, writesOnly })`
   - `GET /users/{userId}/stats/{range}` → `getUserStatsByRange(userId, range, { timeout, writesOnly })`
   - `GET /users/current/stats/{range}` → `getCurrentUserStatsByRange(range, { timeout, writesOnly })`
+  - `GET /stats/{range}` → `getAggregateStatsByRange(range, { timeout, writesOnly })`
 
 ---
 

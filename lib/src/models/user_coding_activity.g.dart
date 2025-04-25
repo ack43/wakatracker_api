@@ -23,32 +23,25 @@ _UserCodingActivity _$UserCodingActivityFromJson(Map<String, dynamic> json) =>
           json['human_readable_daily_average_including_other_language']
               as String?,
       categories: (json['categories'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       projects: (json['projects'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       languages: (json['languages'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       editors: (json['editors'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       operatingSystems: (json['operating_systems'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       dependencies: (json['dependencies'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       machines: (json['machines'] as List<dynamic>?)
-          ?.map(
-              (e) => DayCodingActivityModel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActivityRecordModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       bestDay: json['best_day'] == null
           ? null
@@ -139,4 +132,116 @@ Map<String, dynamic> _$BestDayToJson(_BestDay instance) => <String, dynamic>{
       'date': instance.date,
       'text': instance.text,
       'totalSeconds': instance.totalSeconds,
+    };
+
+_AggregateStatsResponse _$AggregateStatsResponseFromJson(
+        Map<String, dynamic> json) =>
+    _AggregateStatsResponse(
+      data: UserCodingActivityAggregateData.fromJson(
+          json['data'] as Map<String, dynamic>),
+      jobTitle: json['job_title'] as String?,
+      range: json['range'] == null
+          ? null
+          : DateRange.fromJson(json['range'] as Map<String, dynamic>),
+      timeout: (json['timeout'] as num?)?.toInt(),
+      writesOnly: json['writes_only'] as bool?,
+    );
+
+Map<String, dynamic> _$AggregateStatsResponseToJson(
+        _AggregateStatsResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'job_title': instance.jobTitle,
+      'range': instance.range,
+      'timeout': instance.timeout,
+      'writes_only': instance.writesOnly,
+    };
+
+_UserCodingActivityAggregateData _$UserCodingActivityAggregateDataFromJson(
+        Map<String, dynamic> json) =>
+    _UserCodingActivityAggregateData(
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => ActivityStats.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      dailyAverage: json['daily_average'] == null
+          ? null
+          : ActivityStats.fromJson(
+              json['daily_average'] as Map<String, dynamic>),
+      editors: (json['editors'] as List<dynamic>?)
+          ?.map((e) => ActivityStats.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      languages: (json['languages'] as List<dynamic>?)
+          ?.map((e) => ActivityStats.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      operatingSystems: (json['operating_systems'] as List<dynamic>?)
+          ?.map((e) => ActivityStats.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      total: json['total'] == null
+          ? null
+          : ActivityStats.fromJson(json['total'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$UserCodingActivityAggregateDataToJson(
+        _UserCodingActivityAggregateData instance) =>
+    <String, dynamic>{
+      'categories': instance.categories,
+      'daily_average': instance.dailyAverage,
+      'editors': instance.editors,
+      'languages': instance.languages,
+      'operating_systems': instance.operatingSystems,
+      'total': instance.total,
+    };
+
+_ActivityStats _$ActivityStatsFromJson(Map<String, dynamic> json) =>
+    _ActivityStats(
+      name: json['name'] as String?,
+      isVerified: json['is_verified'] as bool?,
+      average: StatValue.fromJson(json['average'] as Map<String, dynamic>),
+      count: StatValue.fromJson(json['count'] as Map<String, dynamic>),
+      max: StatValue.fromJson(json['max'] as Map<String, dynamic>),
+      median: StatValue.fromJson(json['median'] as Map<String, dynamic>),
+      sum: json['sum'] == null
+          ? null
+          : StatValue.fromJson(json['sum'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ActivityStatsToJson(_ActivityStats instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'is_verified': instance.isVerified,
+      'average': instance.average,
+      'count': instance.count,
+      'max': instance.max,
+      'median': instance.median,
+      'sum': instance.sum,
+    };
+
+_StatValue _$StatValueFromJson(Map<String, dynamic> json) => _StatValue(
+      seconds: (json['seconds'] as num?)?.toDouble(),
+      text: json['text'] as String,
+    );
+
+Map<String, dynamic> _$StatValueToJson(_StatValue instance) =>
+    <String, dynamic>{
+      'seconds': instance.seconds,
+      'text': instance.text,
+    };
+
+_DateRange _$DateRangeFromJson(Map<String, dynamic> json) => _DateRange(
+      endDate: json['end_date'] as String,
+      endText: json['end_text'] as String,
+      name: json['name'] as String,
+      startDate: json['start_date'] as String,
+      startText: json['start_text'] as String,
+      text: json['text'] as String,
+    );
+
+Map<String, dynamic> _$DateRangeToJson(_DateRange instance) =>
+    <String, dynamic>{
+      'end_date': instance.endDate,
+      'end_text': instance.endText,
+      'name': instance.name,
+      'start_date': instance.startDate,
+      'start_text': instance.startText,
+      'text': instance.text,
     };
