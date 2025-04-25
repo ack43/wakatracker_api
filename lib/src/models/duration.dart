@@ -36,6 +36,7 @@ sealed class WakatimeDuration with _$WakatimeDuration {
     required String project,
     required double time,
     required double duration,
+    String? color,
   }) = _WakatimeDuration;
 
   // @freezed requirements

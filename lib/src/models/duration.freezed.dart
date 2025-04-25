@@ -223,6 +223,7 @@ mixin _$WakatimeDuration {
   String get project;
   double get time;
   double get duration;
+  String? get color;
 
   /// Create a copy of WakatimeDuration
   /// with the given fields replaced by the non-null parameter values.
@@ -243,16 +244,17 @@ mixin _$WakatimeDuration {
             (identical(other.project, project) || other.project == project) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.duration, duration) ||
-                other.duration == duration));
+                other.duration == duration) &&
+            (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, project, time, duration);
+  int get hashCode => Object.hash(runtimeType, project, time, duration, color);
 
   @override
   String toString() {
-    return 'WakatimeDuration(project: $project, time: $time, duration: $duration)';
+    return 'WakatimeDuration(project: $project, time: $time, duration: $duration, color: $color)';
   }
 }
 
@@ -262,7 +264,7 @@ abstract mixin class $WakatimeDurationCopyWith<$Res> {
           WakatimeDuration value, $Res Function(WakatimeDuration) _then) =
       _$WakatimeDurationCopyWithImpl;
   @useResult
-  $Res call({String project, double time, double duration});
+  $Res call({String project, double time, double duration, String? color});
 }
 
 /// @nodoc
@@ -281,6 +283,7 @@ class _$WakatimeDurationCopyWithImpl<$Res>
     Object? project = null,
     Object? time = null,
     Object? duration = null,
+    Object? color = freezed,
   }) {
     return _then(_self.copyWith(
       project: null == project
@@ -295,6 +298,10 @@ class _$WakatimeDurationCopyWithImpl<$Res>
           ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as double,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -303,7 +310,10 @@ class _$WakatimeDurationCopyWithImpl<$Res>
 @JsonSerializable()
 class _WakatimeDuration extends WakatimeDuration {
   const _WakatimeDuration(
-      {required this.project, required this.time, required this.duration})
+      {required this.project,
+      required this.time,
+      required this.duration,
+      this.color})
       : super._();
   factory _WakatimeDuration.fromJson(Map<String, dynamic> json) =>
       _$WakatimeDurationFromJson(json);
@@ -314,6 +324,8 @@ class _WakatimeDuration extends WakatimeDuration {
   final double time;
   @override
   final double duration;
+  @override
+  final String? color;
 
   /// Create a copy of WakatimeDuration
   /// with the given fields replaced by the non-null parameter values.
@@ -338,16 +350,17 @@ class _WakatimeDuration extends WakatimeDuration {
             (identical(other.project, project) || other.project == project) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.duration, duration) ||
-                other.duration == duration));
+                other.duration == duration) &&
+            (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, project, time, duration);
+  int get hashCode => Object.hash(runtimeType, project, time, duration, color);
 
   @override
   String toString() {
-    return 'WakatimeDuration(project: $project, time: $time, duration: $duration)';
+    return 'WakatimeDuration(project: $project, time: $time, duration: $duration, color: $color)';
   }
 }
 
@@ -359,7 +372,7 @@ abstract mixin class _$WakatimeDurationCopyWith<$Res>
       __$WakatimeDurationCopyWithImpl;
   @override
   @useResult
-  $Res call({String project, double time, double duration});
+  $Res call({String project, double time, double duration, String? color});
 }
 
 /// @nodoc
@@ -378,6 +391,7 @@ class __$WakatimeDurationCopyWithImpl<$Res>
     Object? project = null,
     Object? time = null,
     Object? duration = null,
+    Object? color = freezed,
   }) {
     return _then(_WakatimeDuration(
       project: null == project
@@ -392,6 +406,10 @@ class __$WakatimeDurationCopyWithImpl<$Res>
           ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as double,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }

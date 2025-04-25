@@ -145,4 +145,12 @@ abstract class WakatrackApi {
     @Query('timeout') int? timeout,
     @Query('writes_only') bool? writesOnly,
   });
+
+  // GET /api/v1/stats/:range
+  @GET('stats/{range}')
+  Future<AggregateStatsResponse> getAggregateStatsByRange(
+    @Path('range') String range, {
+    @Query('timeout') int? timeout,
+    @Query('writes_only') bool? writesOnly,
+  });
 }
