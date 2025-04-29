@@ -3,10 +3,10 @@ import 'package:wakatracker_api/wakatracker_api.dart'; // Update with the correc
 
 void main() {
   group('DateTimeConverter', () {
-    final dateTimeConverter = DateTimeConverter();
+    const dateTimeConverter = DateTimeConverter();
 
     test('fromJson correctly converts "yyyy-MM-dd" string to DateTime', () {
-      final dateString = '2025-04-29';
+      const dateString = '2025-04-29';
       final result = dateTimeConverter.fromJson(dateString);
 
       expect(result, isA<DateTime>());
