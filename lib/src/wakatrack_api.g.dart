@@ -150,10 +150,10 @@ class _WakatrackApi implements WakatrackApi {
 
   @override
   Future<ResponseWrapperHeartbeats> getCurrentHearbeats({
-    required String date,
+    required WakaDate date,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'date': date};
+    final queryParameters = <String, dynamic>{r'date': date.toJson()};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<ResponseWrapperHeartbeats>(
@@ -180,10 +180,10 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperHeartbeats> getHearbeats(
     String userId, {
-    required String date,
+    required WakaDate date,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'date': date};
+    final queryParameters = <String, dynamic>{r'date': date.toJson()};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<ResponseWrapperHeartbeats>(
@@ -209,7 +209,7 @@ class _WakatrackApi implements WakatrackApi {
 
   @override
   Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
-    required String date,
+    required WakaDate date,
     String? project,
     String? branches,
     int? timeout,
@@ -219,7 +219,7 @@ class _WakatrackApi implements WakatrackApi {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'date': date,
+      r'date': date.toJson(),
       r'project': project,
       r'branches': branches,
       r'timeout': timeout,
@@ -257,7 +257,7 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
     String userId, {
-    required String date,
+    required WakaDate date,
     String? project,
     String? branches,
     int? timeout,
@@ -267,7 +267,7 @@ class _WakatrackApi implements WakatrackApi {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'date': date,
+      r'date': date.toJson(),
       r'project': project,
       r'branches': branches,
       r'timeout': timeout,
@@ -305,14 +305,14 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperDurations<ExternalDuration>>
       getCurrentExternalDurations({
-    required String date,
+    required WakaDate date,
     String? project,
     String? branches,
     String? timezone,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'date': date,
+      r'date': date.toJson(),
       r'project': project,
       r'branches': branches,
       r'timezone': timezone,
@@ -347,14 +347,14 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperDurations<ExternalDuration>> getExternalDurations(
     String userId, {
-    required String date,
+    required WakaDate date,
     String? project,
     String? branches,
     String? timezone,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'date': date,
+      r'date': date.toJson(),
       r'project': project,
       r'branches': branches,
       r'timezone': timezone,
@@ -388,8 +388,8 @@ class _WakatrackApi implements WakatrackApi {
 
   @override
   Future<ResponseWrapperList<DayCodingActivityModel>> getCurrentSummaries({
-    required String start,
-    required String end,
+    required WakaDate start,
+    required WakaDate end,
     String? project,
     String? branches,
     int? timeout,
@@ -399,8 +399,8 @@ class _WakatrackApi implements WakatrackApi {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'start': start,
-      r'end': end,
+      r'start': start.toJson(),
+      r'end': end.toJson(),
       r'project': project,
       r'branches': branches,
       r'timeout': timeout,
@@ -441,8 +441,8 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperList<DayCodingActivityModel>> getSummaries(
     String userId, {
-    required String start,
-    required String end,
+    required WakaDate start,
+    required WakaDate end,
     String? project,
     String? branches,
     int? timeout,
@@ -452,8 +452,8 @@ class _WakatrackApi implements WakatrackApi {
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'start': start,
-      r'end': end,
+      r'start': start.toJson(),
+      r'end': end.toJson(),
       r'project': project,
       r'branches': branches,
       r'timeout': timeout,

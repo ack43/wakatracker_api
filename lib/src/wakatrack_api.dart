@@ -34,20 +34,20 @@ abstract class WakatrackApi {
   @GET('users/current/heartbeats')
   Future<ResponseWrapperHeartbeats> getCurrentHearbeats({
     @Query('date')
-    required String date, // Use `DateFormat('yyyy-MM-dd')` to format
+    required WakaDate date, // Use `DateFormat('yyyy-MM-dd')` to format
   });
 
   @GET('users/{userId}/heartbeats')
   Future<ResponseWrapperHeartbeats> getHearbeats(
     @Path('userId') String userId, {
-    @Query('date') required String date,
+    @Query('date') required WakaDate date,
   });
 
   //
   // Durations
   @GET('users/current/durations')
   Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
-    @Query('date') required String date, // Format: yyyy-MM-dd
+    @Query('date') required WakaDate date, // Format: yyyy-MM-dd
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timeout') int? timeout,
@@ -59,7 +59,7 @@ abstract class WakatrackApi {
   @GET('users/{userId}/durations')
   Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
     @Path('userId') String userId, {
-    @Query('date') required String date,
+    @Query('date') required WakaDate date,
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timeout') int? timeout,
@@ -72,7 +72,7 @@ abstract class WakatrackApi {
   @GET('users/current/external_durations')
   Future<ResponseWrapperDurations<ExternalDuration>>
       getCurrentExternalDurations({
-    @Query('date') required String date,
+    @Query('date') required WakaDate date,
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timezone') String? timezone,
@@ -81,7 +81,7 @@ abstract class WakatrackApi {
   @GET('users/{userId}/external_durations')
   Future<ResponseWrapperDurations<ExternalDuration>> getExternalDurations(
     @Path('userId') String userId, {
-    @Query('date') required String date,
+    @Query('date') required WakaDate date,
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timezone') String? timezone,
@@ -90,8 +90,8 @@ abstract class WakatrackApi {
   // Summaries
   @GET('users/current/summaries')
   Future<ResponseWrapperList<DayCodingActivityModel>> getCurrentSummaries({
-    @Query('start') required String start,
-    @Query('end') required String end,
+    @Query('start') required WakaDate start,
+    @Query('end') required WakaDate end,
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timeout') int? timeout,
@@ -103,8 +103,8 @@ abstract class WakatrackApi {
   @GET('users/{userId}/summaries')
   Future<ResponseWrapperList<DayCodingActivityModel>> getSummaries(
     @Path('userId') String userId, {
-    @Query('start') required String start,
-    @Query('end') required String end,
+    @Query('start') required WakaDate start,
+    @Query('end') required WakaDate end,
     @Query('project') String? project,
     @Query('branches') String? branches,
     @Query('timeout') int? timeout,

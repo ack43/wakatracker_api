@@ -1,7 +1,6 @@
 // cause it's tests
 // ignore_for_file: avoid_print, lines_longer_than_80_chars
 
-import 'dart:convert';
 import 'package:dotenv/dotenv.dart';
 import 'package:test/test.dart';
 import 'package:wakatracker_api/wakatracker_api.dart';
@@ -27,8 +26,6 @@ void main() {
 
       final result = await api!.getAggregateStatsByRange('last_7_days');
       final data = result.data;
-
-      // print(jsonEncode(data.toJson()));
 
       print('✅ Aggregate stats for range: ${result.range}');
       print('• Daily avg: ${data.dailyAverage?.average}');

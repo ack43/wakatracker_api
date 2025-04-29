@@ -25,10 +25,10 @@ void main() {
 
       final api = await client.createApiClient(safe: false);
 
-      final today = DateTime.now().toIso8601String().split('T').first;
+      final today = DateTime.now();
 
       final externalDurations = await api!.getCurrentExternalDurations(
-        date: today,
+        date: WakaDate(today),
       );
 
       expect(externalDurations.data, isA<List<ExternalDuration>>());

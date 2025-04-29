@@ -30,8 +30,8 @@ void main() {
       final today = now.toIso8601String().substring(0, 10);
 
       final response = await api!.getCurrentSummaries(
-        start: today,
-        end: today,
+        start: WakaDate(now),
+        end: WakaDate(now),
       );
 
       expect(response.data, isNotEmpty);
@@ -58,8 +58,8 @@ void main() {
       expect(api, isNotNull);
 
       final response = await api!.getCurrentSummaries(
-        start: '', // ignored if range is supplied
-        end: '',
+        start: const WakaDate.empty(), // ignored if range is supplied
+        end: const WakaDate.empty(),
         range: 'Last 7 Days',
       );
 
@@ -89,8 +89,8 @@ void main() {
       final today = now.toIso8601String().substring(0, 10);
 
       final response = await api!.getCurrentSummaries(
-        start: today,
-        end: today,
+        start: WakaDate(now),
+        end: WakaDate(now),
         writesOnly: true,
       );
 

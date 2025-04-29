@@ -25,7 +25,7 @@ void main() {
 
       final api = await client.createApiClient(safe: false);
       final heartbeats = await api!.getCurrentHearbeats(
-        date: DateTime.now().toIso8601String().split('T').first,
+        date: WakaDate(DateTime.now()),
       );
 
       expect(heartbeats.data, isA<List<Heartbeat>>());

@@ -25,10 +25,10 @@ void main() {
 
       final api = await client.createApiClient(safe: false);
 
-      final today = DateTime.now().toIso8601String().split('T').first;
+      final today = DateTime.now();
 
       final durations = await api!.getCurrentDurations(
-        date: today,
+        date: WakaDate(today),
         sliceBy:
             'project', // Optional: try other values like 'editor', 'entity', etc.
       );
