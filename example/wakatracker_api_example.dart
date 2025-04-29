@@ -168,18 +168,18 @@ Future<void> fetchWakatimeData({
   print('');
   print('formattedDate - $formattedDate');
   final durationsResponse = await api.getCurrentDurations(
-    date: WakaDate(today),
+    date: today,
   );
   print('⏱ Durations Today: ${durationsResponse.data.length} entries');
 
   final externalDurationsResponse =
-      await api.getCurrentExternalDurations(date: WakaDate(today));
+      await api.getCurrentExternalDurations(date: today);
   final entriesCount = externalDurationsResponse.data.length;
   print('🧩 External Durations Today: $entriesCount entries');
 
   final summariesResponse = await api.getCurrentSummaries(
-    start: WakaDate(today),
-    end: WakaDate(today),
+    start: today,
+    end: today,
   );
   final summariesResponseForTodayText =
       summariesResponse.data.map((s) => s.grandTotal?.text ?? '').join(', ');

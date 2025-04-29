@@ -28,7 +28,7 @@ void main() {
       final today = DateTime.now();
 
       final externalDurations = await api!.getCurrentExternalDurations(
-        date: WakaDate(today),
+        date: today,
       );
 
       expect(externalDurations.data, isA<List<ExternalDuration>>());

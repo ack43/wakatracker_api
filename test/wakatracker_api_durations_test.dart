@@ -28,7 +28,7 @@ void main() {
       final today = DateTime.now();
 
       final durations = await api!.getCurrentDurations(
-        date: WakaDate(today),
+        date: today,
         sliceBy:
             'project', // Optional: try other values like 'editor', 'entity', etc.
       );
