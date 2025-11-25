@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -484,6 +483,408 @@ class _$UserCodingActivityCopyWithImpl<$Res>
     return $BestDayCopyWith<$Res>(_self.bestDay!, (value) {
       return _then(_self.copyWith(bestDay: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [UserCodingActivity].
+extension UserCodingActivityPatterns on UserCodingActivity {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserCodingActivity value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserCodingActivity value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UserCodingActivity value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? totalSeconds,
+            double? totalSecondsIncludingOtherLanguage,
+            String? humanReadableTotal,
+            String? humanReadableTotalIncludingOtherLanguage,
+            double? dailyAverage,
+            double? dailyAverageIncludingOtherLanguage,
+            String? humanReadableDailyAverage,
+            String? humanReadableDailyAverageIncludingOtherLanguage,
+            List<ActivityRecordModel>? categories,
+            List<ActivityRecordModel>? projects,
+            List<ActivityRecordModel>? languages,
+            List<ActivityRecordModel>? editors,
+            List<ActivityRecordModel>? operatingSystems,
+            List<ActivityRecordModel>? dependencies,
+            List<ActivityRecordModel>? machines,
+            BestDay? bestDay,
+            String? range,
+            String? humanReadableRange,
+            int? holidays,
+            int? daysIncludingHolidays,
+            int? daysMinusHolidays,
+            String? status,
+            int? percentCalculated,
+            bool? isAlreadyUpdating,
+            bool? isCodingActivityVisible,
+            bool? isLanguageUsageVisible,
+            bool? isEditorUsageVisible,
+            bool? isCategoryUsageVisible,
+            bool? isOsUsageVisible,
+            bool? isStuck,
+            bool? isIncludingToday,
+            bool? isUpToDate,
+            String? start,
+            String? end,
+            String? timezone,
+            int? timeout,
+            bool? writesOnly,
+            String? userId,
+            String? username,
+            String? createdAt,
+            String? modifiedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity() when $default != null:
+        return $default(
+            _that.totalSeconds,
+            _that.totalSecondsIncludingOtherLanguage,
+            _that.humanReadableTotal,
+            _that.humanReadableTotalIncludingOtherLanguage,
+            _that.dailyAverage,
+            _that.dailyAverageIncludingOtherLanguage,
+            _that.humanReadableDailyAverage,
+            _that.humanReadableDailyAverageIncludingOtherLanguage,
+            _that.categories,
+            _that.projects,
+            _that.languages,
+            _that.editors,
+            _that.operatingSystems,
+            _that.dependencies,
+            _that.machines,
+            _that.bestDay,
+            _that.range,
+            _that.humanReadableRange,
+            _that.holidays,
+            _that.daysIncludingHolidays,
+            _that.daysMinusHolidays,
+            _that.status,
+            _that.percentCalculated,
+            _that.isAlreadyUpdating,
+            _that.isCodingActivityVisible,
+            _that.isLanguageUsageVisible,
+            _that.isEditorUsageVisible,
+            _that.isCategoryUsageVisible,
+            _that.isOsUsageVisible,
+            _that.isStuck,
+            _that.isIncludingToday,
+            _that.isUpToDate,
+            _that.start,
+            _that.end,
+            _that.timezone,
+            _that.timeout,
+            _that.writesOnly,
+            _that.userId,
+            _that.username,
+            _that.createdAt,
+            _that.modifiedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? totalSeconds,
+            double? totalSecondsIncludingOtherLanguage,
+            String? humanReadableTotal,
+            String? humanReadableTotalIncludingOtherLanguage,
+            double? dailyAverage,
+            double? dailyAverageIncludingOtherLanguage,
+            String? humanReadableDailyAverage,
+            String? humanReadableDailyAverageIncludingOtherLanguage,
+            List<ActivityRecordModel>? categories,
+            List<ActivityRecordModel>? projects,
+            List<ActivityRecordModel>? languages,
+            List<ActivityRecordModel>? editors,
+            List<ActivityRecordModel>? operatingSystems,
+            List<ActivityRecordModel>? dependencies,
+            List<ActivityRecordModel>? machines,
+            BestDay? bestDay,
+            String? range,
+            String? humanReadableRange,
+            int? holidays,
+            int? daysIncludingHolidays,
+            int? daysMinusHolidays,
+            String? status,
+            int? percentCalculated,
+            bool? isAlreadyUpdating,
+            bool? isCodingActivityVisible,
+            bool? isLanguageUsageVisible,
+            bool? isEditorUsageVisible,
+            bool? isCategoryUsageVisible,
+            bool? isOsUsageVisible,
+            bool? isStuck,
+            bool? isIncludingToday,
+            bool? isUpToDate,
+            String? start,
+            String? end,
+            String? timezone,
+            int? timeout,
+            bool? writesOnly,
+            String? userId,
+            String? username,
+            String? createdAt,
+            String? modifiedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity():
+        return $default(
+            _that.totalSeconds,
+            _that.totalSecondsIncludingOtherLanguage,
+            _that.humanReadableTotal,
+            _that.humanReadableTotalIncludingOtherLanguage,
+            _that.dailyAverage,
+            _that.dailyAverageIncludingOtherLanguage,
+            _that.humanReadableDailyAverage,
+            _that.humanReadableDailyAverageIncludingOtherLanguage,
+            _that.categories,
+            _that.projects,
+            _that.languages,
+            _that.editors,
+            _that.operatingSystems,
+            _that.dependencies,
+            _that.machines,
+            _that.bestDay,
+            _that.range,
+            _that.humanReadableRange,
+            _that.holidays,
+            _that.daysIncludingHolidays,
+            _that.daysMinusHolidays,
+            _that.status,
+            _that.percentCalculated,
+            _that.isAlreadyUpdating,
+            _that.isCodingActivityVisible,
+            _that.isLanguageUsageVisible,
+            _that.isEditorUsageVisible,
+            _that.isCategoryUsageVisible,
+            _that.isOsUsageVisible,
+            _that.isStuck,
+            _that.isIncludingToday,
+            _that.isUpToDate,
+            _that.start,
+            _that.end,
+            _that.timezone,
+            _that.timeout,
+            _that.writesOnly,
+            _that.userId,
+            _that.username,
+            _that.createdAt,
+            _that.modifiedAt);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? totalSeconds,
+            double? totalSecondsIncludingOtherLanguage,
+            String? humanReadableTotal,
+            String? humanReadableTotalIncludingOtherLanguage,
+            double? dailyAverage,
+            double? dailyAverageIncludingOtherLanguage,
+            String? humanReadableDailyAverage,
+            String? humanReadableDailyAverageIncludingOtherLanguage,
+            List<ActivityRecordModel>? categories,
+            List<ActivityRecordModel>? projects,
+            List<ActivityRecordModel>? languages,
+            List<ActivityRecordModel>? editors,
+            List<ActivityRecordModel>? operatingSystems,
+            List<ActivityRecordModel>? dependencies,
+            List<ActivityRecordModel>? machines,
+            BestDay? bestDay,
+            String? range,
+            String? humanReadableRange,
+            int? holidays,
+            int? daysIncludingHolidays,
+            int? daysMinusHolidays,
+            String? status,
+            int? percentCalculated,
+            bool? isAlreadyUpdating,
+            bool? isCodingActivityVisible,
+            bool? isLanguageUsageVisible,
+            bool? isEditorUsageVisible,
+            bool? isCategoryUsageVisible,
+            bool? isOsUsageVisible,
+            bool? isStuck,
+            bool? isIncludingToday,
+            bool? isUpToDate,
+            String? start,
+            String? end,
+            String? timezone,
+            int? timeout,
+            bool? writesOnly,
+            String? userId,
+            String? username,
+            String? createdAt,
+            String? modifiedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivity() when $default != null:
+        return $default(
+            _that.totalSeconds,
+            _that.totalSecondsIncludingOtherLanguage,
+            _that.humanReadableTotal,
+            _that.humanReadableTotalIncludingOtherLanguage,
+            _that.dailyAverage,
+            _that.dailyAverageIncludingOtherLanguage,
+            _that.humanReadableDailyAverage,
+            _that.humanReadableDailyAverageIncludingOtherLanguage,
+            _that.categories,
+            _that.projects,
+            _that.languages,
+            _that.editors,
+            _that.operatingSystems,
+            _that.dependencies,
+            _that.machines,
+            _that.bestDay,
+            _that.range,
+            _that.humanReadableRange,
+            _that.holidays,
+            _that.daysIncludingHolidays,
+            _that.daysMinusHolidays,
+            _that.status,
+            _that.percentCalculated,
+            _that.isAlreadyUpdating,
+            _that.isCodingActivityVisible,
+            _that.isLanguageUsageVisible,
+            _that.isEditorUsageVisible,
+            _that.isCategoryUsageVisible,
+            _that.isOsUsageVisible,
+            _that.isStuck,
+            _that.isIncludingToday,
+            _that.isUpToDate,
+            _that.start,
+            _that.end,
+            _that.timezone,
+            _that.timeout,
+            _that.writesOnly,
+            _that.userId,
+            _that.username,
+            _that.createdAt,
+            _that.modifiedAt);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1198,6 +1599,160 @@ class _$BestDayCopyWithImpl<$Res> implements $BestDayCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [BestDay].
+extension BestDayPatterns on BestDay {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BestDay value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BestDay value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BestDay value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String date, String text, double? totalSeconds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay() when $default != null:
+        return $default(_that.date, _that.text, _that.totalSeconds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String date, String text, double? totalSeconds) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay():
+        return $default(_that.date, _that.text, _that.totalSeconds);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String date, String text, double? totalSeconds)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BestDay() when $default != null:
+        return $default(_that.date, _that.text, _that.totalSeconds);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _BestDay implements BestDay {
@@ -1418,6 +1973,180 @@ class _$AggregateStatsResponseCopyWithImpl<$Res>
     return $DateRangeCopyWith<$Res>(_self.range!, (value) {
       return _then(_self.copyWith(range: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [AggregateStatsResponse].
+extension AggregateStatsResponsePatterns on AggregateStatsResponse {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AggregateStatsResponse value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AggregateStatsResponse value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AggregateStatsResponse value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            UserCodingActivityAggregateData data,
+            @JsonKey(name: 'job_title') String? jobTitle,
+            DateRange? range,
+            int? timeout,
+            @JsonKey(name: 'writes_only') bool? writesOnly)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse() when $default != null:
+        return $default(_that.data, _that.jobTitle, _that.range, _that.timeout,
+            _that.writesOnly);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            UserCodingActivityAggregateData data,
+            @JsonKey(name: 'job_title') String? jobTitle,
+            DateRange? range,
+            int? timeout,
+            @JsonKey(name: 'writes_only') bool? writesOnly)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse():
+        return $default(_that.data, _that.jobTitle, _that.range, _that.timeout,
+            _that.writesOnly);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            UserCodingActivityAggregateData data,
+            @JsonKey(name: 'job_title') String? jobTitle,
+            DateRange? range,
+            int? timeout,
+            @JsonKey(name: 'writes_only') bool? writesOnly)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AggregateStatsResponse() when $default != null:
+        return $default(_that.data, _that.jobTitle, _that.range, _that.timeout,
+            _that.writesOnly);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -1723,6 +2452,184 @@ class _$UserCodingActivityAggregateDataCopyWithImpl<$Res>
     return $ActivityStatsCopyWith<$Res>(_self.total!, (value) {
       return _then(_self.copyWith(total: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [UserCodingActivityAggregateData].
+extension UserCodingActivityAggregateDataPatterns
+    on UserCodingActivityAggregateData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserCodingActivityAggregateData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserCodingActivityAggregateData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UserCodingActivityAggregateData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            List<ActivityStats>? categories,
+            ActivityStats? dailyAverage,
+            List<ActivityStats>? editors,
+            List<ActivityStats>? languages,
+            List<ActivityStats>? operatingSystems,
+            ActivityStats? total)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData() when $default != null:
+        return $default(_that.categories, _that.dailyAverage, _that.editors,
+            _that.languages, _that.operatingSystems, _that.total);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            List<ActivityStats>? categories,
+            ActivityStats? dailyAverage,
+            List<ActivityStats>? editors,
+            List<ActivityStats>? languages,
+            List<ActivityStats>? operatingSystems,
+            ActivityStats? total)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData():
+        return $default(_that.categories, _that.dailyAverage, _that.editors,
+            _that.languages, _that.operatingSystems, _that.total);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            List<ActivityStats>? categories,
+            ActivityStats? dailyAverage,
+            List<ActivityStats>? editors,
+            List<ActivityStats>? languages,
+            List<ActivityStats>? operatingSystems,
+            ActivityStats? total)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserCodingActivityAggregateData() when $default != null:
+        return $default(_that.categories, _that.dailyAverage, _that.editors,
+            _that.languages, _that.operatingSystems, _that.total);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -2120,6 +3027,186 @@ class _$ActivityStatsCopyWithImpl<$Res>
   }
 }
 
+/// Adds pattern-matching-related methods to [ActivityStats].
+extension ActivityStatsPatterns on ActivityStats {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ActivityStats value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ActivityStats value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ActivityStats value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            @JsonKey(name: 'is_verified') bool? isVerified,
+            StatValue average,
+            StatValue count,
+            StatValue max,
+            StatValue median,
+            StatValue? sum)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats() when $default != null:
+        return $default(_that.name, _that.isVerified, _that.average,
+            _that.count, _that.max, _that.median, _that.sum);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            @JsonKey(name: 'is_verified') bool? isVerified,
+            StatValue average,
+            StatValue count,
+            StatValue max,
+            StatValue median,
+            StatValue? sum)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats():
+        return $default(_that.name, _that.isVerified, _that.average,
+            _that.count, _that.max, _that.median, _that.sum);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? name,
+            @JsonKey(name: 'is_verified') bool? isVerified,
+            StatValue average,
+            StatValue count,
+            StatValue max,
+            StatValue median,
+            StatValue? sum)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityStats() when $default != null:
+        return $default(_that.name, _that.isVerified, _that.average,
+            _that.count, _that.max, _that.median, _that.sum);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _ActivityStats implements ActivityStats {
@@ -2398,6 +3485,159 @@ class _$StatValueCopyWithImpl<$Res> implements $StatValueCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [StatValue].
+extension StatValuePatterns on StatValue {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StatValue value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StatValue value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StatValue value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double? seconds, String text)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue() when $default != null:
+        return $default(_that.seconds, _that.text);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double? seconds, String text) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue():
+        return $default(_that.seconds, _that.text);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double? seconds, String text)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StatValue() when $default != null:
+        return $default(_that.seconds, _that.text);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _StatValue implements StatValue {
@@ -2591,6 +3831,183 @@ class _$DateRangeCopyWithImpl<$Res> implements $DateRangeCopyWith<$Res> {
           : text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [DateRange].
+extension DateRangePatterns on DateRange {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DateRange value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DateRange value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DateRange value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'end_date') String endDate,
+            @JsonKey(name: 'end_text') String endText,
+            String name,
+            @JsonKey(name: 'start_date') String startDate,
+            @JsonKey(name: 'start_text') String startText,
+            String text)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange() when $default != null:
+        return $default(_that.endDate, _that.endText, _that.name,
+            _that.startDate, _that.startText, _that.text);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'end_date') String endDate,
+            @JsonKey(name: 'end_text') String endText,
+            String name,
+            @JsonKey(name: 'start_date') String startDate,
+            @JsonKey(name: 'start_text') String startText,
+            String text)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange():
+        return $default(_that.endDate, _that.endText, _that.name,
+            _that.startDate, _that.startText, _that.text);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'end_date') String endDate,
+            @JsonKey(name: 'end_text') String endText,
+            String name,
+            @JsonKey(name: 'start_date') String startDate,
+            @JsonKey(name: 'start_text') String startText,
+            String text)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DateRange() when $default != null:
+        return $default(_that.endDate, _that.endText, _that.name,
+            _that.startDate, _that.startText, _that.text);
+      case _:
+        return null;
+    }
   }
 }
 

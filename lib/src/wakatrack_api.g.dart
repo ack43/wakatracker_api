@@ -6,7 +6,7 @@ part of 'wakatrack_api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
 class _WakatrackApi implements WakatrackApi {
   _WakatrackApi(this._dio, {this.baseUrl, this.errorLogger});
@@ -208,7 +208,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
+  Future<ResponseWrapperDurations<DurationEntry>> getCurrentDurations({
     required DateTime date,
     String? project,
     String? branches,
@@ -230,7 +230,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ResponseWrapperDurations<WakatimeDuration>>(
+    final _options = _setStreamType<ResponseWrapperDurations<DurationEntry>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -241,11 +241,11 @@ class _WakatrackApi implements WakatrackApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<WakatimeDuration> _value;
+    late ResponseWrapperDurations<DurationEntry> _value;
     try {
-      _value = ResponseWrapperDurations<WakatimeDuration>.fromJson(
+      _value = ResponseWrapperDurations<DurationEntry>.fromJson(
         _result.data!,
-        (json) => WakatimeDuration.fromJson(json as Map<String, dynamic>),
+        (json) => DurationEntry.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -255,7 +255,7 @@ class _WakatrackApi implements WakatrackApi {
   }
 
   @override
-  Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
+  Future<ResponseWrapperDurations<DurationEntry>> getDurations(
     String userId, {
     required DateTime date,
     String? project,
@@ -278,7 +278,7 @@ class _WakatrackApi implements WakatrackApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ResponseWrapperDurations<WakatimeDuration>>(
+    final _options = _setStreamType<ResponseWrapperDurations<DurationEntry>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -289,11 +289,11 @@ class _WakatrackApi implements WakatrackApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResponseWrapperDurations<WakatimeDuration> _value;
+    late ResponseWrapperDurations<DurationEntry> _value;
     try {
-      _value = ResponseWrapperDurations<WakatimeDuration>.fromJson(
+      _value = ResponseWrapperDurations<DurationEntry>.fromJson(
         _result.data!,
-        (json) => WakatimeDuration.fromJson(json as Map<String, dynamic>),
+        (json) => DurationEntry.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -388,8 +388,8 @@ class _WakatrackApi implements WakatrackApi {
 
   @override
   Future<ResponseWrapperList<DayCodingActivityModel>> getCurrentSummaries({
-    DateTime? start,
-    DateTime? end,
+    required DateTime? start,
+    required DateTime? end,
     String? project,
     String? branches,
     int? timeout,
@@ -441,8 +441,8 @@ class _WakatrackApi implements WakatrackApi {
   @override
   Future<ResponseWrapperList<DayCodingActivityModel>> getSummaries(
     String userId, {
-    DateTime? start,
-    DateTime? end,
+    required DateTime? start,
+    required DateTime? end,
     String? project,
     String? branches,
     int? timeout,

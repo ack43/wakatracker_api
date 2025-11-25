@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -22,7 +21,11 @@ mixin _$ActivityRecordModel {
   double? get percent;
   int? get seconds;
   String? get text;
-  double? get totalSeconds;
+  double? get totalSeconds; //
+  int? get aiAdditions;
+  int? get aiDeletions;
+  int? get humanAdditions;
+  int? get humanDeletions;
 
   /// Create a copy of ActivityRecordModel
   /// with the given fields replaced by the non-null parameter values.
@@ -48,17 +51,37 @@ mixin _$ActivityRecordModel {
             (identical(other.seconds, seconds) || other.seconds == seconds) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.totalSeconds, totalSeconds) ||
-                other.totalSeconds == totalSeconds));
+                other.totalSeconds == totalSeconds) &&
+            (identical(other.aiAdditions, aiAdditions) ||
+                other.aiAdditions == aiAdditions) &&
+            (identical(other.aiDeletions, aiDeletions) ||
+                other.aiDeletions == aiDeletions) &&
+            (identical(other.humanAdditions, humanAdditions) ||
+                other.humanAdditions == humanAdditions) &&
+            (identical(other.humanDeletions, humanDeletions) ||
+                other.humanDeletions == humanDeletions));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, digital, hours, minutes, name,
-      percent, seconds, text, totalSeconds);
+  int get hashCode => Object.hash(
+      runtimeType,
+      digital,
+      hours,
+      minutes,
+      name,
+      percent,
+      seconds,
+      text,
+      totalSeconds,
+      aiAdditions,
+      aiDeletions,
+      humanAdditions,
+      humanDeletions);
 
   @override
   String toString() {
-    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds)';
+    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds, aiAdditions: $aiAdditions, aiDeletions: $aiDeletions, humanAdditions: $humanAdditions, humanDeletions: $humanDeletions)';
   }
 }
 
@@ -76,7 +99,11 @@ abstract mixin class $ActivityRecordModelCopyWith<$Res> {
       double? percent,
       int? seconds,
       String? text,
-      double? totalSeconds});
+      double? totalSeconds,
+      int? aiAdditions,
+      int? aiDeletions,
+      int? humanAdditions,
+      int? humanDeletions});
 }
 
 /// @nodoc
@@ -100,6 +127,10 @@ class _$ActivityRecordModelCopyWithImpl<$Res>
     Object? seconds = freezed,
     Object? text = freezed,
     Object? totalSeconds = freezed,
+    Object? aiAdditions = freezed,
+    Object? aiDeletions = freezed,
+    Object? humanAdditions = freezed,
+    Object? humanDeletions = freezed,
   }) {
     return _then(_self.copyWith(
       digital: freezed == digital
@@ -134,7 +165,251 @@ class _$ActivityRecordModelCopyWithImpl<$Res>
           ? _self.totalSeconds
           : totalSeconds // ignore: cast_nullable_to_non_nullable
               as double?,
+      aiAdditions: freezed == aiAdditions
+          ? _self.aiAdditions
+          : aiAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aiDeletions: freezed == aiDeletions
+          ? _self.aiDeletions
+          : aiDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanAdditions: freezed == humanAdditions
+          ? _self.humanAdditions
+          : humanAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanDeletions: freezed == humanDeletions
+          ? _self.humanDeletions
+          : humanDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ActivityRecordModel].
+extension ActivityRecordModelPatterns on ActivityRecordModel {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ActivityRecordModel value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ActivityRecordModel value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ActivityRecordModel value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? digital,
+            int? hours,
+            int? minutes,
+            String? name,
+            double? percent,
+            int? seconds,
+            String? text,
+            double? totalSeconds,
+            int? aiAdditions,
+            int? aiDeletions,
+            int? humanAdditions,
+            int? humanDeletions)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel() when $default != null:
+        return $default(
+            _that.digital,
+            _that.hours,
+            _that.minutes,
+            _that.name,
+            _that.percent,
+            _that.seconds,
+            _that.text,
+            _that.totalSeconds,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? digital,
+            int? hours,
+            int? minutes,
+            String? name,
+            double? percent,
+            int? seconds,
+            String? text,
+            double? totalSeconds,
+            int? aiAdditions,
+            int? aiDeletions,
+            int? humanAdditions,
+            int? humanDeletions)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel():
+        return $default(
+            _that.digital,
+            _that.hours,
+            _that.minutes,
+            _that.name,
+            _that.percent,
+            _that.seconds,
+            _that.text,
+            _that.totalSeconds,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? digital,
+            int? hours,
+            int? minutes,
+            String? name,
+            double? percent,
+            int? seconds,
+            String? text,
+            double? totalSeconds,
+            int? aiAdditions,
+            int? aiDeletions,
+            int? humanAdditions,
+            int? humanDeletions)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ActivityRecordModel() when $default != null:
+        return $default(
+            _that.digital,
+            _that.hours,
+            _that.minutes,
+            _that.name,
+            _that.percent,
+            _that.seconds,
+            _that.text,
+            _that.totalSeconds,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -150,7 +425,11 @@ class _ActivityRecordModel implements ActivityRecordModel {
       this.percent,
       this.seconds,
       this.text,
-      this.totalSeconds});
+      this.totalSeconds,
+      this.aiAdditions,
+      this.aiDeletions,
+      this.humanAdditions,
+      this.humanDeletions});
   factory _ActivityRecordModel.fromJson(Map<String, dynamic> json) =>
       _$ActivityRecordModelFromJson(json);
 
@@ -170,6 +449,15 @@ class _ActivityRecordModel implements ActivityRecordModel {
   final String? text;
   @override
   final double? totalSeconds;
+//
+  @override
+  final int? aiAdditions;
+  @override
+  final int? aiDeletions;
+  @override
+  final int? humanAdditions;
+  @override
+  final int? humanDeletions;
 
   /// Create a copy of ActivityRecordModel
   /// with the given fields replaced by the non-null parameter values.
@@ -200,17 +488,37 @@ class _ActivityRecordModel implements ActivityRecordModel {
             (identical(other.seconds, seconds) || other.seconds == seconds) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.totalSeconds, totalSeconds) ||
-                other.totalSeconds == totalSeconds));
+                other.totalSeconds == totalSeconds) &&
+            (identical(other.aiAdditions, aiAdditions) ||
+                other.aiAdditions == aiAdditions) &&
+            (identical(other.aiDeletions, aiDeletions) ||
+                other.aiDeletions == aiDeletions) &&
+            (identical(other.humanAdditions, humanAdditions) ||
+                other.humanAdditions == humanAdditions) &&
+            (identical(other.humanDeletions, humanDeletions) ||
+                other.humanDeletions == humanDeletions));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, digital, hours, minutes, name,
-      percent, seconds, text, totalSeconds);
+  int get hashCode => Object.hash(
+      runtimeType,
+      digital,
+      hours,
+      minutes,
+      name,
+      percent,
+      seconds,
+      text,
+      totalSeconds,
+      aiAdditions,
+      aiDeletions,
+      humanAdditions,
+      humanDeletions);
 
   @override
   String toString() {
-    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds)';
+    return 'ActivityRecordModel(digital: $digital, hours: $hours, minutes: $minutes, name: $name, percent: $percent, seconds: $seconds, text: $text, totalSeconds: $totalSeconds, aiAdditions: $aiAdditions, aiDeletions: $aiDeletions, humanAdditions: $humanAdditions, humanDeletions: $humanDeletions)';
   }
 }
 
@@ -230,7 +538,11 @@ abstract mixin class _$ActivityRecordModelCopyWith<$Res>
       double? percent,
       int? seconds,
       String? text,
-      double? totalSeconds});
+      double? totalSeconds,
+      int? aiAdditions,
+      int? aiDeletions,
+      int? humanAdditions,
+      int? humanDeletions});
 }
 
 /// @nodoc
@@ -254,6 +566,10 @@ class __$ActivityRecordModelCopyWithImpl<$Res>
     Object? seconds = freezed,
     Object? text = freezed,
     Object? totalSeconds = freezed,
+    Object? aiAdditions = freezed,
+    Object? aiDeletions = freezed,
+    Object? humanAdditions = freezed,
+    Object? humanDeletions = freezed,
   }) {
     return _then(_ActivityRecordModel(
       digital: freezed == digital
@@ -288,6 +604,22 @@ class __$ActivityRecordModelCopyWithImpl<$Res>
           ? _self.totalSeconds
           : totalSeconds // ignore: cast_nullable_to_non_nullable
               as double?,
+      aiAdditions: freezed == aiAdditions
+          ? _self.aiAdditions
+          : aiAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aiDeletions: freezed == aiDeletions
+          ? _self.aiDeletions
+          : aiDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanAdditions: freezed == humanAdditions
+          ? _self.humanAdditions
+          : humanAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanDeletions: freezed == humanDeletions
+          ? _self.humanDeletions
+          : humanDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }

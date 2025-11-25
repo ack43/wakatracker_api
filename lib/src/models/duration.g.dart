@@ -28,20 +28,28 @@ Map<String, dynamic> _$ResponseWrapperDurationsToJson<T>(
       'timezone': instance.timezone,
     };
 
-_WakatimeDuration _$WakatimeDurationFromJson(Map<String, dynamic> json) =>
-    _WakatimeDuration(
+_DurationEntry _$DurationEntryFromJson(Map<String, dynamic> json) =>
+    _DurationEntry(
       project: json['project'] as String,
       time: (json['time'] as num).toDouble(),
       duration: (json['duration'] as num).toDouble(),
       color: json['color'] as String?,
+      aiAdditions: (json['ai_additions'] as num?)?.toInt(),
+      aiDeletions: (json['ai_deletions'] as num?)?.toInt(),
+      humanAdditions: (json['human_additions'] as num?)?.toInt(),
+      humanDeletions: (json['human_deletions'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$WakatimeDurationToJson(_WakatimeDuration instance) =>
+Map<String, dynamic> _$DurationEntryToJson(_DurationEntry instance) =>
     <String, dynamic>{
       'project': instance.project,
       'time': instance.time,
       'duration': instance.duration,
       'color': instance.color,
+      'ai_additions': instance.aiAdditions,
+      'ai_deletions': instance.aiDeletions,
+      'human_additions': instance.humanAdditions,
+      'human_deletions': instance.humanDeletions,
     };
 
 _ResponseWrapperExternalDurations _$ResponseWrapperExternalDurationsFromJson(

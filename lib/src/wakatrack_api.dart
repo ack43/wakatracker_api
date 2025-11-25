@@ -45,7 +45,7 @@ abstract class WakatrackApi {
   //
   // Durations
   @GET('users/current/durations')
-  Future<ResponseWrapperDurations<WakatimeDuration>> getCurrentDurations({
+  Future<ResponseWrapperDurations<DurationEntry>> getCurrentDurations({
     @Query('date') @DateTimeConverter() required DateTime date,
     @Query('project') String? project,
     @Query('branches') String? branches,
@@ -56,7 +56,7 @@ abstract class WakatrackApi {
   });
 
   @GET('users/{userId}/durations')
-  Future<ResponseWrapperDurations<WakatimeDuration>> getDurations(
+  Future<ResponseWrapperDurations<DurationEntry>> getDurations(
     @Path('userId') String userId, {
     @Query('date') @DateTimeConverter() required DateTime date,
     @Query('project') String? project,

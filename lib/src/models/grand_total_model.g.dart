@@ -14,6 +14,10 @@ _GrandTotalModel _$GrandTotalModelFromJson(Map<String, dynamic> json) =>
       minutes: (json['minutes'] as num?)?.toInt(),
       text: json['text'] as String?,
       totalSeconds: (json['total_seconds'] as num?)?.toDouble(),
+      aiAdditions: (json['ai_additions'] as num?)?.toInt(),
+      aiDeletions: (json['ai_deletions'] as num?)?.toInt(),
+      humanAdditions: (json['human_additions'] as num?)?.toInt(),
+      humanDeletions: (json['human_deletions'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$GrandTotalModelToJson(_GrandTotalModel instance) =>
@@ -24,4 +28,8 @@ Map<String, dynamic> _$GrandTotalModelToJson(_GrandTotalModel instance) =>
       'minutes': instance.minutes,
       'text': instance.text,
       'total_seconds': instance.totalSeconds,
+      'ai_additions': instance.aiAdditions,
+      'ai_deletions': instance.aiDeletions,
+      'human_additions': instance.humanAdditions,
+      'human_deletions': instance.humanDeletions,
     };

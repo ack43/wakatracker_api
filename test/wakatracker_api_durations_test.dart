@@ -33,13 +33,18 @@ void main() {
             'project', // Optional: try other values like 'editor', 'entity', etc.
       );
 
-      expect(durations.data, isA<List<WakatimeDuration>>());
+      expect(durations.data, isA<List<DurationEntry>>());
       print('✅ Durations fetched: ${durations.data.length}');
       for (final duration in durations.data.take(3)) {
         print(
           //
           // ignore: lines_longer_than_80_chars
           '- project: ${duration.project} @ ${duration.dateTime} (${duration.time}) => (${duration.duration})',
+        );
+        print(
+          //
+          // ignore: lines_longer_than_80_chars
+          '- changes (HUMAN / AI): +${duration.humanAdditions} -${duration.humanDeletions} / +${duration.aiAdditions} -${duration.aiDeletions}',
         );
       }
       print('Durations.meta.start: ${durations.start}');

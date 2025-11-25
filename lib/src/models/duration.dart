@@ -31,28 +31,40 @@ sealed class ResponseWrapperDurations<T> with _$ResponseWrapperDurations<T> {
 
 // naming because of dart's `Duration` conflict
 @freezed
-sealed class WakatimeDuration with _$WakatimeDuration {
-  const factory WakatimeDuration({
+sealed class DurationEntry with _$DurationEntry {
+  const factory DurationEntry({
     required String project,
     required double time,
     required double duration,
     String? color,
-  }) = _WakatimeDuration;
+    //
+    @JsonKey(name: 'ai_additions') int? aiAdditions,
+    @JsonKey(name: 'ai_deletions') int? aiDeletions,
+    @JsonKey(name: 'human_additions') int? humanAdditions,
+    @JsonKey(name: 'human_deletions') int? humanDeletions,
+  }) = _DurationEntry;
 
   // @freezed requirements
   // ignore: unused_element
-  const WakatimeDuration._(); // Enables custom getters
+  const DurationEntry._(); // Enables custom getters
 
-  factory WakatimeDuration.fromJson(Map<String, dynamic> json) =>
-      _$WakatimeDurationFromJson(json);
+  factory DurationEntry.fromJson(Map<String, dynamic> json) =>
+      _$DurationEntryFromJson(Map<String, dynamic>.from(json));
+
+  int get timeInMs => (time * 1000000).toInt();
 
   /// Custom getter to convert `time` (seconds since epoch) to `DateTime`
   DateTime get dateTime => DateTime.fromMicrosecondsSinceEpoch(
-        (time * 1000000).toInt(),
+        timeInMs,
         isUtc: true,
       );
+
+  DateTime get finishTime =>
+      dateTime.add(Duration(microseconds: (duration * 1000000).toInt()));
 }
 
+//
+//
 //
 // ExternalDuration
 @freezed

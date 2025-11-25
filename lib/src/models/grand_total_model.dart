@@ -15,6 +15,11 @@ sealed class GrandTotalModel with _$GrandTotalModel {
     int? minutes,
     String? text,
     double? totalSeconds,
+    //
+    int? aiAdditions,
+    int? aiDeletions,
+    int? humanAdditions,
+    int? humanDeletions,
   }) = _GrandTotalModel;
 
   factory GrandTotalModel.fromJson(Map<String, dynamic> json) =>

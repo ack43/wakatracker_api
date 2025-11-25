@@ -41,6 +41,14 @@ void main() {
       print('- Total time: ${summary.grandTotal?.text}');
       print('- Projects: ${summary.projects?.map((p) => p.name).join(', ')}');
       print('- Languages: ${summary.languages?.map((l) => l.name).join(', ')}');
+
+      summary.projects?.forEach((project) {
+        print(
+          //
+          // ignore: lines_longer_than_80_chars
+          '- changes for `${project.name}` (HUMAN / AI): +${project.humanAdditions} -${project.humanDeletions} / +${project.aiAdditions} -${project.aiDeletions}',
+        );
+      });
     });
 
     test('API Key: summaries with `range` param (Last 7 Days)', () async {

@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.4] - 2025-10-25
+
+### Added
+- `WakatimeDuration` renamed to `DurationEntry`
+- `DurationEntry.finishTime` custom getter method:
+  - Computes the end time of the tracked duration using `time + duration` (both in microseconds).
+  - Complements the existing `dateTime` getter.
+- AI/Human diff tracking fields:
+  - `aiAdditions`, `aiDeletions`, `humanAdditions`, `humanDeletions`
+  - Added to: `ActivityRecordModel`, `DurationEntry`, `GrandTotalModel`
+- Enhanced test output:
+  - `wakatracker_api_durations_test.dart`, `wakatracker_api_stats_test.dart`, `wakatracker_api_summaries_test.dart` now print AI/Human code changes.
+- Fix `retrofit` version on `4.7.3` (`ParseErrorLogger` conflict with `4.9.0`).
+
+### Changed
+- Bumped `pubspec.yaml` version to `0.2.4`
+
 ## [0.2.3] - 2025-04-24
 
 ### 🚀 Added

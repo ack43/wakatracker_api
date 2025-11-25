@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -100,6 +99,162 @@ class _$ResponseWrapperDurationsCopyWithImpl<T, $Res>
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ResponseWrapperDurations].
+extension ResponseWrapperDurationsPatterns<T> on ResponseWrapperDurations<T> {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ResponseWrapperDurations<T> value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ResponseWrapperDurations<T> value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ResponseWrapperDurations<T> value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(List<T> data, String start, String end, String timezone)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations() when $default != null:
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(List<T> data, String start, String end, String timezone)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations():
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(List<T> data, String start, String end, String timezone)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperDurations() when $default != null:
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -219,63 +374,88 @@ class __$ResponseWrapperDurationsCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-mixin _$WakatimeDuration {
+mixin _$DurationEntry {
   String get project;
   double get time;
   double get duration;
-  String? get color;
+  String? get color; //
+  @JsonKey(name: 'ai_additions')
+  int? get aiAdditions;
+  @JsonKey(name: 'ai_deletions')
+  int? get aiDeletions;
+  @JsonKey(name: 'human_additions')
+  int? get humanAdditions;
+  @JsonKey(name: 'human_deletions')
+  int? get humanDeletions;
 
-  /// Create a copy of WakatimeDuration
+  /// Create a copy of DurationEntry
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $WakatimeDurationCopyWith<WakatimeDuration> get copyWith =>
-      _$WakatimeDurationCopyWithImpl<WakatimeDuration>(
-          this as WakatimeDuration, _$identity);
+  $DurationEntryCopyWith<DurationEntry> get copyWith =>
+      _$DurationEntryCopyWithImpl<DurationEntry>(
+          this as DurationEntry, _$identity);
 
-  /// Serializes this WakatimeDuration to a JSON map.
+  /// Serializes this DurationEntry to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WakatimeDuration &&
+            other is DurationEntry &&
             (identical(other.project, project) || other.project == project) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.aiAdditions, aiAdditions) ||
+                other.aiAdditions == aiAdditions) &&
+            (identical(other.aiDeletions, aiDeletions) ||
+                other.aiDeletions == aiDeletions) &&
+            (identical(other.humanAdditions, humanAdditions) ||
+                other.humanAdditions == humanAdditions) &&
+            (identical(other.humanDeletions, humanDeletions) ||
+                other.humanDeletions == humanDeletions));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, project, time, duration, color);
+  int get hashCode => Object.hash(runtimeType, project, time, duration, color,
+      aiAdditions, aiDeletions, humanAdditions, humanDeletions);
 
   @override
   String toString() {
-    return 'WakatimeDuration(project: $project, time: $time, duration: $duration, color: $color)';
+    return 'DurationEntry(project: $project, time: $time, duration: $duration, color: $color, aiAdditions: $aiAdditions, aiDeletions: $aiDeletions, humanAdditions: $humanAdditions, humanDeletions: $humanDeletions)';
   }
 }
 
 /// @nodoc
-abstract mixin class $WakatimeDurationCopyWith<$Res> {
-  factory $WakatimeDurationCopyWith(
-          WakatimeDuration value, $Res Function(WakatimeDuration) _then) =
-      _$WakatimeDurationCopyWithImpl;
+abstract mixin class $DurationEntryCopyWith<$Res> {
+  factory $DurationEntryCopyWith(
+          DurationEntry value, $Res Function(DurationEntry) _then) =
+      _$DurationEntryCopyWithImpl;
   @useResult
-  $Res call({String project, double time, double duration, String? color});
+  $Res call(
+      {String project,
+      double time,
+      double duration,
+      String? color,
+      @JsonKey(name: 'ai_additions') int? aiAdditions,
+      @JsonKey(name: 'ai_deletions') int? aiDeletions,
+      @JsonKey(name: 'human_additions') int? humanAdditions,
+      @JsonKey(name: 'human_deletions') int? humanDeletions});
 }
 
 /// @nodoc
-class _$WakatimeDurationCopyWithImpl<$Res>
-    implements $WakatimeDurationCopyWith<$Res> {
-  _$WakatimeDurationCopyWithImpl(this._self, this._then);
+class _$DurationEntryCopyWithImpl<$Res>
+    implements $DurationEntryCopyWith<$Res> {
+  _$DurationEntryCopyWithImpl(this._self, this._then);
 
-  final WakatimeDuration _self;
-  final $Res Function(WakatimeDuration) _then;
+  final DurationEntry _self;
+  final $Res Function(DurationEntry) _then;
 
-  /// Create a copy of WakatimeDuration
+  /// Create a copy of DurationEntry
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -284,6 +464,10 @@ class _$WakatimeDurationCopyWithImpl<$Res>
     Object? time = null,
     Object? duration = null,
     Object? color = freezed,
+    Object? aiAdditions = freezed,
+    Object? aiDeletions = freezed,
+    Object? humanAdditions = freezed,
+    Object? humanDeletions = freezed,
   }) {
     return _then(_self.copyWith(
       project: null == project
@@ -302,21 +486,245 @@ class _$WakatimeDurationCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      aiAdditions: freezed == aiAdditions
+          ? _self.aiAdditions
+          : aiAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aiDeletions: freezed == aiDeletions
+          ? _self.aiDeletions
+          : aiDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanAdditions: freezed == humanAdditions
+          ? _self.humanAdditions
+          : humanAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanDeletions: freezed == humanDeletions
+          ? _self.humanDeletions
+          : humanDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [DurationEntry].
+extension DurationEntryPatterns on DurationEntry {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DurationEntry value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DurationEntry value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DurationEntry value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String project,
+            double time,
+            double duration,
+            String? color,
+            @JsonKey(name: 'ai_additions') int? aiAdditions,
+            @JsonKey(name: 'ai_deletions') int? aiDeletions,
+            @JsonKey(name: 'human_additions') int? humanAdditions,
+            @JsonKey(name: 'human_deletions') int? humanDeletions)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry() when $default != null:
+        return $default(
+            _that.project,
+            _that.time,
+            _that.duration,
+            _that.color,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String project,
+            double time,
+            double duration,
+            String? color,
+            @JsonKey(name: 'ai_additions') int? aiAdditions,
+            @JsonKey(name: 'ai_deletions') int? aiDeletions,
+            @JsonKey(name: 'human_additions') int? humanAdditions,
+            @JsonKey(name: 'human_deletions') int? humanDeletions)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry():
+        return $default(
+            _that.project,
+            _that.time,
+            _that.duration,
+            _that.color,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String project,
+            double time,
+            double duration,
+            String? color,
+            @JsonKey(name: 'ai_additions') int? aiAdditions,
+            @JsonKey(name: 'ai_deletions') int? aiDeletions,
+            @JsonKey(name: 'human_additions') int? humanAdditions,
+            @JsonKey(name: 'human_deletions') int? humanDeletions)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DurationEntry() when $default != null:
+        return $default(
+            _that.project,
+            _that.time,
+            _that.duration,
+            _that.color,
+            _that.aiAdditions,
+            _that.aiDeletions,
+            _that.humanAdditions,
+            _that.humanDeletions);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _WakatimeDuration extends WakatimeDuration {
-  const _WakatimeDuration(
+class _DurationEntry extends DurationEntry {
+  const _DurationEntry(
       {required this.project,
       required this.time,
       required this.duration,
-      this.color})
+      this.color,
+      @JsonKey(name: 'ai_additions') this.aiAdditions,
+      @JsonKey(name: 'ai_deletions') this.aiDeletions,
+      @JsonKey(name: 'human_additions') this.humanAdditions,
+      @JsonKey(name: 'human_deletions') this.humanDeletions})
       : super._();
-  factory _WakatimeDuration.fromJson(Map<String, dynamic> json) =>
-      _$WakatimeDurationFromJson(json);
+  factory _DurationEntry.fromJson(Map<String, dynamic> json) =>
+      _$DurationEntryFromJson(json);
 
   @override
   final String project;
@@ -326,18 +734,31 @@ class _WakatimeDuration extends WakatimeDuration {
   final double duration;
   @override
   final String? color;
+//
+  @override
+  @JsonKey(name: 'ai_additions')
+  final int? aiAdditions;
+  @override
+  @JsonKey(name: 'ai_deletions')
+  final int? aiDeletions;
+  @override
+  @JsonKey(name: 'human_additions')
+  final int? humanAdditions;
+  @override
+  @JsonKey(name: 'human_deletions')
+  final int? humanDeletions;
 
-  /// Create a copy of WakatimeDuration
+  /// Create a copy of DurationEntry
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$WakatimeDurationCopyWith<_WakatimeDuration> get copyWith =>
-      __$WakatimeDurationCopyWithImpl<_WakatimeDuration>(this, _$identity);
+  _$DurationEntryCopyWith<_DurationEntry> get copyWith =>
+      __$DurationEntryCopyWithImpl<_DurationEntry>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$WakatimeDurationToJson(
+    return _$DurationEntryToJson(
       this,
     );
   }
@@ -346,44 +767,61 @@ class _WakatimeDuration extends WakatimeDuration {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _WakatimeDuration &&
+            other is _DurationEntry &&
             (identical(other.project, project) || other.project == project) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
-            (identical(other.color, color) || other.color == color));
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.aiAdditions, aiAdditions) ||
+                other.aiAdditions == aiAdditions) &&
+            (identical(other.aiDeletions, aiDeletions) ||
+                other.aiDeletions == aiDeletions) &&
+            (identical(other.humanAdditions, humanAdditions) ||
+                other.humanAdditions == humanAdditions) &&
+            (identical(other.humanDeletions, humanDeletions) ||
+                other.humanDeletions == humanDeletions));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, project, time, duration, color);
+  int get hashCode => Object.hash(runtimeType, project, time, duration, color,
+      aiAdditions, aiDeletions, humanAdditions, humanDeletions);
 
   @override
   String toString() {
-    return 'WakatimeDuration(project: $project, time: $time, duration: $duration, color: $color)';
+    return 'DurationEntry(project: $project, time: $time, duration: $duration, color: $color, aiAdditions: $aiAdditions, aiDeletions: $aiDeletions, humanAdditions: $humanAdditions, humanDeletions: $humanDeletions)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$WakatimeDurationCopyWith<$Res>
-    implements $WakatimeDurationCopyWith<$Res> {
-  factory _$WakatimeDurationCopyWith(
-          _WakatimeDuration value, $Res Function(_WakatimeDuration) _then) =
-      __$WakatimeDurationCopyWithImpl;
+abstract mixin class _$DurationEntryCopyWith<$Res>
+    implements $DurationEntryCopyWith<$Res> {
+  factory _$DurationEntryCopyWith(
+          _DurationEntry value, $Res Function(_DurationEntry) _then) =
+      __$DurationEntryCopyWithImpl;
   @override
   @useResult
-  $Res call({String project, double time, double duration, String? color});
+  $Res call(
+      {String project,
+      double time,
+      double duration,
+      String? color,
+      @JsonKey(name: 'ai_additions') int? aiAdditions,
+      @JsonKey(name: 'ai_deletions') int? aiDeletions,
+      @JsonKey(name: 'human_additions') int? humanAdditions,
+      @JsonKey(name: 'human_deletions') int? humanDeletions});
 }
 
 /// @nodoc
-class __$WakatimeDurationCopyWithImpl<$Res>
-    implements _$WakatimeDurationCopyWith<$Res> {
-  __$WakatimeDurationCopyWithImpl(this._self, this._then);
+class __$DurationEntryCopyWithImpl<$Res>
+    implements _$DurationEntryCopyWith<$Res> {
+  __$DurationEntryCopyWithImpl(this._self, this._then);
 
-  final _WakatimeDuration _self;
-  final $Res Function(_WakatimeDuration) _then;
+  final _DurationEntry _self;
+  final $Res Function(_DurationEntry) _then;
 
-  /// Create a copy of WakatimeDuration
+  /// Create a copy of DurationEntry
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -392,8 +830,12 @@ class __$WakatimeDurationCopyWithImpl<$Res>
     Object? time = null,
     Object? duration = null,
     Object? color = freezed,
+    Object? aiAdditions = freezed,
+    Object? aiDeletions = freezed,
+    Object? humanAdditions = freezed,
+    Object? humanDeletions = freezed,
   }) {
-    return _then(_WakatimeDuration(
+    return _then(_DurationEntry(
       project: null == project
           ? _self.project
           : project // ignore: cast_nullable_to_non_nullable
@@ -410,6 +852,22 @@ class __$WakatimeDurationCopyWithImpl<$Res>
           ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
+      aiAdditions: freezed == aiAdditions
+          ? _self.aiAdditions
+          : aiAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aiDeletions: freezed == aiDeletions
+          ? _self.aiDeletions
+          : aiDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanAdditions: freezed == humanAdditions
+          ? _self.humanAdditions
+          : humanAdditions // ignore: cast_nullable_to_non_nullable
+              as int?,
+      humanDeletions: freezed == humanDeletions
+          ? _self.humanDeletions
+          : humanDeletions // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -503,6 +961,166 @@ class _$ResponseWrapperExternalDurationsCopyWithImpl<$Res>
           : timezone // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ResponseWrapperExternalDurations].
+extension ResponseWrapperExternalDurationsPatterns
+    on ResponseWrapperExternalDurations {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ResponseWrapperExternalDurations value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ResponseWrapperExternalDurations value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ResponseWrapperExternalDurations value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(List<ExternalDuration> data, String start, String end,
+            String timezone)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations() when $default != null:
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(List<ExternalDuration> data, String start, String end,
+            String timezone)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations():
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(List<ExternalDuration> data, String start, String end,
+            String timezone)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ResponseWrapperExternalDurations() when $default != null:
+        return $default(_that.data, _that.start, _that.end, _that.timezone);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -784,6 +1402,234 @@ class _$ExternalDurationCopyWithImpl<$Res>
           : meta // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ExternalDuration].
+extension ExternalDurationPatterns on ExternalDuration {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ExternalDuration value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ExternalDuration value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ExternalDuration value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String externalId,
+            String entity,
+            String type,
+            String provider,
+            String? category,
+            DateTime startTime,
+            DateTime endTime,
+            String? project,
+            String? branch,
+            String? language,
+            String? meta)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration() when $default != null:
+        return $default(
+            _that.id,
+            _that.externalId,
+            _that.entity,
+            _that.type,
+            _that.provider,
+            _that.category,
+            _that.startTime,
+            _that.endTime,
+            _that.project,
+            _that.branch,
+            _that.language,
+            _that.meta);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String externalId,
+            String entity,
+            String type,
+            String provider,
+            String? category,
+            DateTime startTime,
+            DateTime endTime,
+            String? project,
+            String? branch,
+            String? language,
+            String? meta)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration():
+        return $default(
+            _that.id,
+            _that.externalId,
+            _that.entity,
+            _that.type,
+            _that.provider,
+            _that.category,
+            _that.startTime,
+            _that.endTime,
+            _that.project,
+            _that.branch,
+            _that.language,
+            _that.meta);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String externalId,
+            String entity,
+            String type,
+            String provider,
+            String? category,
+            DateTime startTime,
+            DateTime endTime,
+            String? project,
+            String? branch,
+            String? language,
+            String? meta)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExternalDuration() when $default != null:
+        return $default(
+            _that.id,
+            _that.externalId,
+            _that.entity,
+            _that.type,
+            _that.provider,
+            _that.category,
+            _that.startTime,
+            _that.endTime,
+            _that.project,
+            _that.branch,
+            _that.language,
+            _that.meta);
+      case _:
+        return null;
+    }
   }
 }
 

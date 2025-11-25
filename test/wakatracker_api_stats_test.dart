@@ -27,9 +27,18 @@ void main() {
       final stats = await api!.getCurrentUserStats();
       final data = stats.data;
 
-      print('✅ Stats for range: ${data.start} - ${data.end} (${data.range}) ');
+      print(stats.data.toJson().keys.join(" | "));
+
+      print(
+          '✅ Stats for range: ${data.start} - ${data.end} (${data.range}) by ${data.username}(ID: ${data.userId})');
       print('• Total days (including holidays): ${data.daysIncludingHolidays}');
       print('• User: ${data.username}');
+
+      data.projects?.forEach((project) {
+        print(
+          '- changes for `${project.name}` (HUMAN / AI): +${project.humanAdditions} -${project.humanDeletions} / +${project.aiAdditions} -${project.aiDeletions}',
+        );
+      });
 
       expect(data.username, isNotEmpty);
       expect(data.daysIncludingHolidays, greaterThan(0));

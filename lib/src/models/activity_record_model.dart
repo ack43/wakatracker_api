@@ -17,6 +17,11 @@ sealed class ActivityRecordModel with _$ActivityRecordModel {
     int? seconds,
     String? text,
     double? totalSeconds,
+    //
+    int? aiAdditions,
+    int? aiDeletions,
+    int? humanAdditions,
+    int? humanDeletions,
   }) = _ActivityRecordModel;
 
   factory ActivityRecordModel.fromJson(Map<String, dynamic> json) =>

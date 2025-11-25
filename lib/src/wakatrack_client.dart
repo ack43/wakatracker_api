@@ -108,6 +108,8 @@ final class WakatrackClient {
           'Authorization':
               '${token?.tokenType ?? 'Bearer'} ${token?.accessToken}',
         },
+        connectTimeout: const Duration(seconds: 10),
+        receiveTimeout: const Duration(seconds: 10),
       ),
     );
 

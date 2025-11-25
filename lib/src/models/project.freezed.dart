@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -77,6 +76,163 @@ class _$ProjectsResponseCopyWithImpl<$Res>
           : data // ignore: cast_nullable_to_non_nullable
               as List<Project>,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ProjectsResponse].
+extension ProjectsResponsePatterns on ProjectsResponse {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ProjectsResponse value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ProjectsResponse value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ProjectsResponse value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(List<Project> data)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse() when $default != null:
+        return $default(_that.data);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(List<Project> data) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse():
+        return $default(_that.data);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(List<Project> data)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectsResponse() when $default != null:
+        return $default(_that.data);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -365,6 +521,252 @@ class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [Project].
+extension ProjectPatterns on Project {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Project value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Project() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Project value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Project():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Project value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Project() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? repository,
+            String? badge,
+            String? color,
+            List<String> clients,
+            @JsonKey(name: 'has_public_url') bool hasPublicUrl,
+            @JsonKey(name: 'human_readable_last_heartbeat_at')
+            String? humanReadableLastHeartbeatAt,
+            @JsonKey(name: 'last_heartbeat_at') String? lastHeartbeatAt,
+            @JsonKey(name: 'human_readable_first_heartbeat_at')
+            String? humanReadableFirstHeartbeatAt,
+            @JsonKey(name: 'first_heartbeat_at') String? firstHeartbeatAt,
+            String url,
+            @JsonKey(name: 'urlencoded_name') String urlencodedName,
+            @JsonKey(name: 'created_at') String createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Project() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.repository,
+            _that.badge,
+            _that.color,
+            _that.clients,
+            _that.hasPublicUrl,
+            _that.humanReadableLastHeartbeatAt,
+            _that.lastHeartbeatAt,
+            _that.humanReadableFirstHeartbeatAt,
+            _that.firstHeartbeatAt,
+            _that.url,
+            _that.urlencodedName,
+            _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String? repository,
+            String? badge,
+            String? color,
+            List<String> clients,
+            @JsonKey(name: 'has_public_url') bool hasPublicUrl,
+            @JsonKey(name: 'human_readable_last_heartbeat_at')
+            String? humanReadableLastHeartbeatAt,
+            @JsonKey(name: 'last_heartbeat_at') String? lastHeartbeatAt,
+            @JsonKey(name: 'human_readable_first_heartbeat_at')
+            String? humanReadableFirstHeartbeatAt,
+            @JsonKey(name: 'first_heartbeat_at') String? firstHeartbeatAt,
+            String url,
+            @JsonKey(name: 'urlencoded_name') String urlencodedName,
+            @JsonKey(name: 'created_at') String createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Project():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.repository,
+            _that.badge,
+            _that.color,
+            _that.clients,
+            _that.hasPublicUrl,
+            _that.humanReadableLastHeartbeatAt,
+            _that.lastHeartbeatAt,
+            _that.humanReadableFirstHeartbeatAt,
+            _that.firstHeartbeatAt,
+            _that.url,
+            _that.urlencodedName,
+            _that.createdAt);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String? repository,
+            String? badge,
+            String? color,
+            List<String> clients,
+            @JsonKey(name: 'has_public_url') bool hasPublicUrl,
+            @JsonKey(name: 'human_readable_last_heartbeat_at')
+            String? humanReadableLastHeartbeatAt,
+            @JsonKey(name: 'last_heartbeat_at') String? lastHeartbeatAt,
+            @JsonKey(name: 'human_readable_first_heartbeat_at')
+            String? humanReadableFirstHeartbeatAt,
+            @JsonKey(name: 'first_heartbeat_at') String? firstHeartbeatAt,
+            String url,
+            @JsonKey(name: 'urlencoded_name') String urlencodedName,
+            @JsonKey(name: 'created_at') String createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Project() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.repository,
+            _that.badge,
+            _that.color,
+            _that.clients,
+            _that.hasPublicUrl,
+            _that.humanReadableLastHeartbeatAt,
+            _that.lastHeartbeatAt,
+            _that.humanReadableFirstHeartbeatAt,
+            _that.firstHeartbeatAt,
+            _that.url,
+            _that.urlencodedName,
+            _that.createdAt);
+      case _:
+        return null;
+    }
   }
 }
 
